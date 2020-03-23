@@ -1,6 +1,6 @@
 from Modules_01.validator_01 import validator
 print('Welcome to the Royal money exchanger')
-input_01 = (input('Input money'))
+input_01 = (input('Input money: '))
 if validator(input_01):
     money = float(input_01)
     TwoPounds = 0
