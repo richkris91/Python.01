@@ -1,3 +1,4 @@
+from Modules_01.square
 from Modules_01.validator_01 import validator
 print('''Welcome to '0.1 Royal Multitool',
 to access one of the given functions enter a representative number
@@ -11,7 +12,10 @@ if validator(input_1) and 0 < int(input_1) <= 3:
     if number == 1:
         print('You have chosen the Square maker ')
         input_Square = input('Enter square height/length: ')
-        if validator(input_Square):
+        if validator(input_square):
+
+
+            def square_maker(input_square):
             x_1 = int(input_Square)
             if x_1 == 1:
                 print('+')
@@ -22,8 +26,10 @@ if validator(input_1) and 0 < int(input_1) <= 3:
                     print('|' + '  ' * (x_1-2) + '|')
                 print('+' + '--' * (x_1 - 2) + '+')
                 print('End')
+
+
         else:
-            print('You have not managed to enter the input correctly')
+            pass
     elif number == 2:
         print('You have chosen the Egyptian special')
         input_Egyptian = input('Enter pyramid height: ')
