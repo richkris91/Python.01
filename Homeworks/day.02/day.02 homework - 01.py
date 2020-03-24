@@ -5,4 +5,4 @@ x= x * 9 / 5 +32
 when x represents Celsius
 so''')
 print(str(c)+'*9/5+32='+str(f))
-print(str(c)+':_Celsius equals '+ str(f)+':_Fahrenheit')
+print(str(c)+':_Celsius equals ' + str(f)+':_Fahrenheit')
