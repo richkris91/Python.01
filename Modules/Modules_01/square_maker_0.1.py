@@ -7,6 +7,6 @@ def square_maker(input_square):
         print('+' + '--' * (x_1 - 2) + '+')
         for i in range((x_1 - 2)):
             print('|' + '  ' * (x_1 - 2) + '|')
-            print('+' + '--' * (x_1 - 2) + '+')
-            print('End')
+        print('+' + '--' * (x_1 - 2) + '+')
+        print('End')
 
