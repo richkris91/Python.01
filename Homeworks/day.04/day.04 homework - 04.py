@@ -19,4 +19,7 @@ to access one of the given functions enter a representative number''')
 menu(functions)
 input_1 = (input(': '))
 if validator(input_1):
-    functions[str(input_1)][1]()
+    if int(input_1) <= 4:
+        functions[str(input_1)][1]()
+    else:
+        print('But it did not represent any of the given functions')
