@@ -1,9 +1,10 @@
-from Modules_01.multitool_functions import celsius_into_fahrenheit, fahrenheit_into_celsius, validator, square_maker, egyptian_special, entry_counter
+from Modules_01.multitool_functions import celsius_into_fahrenheit, fahrenheit_into_celsius, validator, square_maker, egyptian_special, entry_counter, money_exchanger
 functions = {
     '1': ['Celsius into Fahrenheit', celsius_into_fahrenheit],
     '2': ['Fahrenheit into celsius', fahrenheit_into_celsius],
     '3': ['Square maker', square_maker],
-    '4': ['Egyptian special', egyptian_special]
+    '4': ['Egyptian special', egyptian_special],
+    '5': ['Money Exchanger', money_exchanger]
 }
 
 
@@ -19,7 +20,7 @@ to access one of the given functions enter a representative number''')
 menu(functions)
 input_1 = (input(': '))
 if validator(input_1):
-    if int(input_1) <= 4:
+    if int(input_1) <= 5:
         functions[str(input_1)][1]()
     else:
         print('But it did not represent any of the given functions')
