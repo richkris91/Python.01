@@ -1,44 +1,30 @@
-from copy import copy
-
-from Modules_01.validator_01 import validator
+from Modules_01.validator_02 import validator
 
 
 class Tile(object):
-    def __init__(self, x, y, content):
+    def __init__(self, x, y, content='~~~'):
         self.x = x
         self.y = y
         self.content = content
 
     def print(self):
-        return str('[' + self.content + ']')
+        return str('[' + self.content + ']'
 
-    def content(self):
-        return self.content
-
-    def replace(self, other):
-        xre = copy(self.x)
-        yre = copy(self.y)
-        del self
-        field[yre].insert(xre, other)
-
-
-class Grass(Tile):
-    def __init__(self, x, y, content='~~~'):
-        super().__init__(x, y, content)
-        self.x = x
-        self.y = y
-        self.content = content
 class Unit(Tile):
-    def __init__(self, x, y, health, player, movement, content):
+    def __init__(self, x, y, player, health, movement, content):
         super().__init__(x, y, content)
+        self.y = y
+        self.x = x
         self.movement = movement
         self.player = health
         self.player = player
         self.content = content
-        if health == 0:
+        if health is 0:
             del self
-        else:
-            pass
+
+    def create(self, x, y):
+        field[x][y].insert(self)
+        del field[x][y-1]
 
     def moving(self):
         if self.movement == 0:
@@ -71,8 +57,6 @@ class Unit(Tile):
                                 print('You have chosen an occupied tile')
 
 
-
-
 class Gob(Unit):
     def __init__(self, x, y, player, health=10, movement=6, content='Gob'):
         super().__init__(x, y, health, player, movement, content)
@@ -82,7 +66,6 @@ class Gob(Unit):
         self.player = player
         self.movement = movement
         self.content = content
-
 
 field = {
     0: [],
@@ -100,7 +83,7 @@ field = {
 for key in field:
     counter = 0
     while counter < 10:
-        counter_add = Grass(key, counter)
+        counter_add = Tile(key, counter)
         field[key].append(counter_add)
         counter += 1
 
@@ -112,7 +95,7 @@ def map_making():
     while counter1 < 10:
         cords1.append('  ' + str(counter1) + '  ')
         counter1 += 1
-    print('x >' + ''.join(cords1) + ' y ^')
+    print('x ^' + ''.join(cords1) + ' y >')
     for key in field:
         graphics = []
         for element in field[key]:
@@ -128,7 +111,6 @@ while game == 0:
     if turns % 2 != 0:
         print('Its First Player turn')
         player_counter -= 1
-        player1 = 1
         map_making()
         x = input('stop')
         turns += 1
@@ -137,16 +119,15 @@ while game == 0:
         # Adding a unit
         input_placing_1 = input('''Select unit type
         Gob :''')
+        # Gob creation
         if input_placing_1 == 'Gob':
             Units_1.append('Gob_' + str(Units_1.count('Gob')))
-            input_placing_1x = int(input('Where would you like to place it? x  0 - 9'))
-            if validator(input_placing_1x) and input_placing_1x <= 9:
-                input_placing_1y = int(input('Where would you like to place it? y 0 - 1'))
-                if validator(input_placing_1y) and input_placing_1y <= 1:
-                    AddGob = Gob(input_placing_1x, input_placing_1y, player1)
-                    del field[input_placing_1y][input_placing_1x]
-                    field[input_placing_1y][input_placing_1x].replace(AddGob)
-
+            input_placing_1y = int(input('Where would you like to place it? y  0 - 1'))
+            if validator(input_placing_1y) and input_placing_1y <= 1:
+                input_placing_1x = int(input('Where would you like to place it? x 0 - 9'))
+                if validator(input_placing_1x) and input_placing_1x <= 1:
+                    field[input_placing_1x][input_placing_1y] = (Gob(input_placing_1x, input_placing_1y, player_counter))
+                    print(field[input_placing_1x][input_placing_1y].print())
     else:
         print('Its Second player turn')
         player_counter += 1
