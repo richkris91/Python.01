@@ -157,7 +157,7 @@ def moving_an_unit(player_counter):
         print('Its not an unit')
     unit_belonging = getattr(Tiles[y][x], 'player')
     if str(unit_belonging) == str(player_counter):
-        unit_movement = int(getattr(Tiles[y][x], 'movement'))
+        unit_movement = Tiles[y][x].movement
         if unit_movement == 0:
             print('This unit is out of moves!')
         move_dir = input("How would you like to move?"
@@ -170,15 +170,13 @@ def moving_an_unit(player_counter):
                 while unit_movement != 0:
                     if movement_counter <= how_much:
                         if Tiles[y + 1][x].content is None:
-                            del Tiles[y + 1][x]
                             obj_class = Tiles[y][x].__class__.__name__
-                            new_movement = int(getattr(Tiles[y][x], 'movement')) - 1
-                            nr = getattr(Tiles[y][x], 'nr')
-                            hp = getattr(Tiles[y][x], 'hp')
                             del Tiles[y][x]
-                            add = obj_class(y, x, nr, new_movement, hp)
-                            Tiles[y + 1][x].insert(add)
+                            del Tiles[y + 1][x]
                             y += 1
+                            object_u = obj_class(Tiles[y][x].return_to_move())
+                            Tiles[y + 1][x].insert(object_u)
+                            map_making()
                     else:
                         adding_empty_tiles()
             elif up_down == 'd':
@@ -186,14 +184,15 @@ def moving_an_unit(player_counter):
                     if movement_counter <= how_much:
                         if Tiles[y - 1][x].content is None:
                             obj_class = Tiles[y][x].__class__.__name__
-                            new_movement = int(getattr(Tiles[y][x], 'movement')) - 1
-                            nr = getattr(Tiles[y][x], 'nr')
-                            hp = getattr(Tiles[y][x], 'hp')
+                            new_movement = (Tiles[y][x]).__init__.__movement__ - 1
+                            nr = (Tiles[y][x]).__init__.__nr__
+                            hp = (Tiles[y][x]).__init__.__hp__
                             del Tiles[y][x]
                             del Tiles[y - 1][x]
-                            add = obj_class(y, x, nr, new_movement, hp)
-                            Tiles[y - 1][x].insert(add)
                             y -= 1
+                            object_d = obj_class(y, x, nr, new_movement, hp)
+                            Tiles[y - 1][x].insert(object_d)
+                            map_making()
                     else:
                         adding_empty_tiles()
         elif move_dir == 'h':
@@ -204,15 +203,16 @@ def moving_an_unit(player_counter):
                 while unit_movement != 0:
                     if movement_counter <= how_much:
                         if Tiles[y][x - 1].content is None:
-                            del Tiles[y][x - 1]
                             obj_class = Tiles[y][x].__class__.__name__
                             new_movement = int(getattr(Tiles[y][x], 'movement')) - 1
-                            nr = getattr(Tiles[y][x], 'nr')
-                            hp = getattr(Tiles[y][x], 'hp')
+                            nr = int(getattr(Tiles[y][x], 'nr'))
+                            hp = int(getattr(Tiles[y][x], 'hp'))
                             del Tiles[y][x]
-                            add = obj_class(y, x, nr, new_movement, hp)
-                            Tiles[y][x - 1].insert(add)
+                            del Tiles[y][x - 1]
                             x -= 1
+                            object_l = obj_class(y, x, nr, new_movement, hp)
+                            Tiles[y][x - 1].insert(object_l)
+                            map_making()
                     else:
                         adding_empty_tiles()
 
@@ -220,15 +220,17 @@ def moving_an_unit(player_counter):
                 while unit_movement != 0:
                     if movement_counter <= how_much:
                         if Tiles[y][x + 1].content is None:
-                            del Tiles[y][x + 1]
                             obj_class = Tiles[y][x].__class__.__name__
                             new_movement = int(getattr(Tiles[y][x], 'movement')) - 1
-                            nr = getattr(Tiles[y][x], 'nr')
-                            hp = getattr(Tiles[y][x], 'hp')
+                            nr = int(getattr(Tiles[y][x], 'nr'))
+                            hp = int(getattr(Tiles[y][x], 'hp'))
                             del Tiles[y][x]
-                            add = obj_class(y, x, nr, new_movement, hp)
-                            Tiles[y][x + 1].insert(add)
+                            del Tiles[y][x + 1]
                             x += 1
+                            object_r = obj_class(y, x, nr, new_movement, hp)
+                            Tiles[y][x + 1].insert(object_r)
+                            map_making()
+
                     else:
                         adding_empty_tiles()
     else:
@@ -246,38 +248,34 @@ def war_game():
 
 class Tile(object):
     def __init__(self, y, x, content=None):
-        self.content = content
+        self.t_content = content
         self.x = x
         self.y = y
 
     def print(self):
-        if self.content is None:
+        if self.t_content is None:
             return '[~~~]'
         else:
-            return '[' + self.content + ']'
+            return '[' + self.t_content + ']'
 
 
 class Unit(Tile):
-    def __init__(self, y, x, hp, nr, movement, content=None):
+    def __init__(self, y, x, content, hp):
         super().__init__(y, x, content)
         self.hp = hp
-        self.movement = movement
-        self.nr = nr
-        if hp == 0:
+
+    def surviving(self):
+        if self.hp <= 0:
             del self
-
-    def menu_view(self):
-        text = self.print
-        return text
-
+    def moving(self):
 
 class Goblin(Unit):
-    def __init__(self, y, x, nr=0, player=None, movement=5, taken_dmg=0, hp=10, content='Gob'):
-        super().__init__(y, x, hp, nr, movement)
+    def __init__(self, y, x, player=None, nr=None, movement=5, hp=10, content='Gob'):
+        super().__init__(y, x, content, hp)
+        self.movement = movement
         self.content = content
-        self.hp = hp - taken_dmg
-        self.nr = nr
+        self.hp = hp
         self.player = player
+        self.nr = nr
 
-
-war_game()
+# war_game()
