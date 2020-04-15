@@ -1,4 +1,5 @@
 import xlrd
+from Modules_01.validator_01 import validator
 from Modules_01.Biggest_array_element import biggest_string_in_a_array
 
 workbook = xlrd.open_workbook('./db.xlsx')
@@ -10,9 +11,12 @@ books = []
 
 def adding_to_cart():
     info()
-    add_cart = int(input('Enter objects ID without .0: '))
-    cart.adding_to_cart(add_cart)
-    return True
+    add_cart = input('Enter objects ID without .0: ')
+    if validator(add_cart) and int(add_cart) <= len(obj_list) - 1:
+        cart.adding_to_cart(int(add_cart))
+        return True
+    else:
+        return True
 
 
 def go_away():
@@ -63,7 +67,7 @@ def program():
     print('Welcome to definitely not fake shop')
     options = {
         1: ['. View available objects', info],
-        2: ['. All info', all_info],
+        2: ['. Full object info', all_info],
         3: ['. Add to cart', adding_to_cart],
         4: ['. Show cart', show_cart],
         5: ['. Exit', go_away]
@@ -72,9 +76,13 @@ def program():
         for key in options:
             print(str(key) + options[key][0])
         print('------------------------------------')
-        x = int(input('Whats your choice? :'))
-        End = options[x][1]()
-        print('------------------------------------')
+        x = input('Whats your choice? :')
+        if validator(x) and int(x) <= 5:
+            End = options[int(x)][1]()
+            print('------------------------------------')
+        else:
+            print('------------------------------------')
+            pass
 
 
 def show_cart():
@@ -92,13 +100,14 @@ class Shopping_cart(object):
         self.content.append(obj_list[ID])
 
     def show_cart(self):
+        money = 0
         if len(self.content) == 0:
             print('Your cart is empty!')
         else:
-            money_count = 0
-
             for element in self.content:
-                print(element.show)
+                money += element.show_money()
+                print(element.show())
+            print('That will cost you: ' + str(money) + ' $')
 
 
 class Product(object):
@@ -110,6 +119,9 @@ class Product(object):
 
     def show(self):
         return 'ID: ' + str(self._id_) + ' ' + str(self.name) + ' :' + str(self.prize) + ' $'
+
+    def show_money(self):
+        return float(self.prize)
 
 
 class Book(Product):
