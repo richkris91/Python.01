@@ -1,6 +1,5 @@
 import xlrd
 from Modules_01.validator_01 import validator
-from Modules_01.Biggest_array_element import biggest_string_in_a_array
 
 workbook = xlrd.open_workbook('./db.xlsx')
 worksheet = workbook.sheet_by_index(0)
