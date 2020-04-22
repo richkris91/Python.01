@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Totaly real internet shop</title>
+</head>
+<body>
+<h1>Totally Real Shop</h1>
+<form action="/products/" method="post">
+    <button name="forwardBtn" type="submit">Products</button>
+</form>
+{{ if list_0 is None: }}
+   <table style="width:100%">
+      <tr><th>ID</th>
+          <th>Name</th>
+          <th>Prize</th>
+          <th>Type</th>
+              {% for element in list_0%}
+                <tr>element[0]</tr>
+                <tr>element[1]</tr>
+                <tr>element[8]</tr>
+                <tr>element.__self.class__</tr>
+              {% endfor %}
+<table/>
+</body>
+</html>

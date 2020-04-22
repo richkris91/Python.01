@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pobieraczek</title>    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        body {
+            padding-top: 10px;
+        }    </style>
+</head>
+<body>
+<div class="container">    <h1>Pobieraczek v0.1 alpha</h1>
+    <div class="card">
+        <div class="card-header">
+            <h4>Ustawienia</h4>
+        </div>
+        <div class="card-body">            <form>
+                <div class="form-group">
+                    <label for="url">Adres www</label>
+                    <input type="url" class="form-control" id="url" name="url" placeholder="Podaj adres url">
+                    <small class="form-text text-muted">Podaj adres strony, z której będziemy pobierać dane</small>
+                </div>
+                <div class="form-group">
+                    <label for="email">Adres email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Podaj adres email">
+                    <small class="form-text text-muted">Jeśli podasz adres email wyślę wyniki na maila</small>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="typ" id="obrazy" value="obrazy">
+                        <label class="form-check-label" for="obrazy">
+                            Obrazy
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="typ" id="dokumenty" value="dokumenty">
+                        <label class="form-check-label" for="dokumenty">
+                            Dokumenty
+                        </label>
+                    </div>
+                </div>                <button type="submit" class="btn btn-primary">Pobierz</button>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="card border-success">
+        <div class="card-header">
+            <h4>Wyniki</h4>
+        </div>
+        <div class="card-body">            <table class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Ikona/Obraz</th>
+                    <th>Nazwa</th>
+                    <th>Link</th>
+                    <th>Akcje</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><img width="100"
+                             src="https://apollo-ireland.akamaized.net/v1/files/5cen8vjqfkk63-PL/image;s=261x203/"></td>
+                    <td>BMW Seria 1 M135ix xdrive,navi,keyless GO,automat DKG,Bi xenon,Led,M Performance</td>
+                    <td>https://apollo-ireland.akamaized.net/v1/files/5cen8vjqfkk63-PL/image;s=261x203</td>
+                    <td><a href="https://apollo-ireland.akamaized.net/v1/files/5cen8vjqfkk63-PL/image;s=261x203"
+                           class="btn btn-outline-success">Pobierz</a></td>
+                </tr>
+                <tr>
+                    <td><img width="100"
+                             src="https://www.pngitem.com/pimgs/m/499-4997293_pdf-file-icon-png-transparent-png.png">
+                    </td>
+                    <td>Jakiś dokument PDF</td>
+                    <td>https://.....pl</td>
+                    <td><a href="https://apollo-ireland.akamaized.net/v1/files/5cen8vjqfkk63-PL/image;s=261x203"
+                           class="btn btn-outline-success">Pobierz</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div></div>
+</body>
+</html>

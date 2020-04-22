@@ -1,7 +1,7 @@
 import xlrd
 from Modules_01.validator_01 import validator
 
-workbook = xlrd.open_workbook('./db.xlsx')
+workbook = xlrd.open_workbook('db.xlsx')
 worksheet = workbook.sheet_by_index(0)
 f_obj_list = []
 obj_list = []
@@ -26,7 +26,6 @@ def go_away():
 def info():
     for element in obj_list:
         print(element.show())
-    return True
 
 
 def all_info():
@@ -34,8 +33,7 @@ def all_info():
         libre_off_ls = []
         for element in row:
             libre_off_ls.append(element.value)
-        print(libre_off_ls)
-    return True
+        return libre_off_ls
 
 
 def start_program():
