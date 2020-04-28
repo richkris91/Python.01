@@ -1,5 +1,4 @@
 
-
 def entry_counter():
     with open('counter_txt', "r+") as test:
         x = test.read()
@@ -14,5 +13,3 @@ def entry_counter():
         test.seek(0)
         return test.read()
 
-
-print(entry_counter())

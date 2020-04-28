@@ -1,0 +1,59 @@
+GigabitEthernet2/0/13 is up, line protocol is up (connected)
+  Hardware is Gigabit Ethernet, address is c471.fe35.c00d (bia c471.fe35.c00d)
+  Description: connection to pl01ctxhost001:eth1
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive set (10 sec)
+  Full-duplex, 1000Mb/s, media type is 10/100/1000BaseTX
+  input flow-control is off, output flow-control is unsupported
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output 00:00:27, output hang never
+  Last clearing of "show interface" counters 5d12h
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 22125
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 600000 bits/sec, 63 packets/sec
+  5 minute output rate 115000 bits/sec, 59 packets/sec
+     283336821 packets input, 148779501026 bytes, 0 no buffer
+     Received 62576 broadcasts (6090 multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 6090 multicast, 0 pause input
+     0 input packets with dribble condition detected
+     852033932 packets output, 1206287508540 bytes, 0 underruns
+     0 output errors, 0 collisions, 0 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped ouz
+
+GigabitEthernet2/0/17 is up, line protocol is up (connected)
+  Hardware is Gigabit Ethernet, address is c471.fe35.c011 (bia c471.fe35.c011)
+  Description: connection to pl01ctxhost003:eth1
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive set (10 sec)
+  Full-duplex, 1000Mb/s, media type is 10/100/1000BaseTX
+  input flow-control is off, output flow-control is unsupported
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output 00:00:12, output hang never
+  Last clearing of "show interface" counters 5d12h
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 57693
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 208000 bits/sec, 173 packets/sec
+  5 minute output rate 3338000 bits/sec, 347 packets/sec
+     1959970050 packets input, 190413591899 bytes, 0 no buffer
+     Received 32203 broadcasts (8065 multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 8065 multicast, 0 pause input
+     0 input packets with dribble condition detected
+     11847736869 packets output, 17566315346647 bytes, 0 underruns
+     0 output errors, 0 collisions, 0 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
