@@ -1,3 +1,4 @@
+import re
 library = []
 
 
@@ -26,6 +27,18 @@ class file(object):
     def info(self):
         return self.lines[5]
 
+    def show_MTU(self):
+        return self.lines[3]
+
+    def show_reliability(self):
+        r = re.split('  | /', self.lines[4][17])
+
+        return self.lines[4][5:24] + ' = ' + str(
+            round(int(self.lines[4][17:20]) / int(self.lines[4][21:24]), 4) * 100) + ' % | ' +\
+               self.lines[4][26:38] + ' = ' + str(
+            round(int(self.lines[4][17:20]) / int(self.lines[4][21:]), 4) * 100)
+
+
 
 def select_obj():
     input_25 = input('''To which object would you like to apply given command?
@@ -45,7 +58,6 @@ def program():
             '3': ['Show description'],
             '4': ['Show MTU, BW and DLY'],
             '5': ['Show reliability, txload and rxload'],
-            '6': ['Show commands', ],
             '7': ['End', ]
         }
         for key in commands:
@@ -69,10 +81,11 @@ def program():
                     element.show_all('')
                     counter_i2 += 1
             else:
-                print('--------------------------------------')
-                library[int(input_i2) - 1].show_all('1')
-            #except:
-                    #print('You have not managed the input correctly')
+                try:
+                    print('--------------------------------------')
+                    library[int(input_i2) - 1].show_all('1')
+                except:
+                    print('You have not managed the input correctly')
         elif input_1 == '3':
             input_i3 = select_obj()
             if input_i3 == '':
@@ -82,8 +95,6 @@ def program():
                     library[element].show_description(counter__2)
                     counter__2 += 1
                 print('--------------------------------------')
-            elif input_i3 == 0:
-                pass
             else:
                 try:
                     print('--------------------------------------')
@@ -94,7 +105,37 @@ def program():
                 except:
                     print('You have not managed to enter input correctly')
         elif input_1 == '4':
-            pass
+            input_i4 = select_obj()
+            if input_i4 == '':
+                print('--------------------------------------')
+                counter_4 = 1
+                for element in range(len(library)):
+                    print(str(counter_4) + ': ' + str(library[counter_4 - 1].show_MTU()))
+                    counter_4 += 1
+                print('--------------------------------------')
+            else:
+                try:
+                    print('--------------------------------------')
+                    print(str(int(input_i4)) + ': ' + library[int(input_i4)].show_MTU())
+                    print('--------------------------------------')
+                except:
+                    print('You have not managed to enter the input correctly')
+        elif input_1 == '5':
+            input_i5 = select_obj()
+            if input_i5 == '':
+                print('--------------------------------------')
+                counter_5 = 1
+                for element in range(len(library)):
+                    print(str(counter_5) + ': ' + str(library[counter_5 - 1].show_reliability()))
+                    counter_5 += 1
+                print('--------------------------------------')
+            else:
+                try:
+                    print('--------------------------------------')
+                    print(str(int(input_i5)) + ': ' + library[int(input_i5)].show_reliability())
+                    print('--------------------------------------')
+                except:
+                    print('You have not managed to enter the input correctly')
 
 
 def file_reader():
@@ -107,11 +148,11 @@ def file_reader():
         with open(file_name, "r") as file_:
             file_lines_x = file_.readlines()
             for element in file_lines_x:
+                element = element.rstrip('\n')
                 lines_count += 1
                 file_lines.append(element)
     except:
         print('File not found')
-    print(str(lines_count) + ' lines')
     while lines_count > 0:
         new_obj = []
         while line_min != line_max:
