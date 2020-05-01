@@ -31,7 +31,7 @@ class file(object):
     def show_MTU(self):
         return self.lines[3]
 
-    def show_reliability(self):
+    def show__reliability(self):
         nums = re.split(' | /', self.lines[4][17:])
         for element in range(len(nums)):
             nums[element] = nums[element].replace(',', '')
@@ -47,14 +47,31 @@ class file(object):
         rxl_n = int(rxl_list[0])
         rxl_m = int(rxl_list[1])
         rxl_p = str(round(rxl_n * 100 / rxl_m, 2))
-        return 'reliability ' + nums[0] + ' = ' + rel_p + ' %\n' + \
-               '   txload      ' + nums[2] + ' = ' + txt_p + ' %\n' + \
-               '   rxload      ' + nums[4] + ' = ' + rxl_p + ' %'
+        return "| " + nums[0] + ' ' * (7 - len(str(nums[0]))) + " = " + rel_p + ' %' + ' ' * (5 - len(str(rel_p))) + \
+               "| " + nums[2] + ' ' * (7 - len(str(nums[2]))) + " = " + txt_p + ' %' + ' ' * (5 - len(str(txt_p))) + \
+               "| " + nums[4] + ' ' * (7 - len(str(nums[2]))) + " = " + rxl_p + ' %' + ' ' * (5 - len(str(rxl_p))) + \
+               "| "
 
-        # return self.lines[4][5:24] + ' = ' + str(
-        # round(int(self.lines[4][17:20]) / int(self.lines[4][21:24]), 4) * 100) + ' % | ' +\
-        # self.lines[4][26:38] + ' = ' + str(
-        # round(int(self.lines[4][17:20]) / int(self.lines[4][21:]), 4) * 100)
+
+#
+
+def show_reliability(All=0):
+    if len(library) < All:
+        print('You have not managed to enter the input correctly')
+    else:
+        num = len(str(len(library))) + 2
+        print('-------------------------------------------------------------')
+        print(' ' * num + '|   Reliability    |      Txload      |       Rxload     |')
+        print('-------------------------------------------------------------')
+        if All == 0:
+            counter_rel = 1
+            for element in range(len(library)):
+                print(str(counter_rel) + ': ' + library[element].show__reliability())
+                counter_rel += 1
+            print('-------------------------------------------------------------')
+        else:
+            print(str(All) + ': ' + library[All - 1].show__reliability())
+            print('-------------------------------------------------------------')
 
 
 def select_obj():
@@ -140,19 +157,9 @@ def program():
         elif input_1 == '5':
             input_i5 = select_obj()
             if input_i5 == '':
-                print('--------------------------------------')
-                counter_5 = 1
-                for element in range(len(library)):
-                    print(str(counter_5) + ': ' + str(library[counter_5 - 1].show_reliability()))
-                    counter_5 += 1
-                print('--------------------------------------')
+                show_reliability()
             else:
-                try:
-                    print('--------------------------------------')
-                    print(str(int(input_i5)) + ': ' + str(library[int(input_i5) - 1].show_reliability()))
-                    print('--------------------------------------')
-                except:
-                    print('You have not managed to enter the input correctly')
+                show_reliability(int(input_i5))
 
 
 def file_reader():
