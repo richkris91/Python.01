@@ -1,4 +1,5 @@
 import re
+
 library = []
 
 
@@ -31,13 +32,29 @@ class file(object):
         return self.lines[3]
 
     def show_reliability(self):
-        r = re.split('  | /', self.lines[4][17])
+        nums = re.split(' | /', self.lines[4][17:])
+        for element in range(len(nums)):
+            nums[element] = nums[element].replace(',', '')
+        rel_list = re.split('/', nums[0])
+        rel_n = int(rel_list[0])
+        rel_m = int(rel_list[1])
+        rel_p = str(round(rel_n * 100 / rel_m, 2))
+        txt_list = re.split('/', nums[2])
+        txt_n = int(txt_list[0])
+        txt_m = int(txt_list[1])
+        txt_p = str(round(txt_n * 100 / txt_m, 2))
+        rxl_list = re.split('/', nums[4])
+        rxl_n = int(rxl_list[0])
+        rxl_m = int(rxl_list[1])
+        rxl_p = str(round(rxl_n * 100 / rxl_m, 2))
+        return 'reliability ' + nums[0] + ' = ' + rel_p + ' %\n' + \
+               '   txload      ' + nums[2] + ' = ' + txt_p + ' %\n' + \
+               '   rxload      ' + nums[4] + ' = ' + rxl_p + ' %'
 
-        return self.lines[4][5:24] + ' = ' + str(
-            round(int(self.lines[4][17:20]) / int(self.lines[4][21:24]), 4) * 100) + ' % | ' +\
-               self.lines[4][26:38] + ' = ' + str(
-            round(int(self.lines[4][17:20]) / int(self.lines[4][21:]), 4) * 100)
-
+        # return self.lines[4][5:24] + ' = ' + str(
+        # round(int(self.lines[4][17:20]) / int(self.lines[4][21:24]), 4) * 100) + ' % | ' +\
+        # self.lines[4][26:38] + ' = ' + str(
+        # round(int(self.lines[4][17:20]) / int(self.lines[4][21:]), 4) * 100)
 
 
 def select_obj():
@@ -132,7 +149,7 @@ def program():
             else:
                 try:
                     print('--------------------------------------')
-                    print(str(int(input_i5)) + ': ' + library[int(input_i5)].show_reliability())
+                    print(str(int(input_i5)) + ': ' + str(library[int(input_i5) - 1].show_reliability()))
                     print('--------------------------------------')
                 except:
                     print('You have not managed to enter the input correctly')
