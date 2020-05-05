@@ -4,9 +4,10 @@ library = []
 
 
 class file(object):
-    def __init__(self, lines, nr):
+    def __init__(self, lines, nr, time):
         self.lines = lines
         self.nr = nr
+        self.time = time
 
     def show_all(self, obj=''):
         counter = 1
@@ -52,8 +53,6 @@ class file(object):
                "| " + nums[4] + ' ' * (7 - len(str(nums[2]))) + " = " + rxl_p + ' %' + ' ' * (5 - len(str(rxl_p))) + \
                "| "
 
-
-#
 
 def show_reliability(All=0):
     if len(library) < All:
@@ -163,37 +162,35 @@ def program():
 
 
 def file_reader():
-    file_name = 'Test'
-    lines_count = 0
-    line_min = 0
-    line_max = 30
-    file_lines = []
     try:
-        with open(file_name, "r") as file_:
-            file_lines_x = file_.readlines()
-            for element in file_lines_x:
-                element = element.rstrip('\n')
-                lines_count += 1
-                file_lines.append(element)
-    except:
+        with open('Test_01', "r") as file_:
+            files_0 = file_.readlines()
+        obj_filter = {1: 'Port pl01-c4500x-1 :',
+                      2: 'Description:',
+                      3: 'MTU',
+                      4: 'reliability',
+                      5: 'Input queue:',
+                      6: '30 second output rate',
+                      7: 'input errors,',
+                      8: 'output errors,',
+                      9: 'unknown protocol drops'
+                      }
+        lines_f = []
+        time_f = ''
+        for element in files_0:
+            if 'date and time' in element:
+                time_f = element[16:]
+            if element == '\n':
+                if len(lines_f) >= 8:
+                    obj = file(lines_f, len(library) + 1, time_f, )
+                    library.append(obj)
+                lines_f = []
+            for key in obj_filter:
+                if obj_filter[key] in element:
+                    lines_f.append(element)
+    except FileNotFoundError or FileExistsError:
         print('File not found')
-    while lines_count > 0:
-        new_obj = []
-        while line_min != line_max:
-            try:
-                new_obj.append(file_lines[line_min])
-                line_min += 1
-            except:
-                line_min += 1
-        new_file = file(new_obj, len(library) + 1)
-        library.append(new_file)
-        lines_count -= 30
-        line_max += 30
 
 
-# input_1 = str(input('Chose a file: '))
 file_reader()
-# for element in range(len(library)):
-# print(library[element])
-# print(library[element].show())
-program()
+print(library)
