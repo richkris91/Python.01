@@ -8,7 +8,7 @@ Description: pl01-pan-1 DC Vrf
   30 second output rate 4095000 bits/sec, 2795 packets/sec
      0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
      0 output errors, 0 collisions, 0 interface resets
-     0 unknown protocol drops
+     0 unknown protocol drops   ``
 
 01/05/2020 18:15:35 pl01-vpn-router G0/0/3
 Description: LEVEL_3 200M CID: BDHX6224
