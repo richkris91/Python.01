@@ -45,7 +45,7 @@ def table_data():
     wb = xlwt.Workbook()
     new_sheet = wb.add_sheet('cisc.xlsx')
     data = [
-        'Object Nr', 'Host attribute', 'Date', 'If_name', 'Description',
+        'Object Number', 'Host attribute', 'Date', 'If_name', 'Description',
         'RE', 'RE_%',
         'TX', 'TX_%', 'TX_b/s', 'TX_Mb/s', 'TX_packets',
         'RX', 'RX_%', 'RX_b/s', 'RX_MB/s', 'TX_packets'
@@ -102,37 +102,40 @@ def file_reader():
             if 'Description' in element:
                 description_f = element.replace('Description: ', '')
                 description_f = description_f.replace('\n', '')
-                description_f[0].replace(' ', '')
             if 'reliability' and 'txload' and 'rxload' in element:
                 RE_ls = re.split(' ', element.strip())
                 RE = RE_ls[1]
                 TX = RE_ls[3]
                 RX = RE_ls[5]
-            if 'second output rate' in element:
-                TX_l = re.split(' ', element)
-                TX_b = TX_l[2]
-                TX_p = TX_l[4]
-            if 'second input rate' in element:
-                RX_f = element.replace('30 second input rate', '')
-                RX_f1 = RX_f.replace('bits/sec,', '')
-                RX_f2 = RX_f1.replace(' packets/sec\n', '')
-                for element in range(len(RX_f2)):
-                    if RX_f2 == '':
-                        del.RX_f2
-                RX_l = re.split(' ', RX_f2)
-                print(RX_l)
-                RX_b = RX_l[2]
-                RX_p = RX_l[4]
+            if 'output rate' in element:
+                TX_1 = element
+                TX_2 = TX_1.split('rate', 2)
+                del TX_2[0]
+                TX_3 = str(TX_2[0])
+                TX_4 = TX_3.split(',', 2)
+                TX_b = int(str(TX_4[0]).split('bits', 2)[0])
+                TX_p = int(str(TX_4[1]).split('packets', 2)[0])
+            if 'input rate' in element:
+                RX_1 = element
+                RX_2 = RX_1.split('rate', 2)
+                del RX_2[0]
+                RX_3 = str(RX_2[0])
+                RX_4 = RX_3.split(',', 2)
+                RX_b = int(str(RX_4[0]).split('bits', 2)[0])
+                RX_p = int(str(RX_4[1]).split('packets', 2)[0])
             if element == '\n':
                 if len(lines_f) >= 7:
                     obj = file(lines_f, len(library) + 1, time_f, port_f, description_f, RE, TX, TX_b, TX_p, RX, RX_b,
                                RX_p)
                     library.append(obj)
                 lines_f = []
-            for key in obj_filter:
-                if obj_filter[key] in element:
-                    element = element.strip('\n')
-                    lines_f.append(element)
+            counter_act = 0
+            while counter_act == 0:
+                for key in obj_filter:
+                    if obj_filter[key] in element:
+                        element = element.strip('\n')
+                        lines_f.append(element)
+                    counter_act += 1
     except FileNotFoundError:
         print('File not found')
 
