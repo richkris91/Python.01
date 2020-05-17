@@ -55,7 +55,7 @@ def user_logs():
                 log.append(element[6])
             else:
                 log.append('None')
-                
+
 
 
 
