@@ -1,0 +1,165 @@
+Port channel 41 - DC VRF
+Port pl01-c4500x-1 : Te1/1/10
+Description: pl01-pan-1 DC Vrf
+  MTU 1500 bytes, BW 2000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 8/255
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+  30 second input rate 68116000 bits/sec, 7361 packets/sec
+  30 second output rate 4095000 bits/sec, 2795 packets/sec
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 output errors, 0 collisions, 0 interface resets
+     0 unknown protocol drops   ``
+
+01/05/2020 18:15:35 pl01-vpn-router G0/0/3
+Description: LEVEL_3 200M CID: BDHX6224
+  MTU 1500 bytes, BW 200000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 4/255, rxload 5/255
+  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 23756
+  30 second input rate 4169000 bits/sec, 2154 packets/sec
+  30 second output rate 3444000 bits/sec, 2260 packets/sec
+     23855 input errors, 0 CRC, 0 frame, 23855 overrun, 0 ignored
+     0 output errors, 0 collisions, 0 interface resets
+     0 unknown protocol drops
+
+Today's date: 2020-05-01
+now = 2020-05-01 18:16:18.198944
+date and time = 01/05/2020 18:16:18
+
+Ports to pl01ctxhost001
+Port pl01-c3750x-1 G2/0/13
+Description: connection to pl01ctxhost001:eth1
+reliability 255/255, txload 1/255, rxload 1/255
+Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 22173
+5 minute input rate 619000 bits/sec, 63 packets/sec
+5 minute output rate 85000 bits/sec, 59 packets/sec
+0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+0 output errors, 0 collisions, 0 interface resets
+0 unknown protocol drops
+
+Port pl01-c3750x-1 G2/0/41
+  Description: connection to pl01ctxhost001:eth2
+     reliability 255/255, txload 1/255, rxload 1/255
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 955
+  5 minute input rate 1165000 bits/sec, 114 packets/sec
+  5 minute output rate 364000 bits/sec, 69 packets/sec
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 output errors, 0 collisions, 0 interface resets
+     0 unknown protocol drops
+
+Port pl01-c3750x-1 G3/0/43
+  Description: connection to pl01ctxhost001:eth3
+     reliability 255/255, txload 1/255, rxload 1/255
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 364608
+  5 minute input rate 251000 bits/sec, 68 packets/sec
+  5 minute output rate 357000 bits/sec, 85 packets/sec
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 output errors, 0 collisions, 0 interface resets
+     0 unknown protocol drops
+
+Port pl01-c3750x-1 G3/0/44
+  Description: connection to pl01ctxhost001:eth4
+     reliability 255/255, txload 1/255, rxload 1/255
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 77
+  5 minute input rate 37000 bits/sec, 1 packets/sec
+  5 minute output rate 1000 bits/sec, 2 packets/sec
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 output errors, 0 collisions, 0 interface resets
+     0 unknown protocol drops
+
+Today's date: 2020-05-01
+now = 2020-05-01 18:16:52.054246
+date and time = 01/05/2020 18:16:52
+
+Ports to pl01ctxhost002
+Port pl01-c3750x-1 G2/0/15
+  Description: connection to pl01ctxhost002:eth0
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 1029
+  5 minute input rate 5090000 bits/sec, 455 packets/sec
+  5 minute output rate 505000 bits/sec, 298 packets/sec
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 output errors, 0 collisions, 0 interface resets
+     0 unknown protocol drops
+
+Port pl01-c3750x-1 G2/0/42
+  Description: connection to pl01ctxhost002:eth1
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 13/255, rxload 1/255
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 74553
+  5 minute input rate 735000 bits/sec, 920 packets/sec
+  5 minute output rate 52521000 bits/sec, 4694 packets/sec
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 output errors, 0 collisions, 0 interface resets
+     0 unknown protocol drops
+
+Port pl01-c3750x-1 G3/0/45
+  Description: connection to pl01ctxhost002:eth3
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 7/255, rxload 1/255
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 35152
+  5 minute input rate 1138000 bits/sec, 585 packets/sec
+  5 minute output rate 29912000 bits/sec, 2564 packets/sec
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 output errors, 0 collisions, 0 interface resets
+     0 unknown protocol drops
+
+Port pl01-c3750x-1 G3/0/46
+  Description: connection to pl01ctxhost002:eth4
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 39748
+  5 minute input rate 126000 bits/sec, 42 packets/sec
+  5 minute output rate 126000 bits/sec, 41 packets/sec
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 output errors, 0 collisions, 0 interface resets
+     0 unknown protocol drops
+
+Today's date: 2020-05-01
+now = 2020-05-01 18:17:25.689698
+date and time = 01/05/2020 18:17:25
+
+Ports to pl01ctxhost003
+Port pl01-c3750x-1 G2/0/17 eth1
+  Description: connection to pl01ctxhost003:eth1
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 60128
+  5 minute input rate 169000 bits/sec, 89 packets/sec
+  5 minute output rate 1723000 bits/sec, 183 packets/sec
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 output errors, 0 collisions, 0 interface resets
+     0 unknown protocol drops
+
+Port pl01-c3750x-1 G2/0/45 eth2
+  Description: connection to pl01ctxhost003:eth2
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 14472
+  5 minute input rate 192000 bits/sec, 164 packets/sec
+  5 minute output rate 2279000 bits/sec, 296 packets/sec
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 output errors, 0 collisions, 0 interface resets
+     0 unknown protocol drops
+
+Port pl01-c3750x-1 G3/0/47 eth3
+  Description: connection to pl01ctxhost003:eth3
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 17228
+  5 minute input rate 260000 bits/sec, 62 packets/sec
+  5 minute output rate 2042000 bits/sec, 186 packets/sec
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 output errors, 0 collisions, 0 interface resets
+     0 unknown protocol drops
+
+Port pl01-c3750x-1 G3/0/48 eth4
+  Description: connection to pl01ctxhost003:eth4
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 3532
+  5 minute input rate 666000 bits/sec, 59 packets/sec
+  5 minute output rate 102000 bits/sec, 54 packets/sec
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 output errors, 0 collisions, 0 interface resets
+     0 unknown protocol drops
