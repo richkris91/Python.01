@@ -152,12 +152,16 @@ def log_master():
                     for key in comps_logs:
                         text_lines.append(' ' * 10 + 'Computer: ' + key)
                         sorted_logs = log_sorter(comps_logs[key])
-                        for key in sorted_logs:
-                            for element in sorted_logs[key]:
-                                file_org = element.show_org()
-                                text_lines.append(' ' * 12 + 'File: ' + file_org + ' :' + element.show_log())
-                            text_lines.append('-' * 84)
-                    comp_count += 1
+                        compressed_logs = log_compressor(sorted_logs)
+                        print(compressed_logs)
+                        for key in compressed_logs:
+                            text_lines.append(' ' * 12 + 'Date: ' + compressed_logs[key][0][0][0].show_org() + ' ' +
+                                                compressed_logs[key][0][0][0].show_license() + ': IN :' + str(
+                                compressed_logs[key][0][1][0]))
+                            text_lines.append(' ' * 12 + 'Date: ' + compressed_logs[key][1][0][0].show_org() + ' ' +
+                                                compressed_logs[key][1][0][0].show_license() + ': OUT :' + str(
+                                compressed_logs[key][1][1][0]))
+                        comp_count += 1
                     counter += 1
                 with open('All_User_INFO', 'w+') as opened_file:
                     for element in range(len(text_lines)):
@@ -178,6 +182,42 @@ def log_sorter(array):
     return Sorted_logs
 
 
+def log_compressor(dic):
+    return_dic = {
+        'start': [['start'], 0]
+    }
+    for key in dic:
+        dic_key = key
+        for element in range(len(dic[key])):
+            movement = dic[dic_key][element].show_type()
+            dic_num = int(dic[dic_key][element].show_lic_nr())
+            return_keys = []
+            for key in return_dic:
+                return_keys.append(key)
+            print(movement)
+            if dic_key not in return_keys:
+                return_dic[dic_key] = [[[], []], [[], []]]
+                if movement == 'OUT:':
+                    return_dic[dic_key][0][0].append(dic[dic_key][element])
+                    return_dic[dic_key][0][1].append(dic_num)
+                    return_dic[dic_key][1][1].append(0)
+                elif movement == 'IN':
+                    return_dic[dic_key][1][0].append(dic[dic_key][element])
+                    return_dic[dic_key][1][1].append(dic_num)
+                    return_dic[dic_key][0][1].append(0)
+                print('=')
+            elif dic_key in return_keys:
+                if 'OUT' in movement:
+                    return_dic[dic_key][0][0].append(dic[dic_key][element])
+                    return_dic[dic_key][0][1][0] += dic_num
+                elif 'IN' in movement:
+                    return_dic[dic_key][1][0].append(dic[dic_key][element])
+                    return_dic[dic_key][1][1][0] += dic_num
+                print('+')
+    del return_dic['start']
+    return return_dic
+
+
 class log(object):
     def __init__(self, time, type_, license_, username, computer_, file_name, how_many_lic=1):
         self.time = time
@@ -192,7 +232,7 @@ class log(object):
         return self.computer
 
     def show_log(self):
-        return self.time + ' ' + self.type_ + ' ' + self.license_ + ' ' + str(self.how_many_licenses)
+        return self.file_name + ' ' + self.type_ + ' ' + self.license_ + ' ' + str(self.how_many_licenses)
 
     def show_license(self):
         return self.license_
