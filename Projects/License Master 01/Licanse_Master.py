@@ -6,16 +6,15 @@ import os
 def user_creator(users, log_fracts):
     files_name = 'None'
     users = users
-    log_fracts = log_fracts
     for element in log_fracts:
         if '__FILE' in element:
             files_name = str(element).split(':')[1]
-            print(files_name)
         else:
             lic_count = ''
-            if len(element) >= 7 and '(' in str(element[:][6:7]):
-                lic_count = element[:][6:7][0]
-                lic_count = lic_count.replace('(', '')
+            if 'licenses)' in str(element):
+                lic_count = str(element).split('(',)[-1]
+                lic_count = lic_count.[0].replace
+                lic_count = lic_count.replace(')', '')
                 lic_count = int(lic_count)
             username = element[4].split('@')[0]
             computer = element[4].split('@')[1]
@@ -150,22 +149,43 @@ def log_master():
                     comp_count = 0
                     comps_logs = users1[key].comps_logs()
                     for key in comps_logs:
-                        text_lines.append(' ' * 10 + 'Computer: ' + key)
+                        computer_name = key
                         sorted_logs = log_sorter(comps_logs[key])
                         compressed_logs = log_compressor(sorted_logs)
-                        print(compressed_logs)
+                        dates = ['Dates']
                         for key in compressed_logs:
-                            text_lines.append(' ' * 12 + 'Date: ' + compressed_logs[key][0][0][0].show_org() + ' ' +
-                                                compressed_logs[key][0][0][0].show_license() + ': IN :' + str(
-                                compressed_logs[key][0][1][0]))
-                            text_lines.append(' ' * 12 + 'Date: ' + compressed_logs[key][1][0][0].show_org() + ' ' +
-                                                compressed_logs[key][1][0][0].show_license() + ': OUT :' + str(
-                                compressed_logs[key][1][1][0]))
+                            for element in compressed_logs[key][0][0]:
+                                if element.show_file_name().split('_')[0] not in dates:
+                                    dates.append(element.show_file_name().split('_')[0])
+                            for element in compressed_logs[key][1][0]:
+                                if element.show_file_name().split('_')[0] not in dates:
+                                    dates.append(element.show_file_name().split('_')[0])
+                            comp_all_out = 0
+                            comp_all_in = 0
+                            for key in compressed_logs:
+                                comp_all_out += compressed_logs[key][1][1][0]
+                                comp_all_in += compressed_logs[key][0][1][0]
+                        text_lines.append(
+                            ' ' * 10 + 'Computer: ' + computer_name + ' OUT:' + str(comp_all_out) + ' IN: ' + str(
+                                comp_all_in))
+                        dates = str(dates).replace('[', '')
+                        dates = dates.replace(']', '')
+                        dates = dates.replace("'", '')
+                        dates = dates.replace(',', '')
+                        for key in compressed_logs:
+                            text_lines.append(
+                                ' ' * 12 + dates + ' ' +
+                                compressed_logs[key][0][0][0].show_license() + '  OUT:' + str(
+                                    compressed_logs[key][1][1][0]) + '  IN:' + str(
+                                    compressed_logs[key][0][1][0]))
                         comp_count += 1
                     counter += 1
                 with open('All_User_INFO', 'w+') as opened_file:
                     for element in range(len(text_lines)):
                         opened_file.write(text_lines[element] + '\n')
+        elif input_user == 'l':
+            users2 = user_creator(users, log_fracts)
+            print(users2['pcelejew'].show_user())
 
 
 def log_sorter(array):
@@ -194,26 +214,24 @@ def log_compressor(dic):
             return_keys = []
             for key in return_dic:
                 return_keys.append(key)
-            print(movement)
             if dic_key not in return_keys:
                 return_dic[dic_key] = [[[], []], [[], []]]
                 if movement == 'OUT:':
                     return_dic[dic_key][0][0].append(dic[dic_key][element])
                     return_dic[dic_key][0][1].append(dic_num)
                     return_dic[dic_key][1][1].append(0)
-                elif movement == 'IN':
+                elif movement == 'IN:':
                     return_dic[dic_key][1][0].append(dic[dic_key][element])
                     return_dic[dic_key][1][1].append(dic_num)
                     return_dic[dic_key][0][1].append(0)
-                print('=')
             elif dic_key in return_keys:
-                if 'OUT' in movement:
+
+                if 'OUT:' in movement:
                     return_dic[dic_key][0][0].append(dic[dic_key][element])
                     return_dic[dic_key][0][1][0] += dic_num
-                elif 'IN' in movement:
+                elif 'IN:' in movement:
                     return_dic[dic_key][1][0].append(dic[dic_key][element])
                     return_dic[dic_key][1][1][0] += dic_num
-                print('+')
     del return_dic['start']
     return return_dic
 
@@ -244,6 +262,9 @@ class log(object):
         return self.type_
 
     def show_org(self):
+        return self.file_name
+
+    def show_file_name(self):
         return self.file_name
 
 

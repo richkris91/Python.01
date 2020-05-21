@@ -2,20 +2,2502 @@
      Number of Computers: 1
      Number of logs: 4270
         Computers
-          Computer: pl01itcs2
-            Date: 051320_LICENSE.LOG "ICValidator-Manager": IN :1
-            Date: 051220_LICENSE.LOG "ICValidator-Manager": OUT :1504
-            Date: 051320_LICENSE.LOG "ICValidator2-GeometryEngine": IN :1
-            Date: 051220_LICENSE.LOG "ICValidator2-GeometryEngine": OUT :314
-            Date: 051320_LICENSE.LOG "ICValidator2-CompareEngine": IN :1
-            Date: 051220_LICENSE.LOG "ICValidator2-CompareEngine": OUT :187
-            Date: 051320_LICENSE.LOG "ICWBEV_PLUS": IN :1
-            Date: 051220_LICENSE.LOG "ICWBEV_PLUS": OUT :126
-            Date: 051320_LICENSE.LOG "SynopsysCustomLayout": IN :1
-            Date: 051320_LICENSE.LOG "SynopsysCustomLayout": OUT :1
-            Date: 051320_LICENSE.LOG "SynopsysCustomLayoutAdvanced": IN :1
-            Date: 051320_LICENSE.LOG "SynopsysCustomLayoutAdvanced": OUT :1
-            Date: 051320_LICENSE.LOG "SynopsysCustomRouterAuto": IN :1
-            Date: 051320_LICENSE.LOG "SynopsysCustomRouterAuto": OUT :1
-            Date: 051320_LICENSE.LOG "SynopsysCustomSAE": IN :1
-            Date: 051320_LICENSE.LOG "SynopsysCustomSAE": OUT :1
+          Computer: pl01itcs2 OUT:2135 IN: 8
+            Dates 051320 051220 051420 051520 051120 "ICValidator-Manager"  OUT:1504  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:314  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-CompareEngine"  OUT:187  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICWBEV_PLUS"  OUT:126  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomRouterAuto"  OUT:1  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomSAE"  OUT:1  IN:1
+2: User : rleszcz
+     Number of Computers: 16
+     Number of logs: 7769
+        Computers
+          Computer: rleszcz-z420-lnx OUT:670 IN: 10
+            Dates 051320 051220 051420 051520 051120 "CKTSIMSPICE"  OUT:609  IN:1
+            Dates 051320 051220 051420 051520 051120 "spice_explorer"  OUT:23  IN:1
+            Dates 051320 051220 051420 051520 051120 "COSMOS_SCOPE"  OUT:2  IN:1
+            Dates 051320 051220 051420 051520 051120 "CKTSIMMC"  OUT:26  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-CompareEngine"  OUT:1  IN:1
+            Dates 051320 051220 051420 051520 051120 "STAR-RC2_ULTRA_MANAGER"  OUT:3  IN:1
+          Computer: pl01dwemt007 OUT:208 IN: 2
+            Dates 051320 051220 051520 051120 "CKTSIMSPICE"  OUT:138  IN:1
+            Dates 051320 051220 051520 051120 "CKTSIMMC"  OUT:70  IN:1
+          Computer: pl01dwamd000 OUT:258 IN: 3
+            Dates 051320 051220 051420 051520 051120 "CKTSIMSPICE"  OUT:169  IN:1
+            Dates 051320 051220 051420 051520 051120 "CKTSIMMC"  OUT:88  IN:1
+            Dates 051320 051220 051420 051520 051120 "spice_explorer"  OUT:1  IN:1
+          Computer: pl01msemt006 OUT:8 IN: 1
+            Dates 051220 "CKTSIMSPICE"  OUT:8  IN:1
+          Computer: pl01msemt007 OUT:1041 IN: 2
+            Dates 051320 051220 051420 051520 051120 "CKTSIMSPICE"  OUT:637  IN:1
+            Dates 051320 051220 051420 051520 051120 "CKTSIMMC"  OUT:404  IN:1
+          Computer: pl01msemt001 OUT:401 IN: 2
+            Dates 051320 051220 051420 051520 051120 "CKTSIMSPICE"  OUT:251  IN:1
+            Dates 051320 051220 051420 051520 051120 "CKTSIMMC"  OUT:150  IN:1
+          Computer: pl01msemt005 OUT:8 IN: 1
+            Dates 051220 "CKTSIMSPICE"  OUT:8  IN:1
+          Computer: pl01dwemt009 OUT:128 IN: 2
+            Dates 051320 051220 051420 051520 051120 "CKTSIMSPICE"  OUT:68  IN:1
+            Dates 051320 051220 051420 051520 051120 "CKTSIMMC"  OUT:60  IN:1
+          Computer: pl01dwemt003 OUT:171 IN: 2
+            Dates 051320 051220 051520 051120 "CKTSIMSPICE"  OUT:119  IN:1
+            Dates 051320 051220 051520 051120 "CKTSIMMC"  OUT:52  IN:1
+          Computer: pl01dwemt000 OUT:181 IN: 2
+            Dates 051320 051220 051520 051120 "CKTSIMSPICE"  OUT:131  IN:1
+            Dates 051320 051220 051520 051120 "CKTSIMMC"  OUT:50  IN:1
+          Computer: pl01msemt003 OUT:7 IN: 1
+            Dates 051220 "CKTSIMSPICE"  OUT:7  IN:1
+          Computer: pl01dwemt005 OUT:175 IN: 2
+            Dates 051320 051220 051520 051120 "CKTSIMSPICE"  OUT:133  IN:1
+            Dates 051320 051220 051520 051120 "CKTSIMMC"  OUT:42  IN:1
+          Computer: pl01dwemt008 OUT:190 IN: 2
+            Dates 051320 051220 051520 051120 "CKTSIMSPICE"  OUT:133  IN:1
+            Dates 051320 051220 051520 051120 "CKTSIMMC"  OUT:57  IN:1
+          Computer: pl01msemt002 OUT:435 IN: 2
+            Dates 051320 051220 051120 051520 "CKTSIMMC"  OUT:167  IN:1
+            Dates 051320 051220 051120 051520 "CKTSIMSPICE"  OUT:268  IN:1
+          Computer: kbaranow-z420-lnx OUT:2 IN: 2
+            Dates 051420 "CKTSIMMC"  OUT:1  IN:1
+            Dates 051420 "CKTSIMSPICE"  OUT:1  IN:1
+          Computer: skeller-z440-lnx OUT:0 IN: 2
+            Dates 051120 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051120 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
+3: User : rmalucki
+     Number of Computers: 5
+     Number of logs: 114
+        Computers
+          Computer: pl01msemt003 OUT:2 IN: 2
+            Dates 051220 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051220 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+          Computer: pl01msemt004 OUT:42 IN: 6
+            Dates 051320 051220 051520 051120 051420 "ICValidator-Manager"  OUT:15  IN:1
+            Dates 051320 051220 051520 051120 051420 "ICValidator2-GeometryEngine"  OUT:15  IN:1
+            Dates 051320 051220 051520 051120 051420 "SynopsysCustomLayout"  OUT:4  IN:1
+            Dates 051320 051220 051520 051120 051420 "SynopsysCustomLayoutAdvanced"  OUT:4  IN:1
+            Dates 051320 051220 051520 051120 051420 "SynopsysCustomRouterAuto"  OUT:2  IN:1
+            Dates 051320 051220 051520 051120 051420 "SynopsysCustomSAE"  OUT:2  IN:1
+          Computer: pl01msemt006 OUT:8 IN: 2
+            Dates 051320 051420 "ICValidator-Manager"  OUT:4  IN:1
+            Dates 051320 051420 "ICValidator2-GeometryEngine"  OUT:4  IN:1
+          Computer: pl01msemt002 OUT:2 IN: 2
+            Dates 051520 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051520 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+          Computer: pl01msemt005 OUT:4 IN: 2
+            Dates 051320 051120 "ICValidator-Manager"  OUT:2  IN:1
+            Dates 051320 051120 "ICValidator2-GeometryEngine"  OUT:2  IN:1
+4: User : kszyman
+     Number of Computers: 2
+     Number of logs: 2985
+        Computers
+          Computer: kszyman-z420-lnx OUT:1387 IN: 12
+            Dates 051320 051220 051420 051520 051120 "hspice"  OUT:229  IN:1
+            Dates 051320 051220 051420 051520 051120 "sx_wva"  OUT:10  IN:1
+            Dates 051320 051220 051420 051520 051120 "sx_apx"  OUT:2  IN:1
+            Dates 051320 051220 051420 051520 051120 "COSMOS_SCOPE"  OUT:66  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayout"  OUT:8  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:3  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator-Manager"  OUT:6  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:6  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-CompareEngine"  OUT:6  IN:1
+            Dates 051320 051220 051420 051520 051120 "STAR-RC2_ULTRA_MANAGER"  OUT:3  IN:1
+            Dates 051320 051220 051420 051520 051120 "CKTSIMMC"  OUT:524  IN:1
+            Dates 051320 051220 051420 051520 051120 "CKTSIMSPICE"  OUT:524  IN:1
+          Computer: rmalucki-z440-lnx OUT:104 IN: 11
+            Dates 051120 051220 051320 051420 "sx_wva"  OUT:2  IN:1
+            Dates 051120 051220 051320 051420 "SynopsysCustomLayout"  OUT:14  IN:1
+            Dates 051120 051220 051320 051420 "ICValidator-Manager"  OUT:10  IN:1
+            Dates 051120 051220 051320 051420 "ICValidator2-GeometryEngine"  OUT:10  IN:1
+            Dates 051120 051220 051320 051420 "ICValidator2-CompareEngine"  OUT:10  IN:1
+            Dates 051120 051220 051320 051420 "STAR-RC2_ULTRA_MANAGER"  OUT:6  IN:1
+            Dates 051120 051220 051320 051420 "hsim-ms"  OUT:2  IN:1
+            Dates 051120 051220 051320 051420 "hsim-pra"  OUT:20  IN:1
+            Dates 051120 051220 051320 051420 "hsim-sra"  OUT:6  IN:1
+            Dates 051120 051220 051320 051420 "hsim-sc"  OUT:22  IN:1
+            Dates 051120 051220 051320 051420 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+5: User : ids_lic
+     Number of Computers: 1
+     Number of logs: 3600
+        Computers
+          Computer: pl01-lic5 OUT:1800 IN: 1
+            Dates 051320 051220 051420 051520 051120 "Design-Compiler"  OUT:1800  IN:1
+6: User : kozaka
+     Number of Computers: 3
+     Number of logs: 146
+        Computers
+          Computer: rangiel-z440-lnx OUT:35 IN: 6
+            Dates 051120 051220 051320 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051120 051220 051320 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+            Dates 051120 051220 051320 "ICValidator-Manager"  OUT:9  IN:1
+            Dates 051120 051220 051320 "ICValidator2-GeometryEngine"  OUT:9  IN:1
+            Dates 051120 051220 051320 "ICValidator2-CompareEngine"  OUT:9  IN:1
+            Dates 051120 051220 051320 "STAR-RC2_ULTRA_MANAGER"  OUT:4  IN:1
+          Computer: kozaka-z400-lnx OUT:3 IN: 3
+            Dates 051220 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051220 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+            Dates 051220 "ICValidator2-CompareEngine"  OUT:1  IN:1
+          Computer: arleta-z440-lnx OUT:33 IN: 6
+            Dates 051320 051220 051420 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051320 051220 051420 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+            Dates 051320 051220 051420 "ICValidator-Manager"  OUT:7  IN:1
+            Dates 051320 051220 051420 "ICValidator2-GeometryEngine"  OUT:7  IN:1
+            Dates 051320 051220 051420 "ICValidator2-CompareEngine"  OUT:7  IN:1
+            Dates 051320 051220 051420 "STAR-RC2_ULTRA_MANAGER"  OUT:8  IN:1
+7: User : mbledow
+     Number of Computers: 7
+     Number of logs: 840
+        Computers
+          Computer: pl01dwemt005 OUT:44 IN: 7
+            Dates 051120 051220 "hsim-sc"  OUT:18  IN:1
+            Dates 051120 051220 "hsim-pra"  OUT:12  IN:1
+            Dates 051120 051220 "hsim-sra"  OUT:9  IN:1
+            Dates 051120 051220 "ICWBEV_PLUS"  OUT:1  IN:1
+            Dates 051120 051220 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051120 051220 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+            Dates 051120 051220 "sx_wva"  OUT:2  IN:1
+          Computer: mbledow-z420-lnx OUT:237 IN: 19
+            Dates 051320 051220 051420 051520 051120 "COSMOS_SCOPE"  OUT:9  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator-Manager"  OUT:15  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:15  IN:1
+            Dates 051320 051220 051420 051520 051120 "hsim-sc"  OUT:68  IN:1
+            Dates 051320 051220 051420 051520 051120 "hsim-pra"  OUT:42  IN:1
+            Dates 051320 051220 051420 051520 051120 "hsim-sra"  OUT:32  IN:1
+            Dates 051320 051220 051420 051520 051120 "sx_wva"  OUT:4  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICWBEV_PLUS"  OUT:12  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayout"  OUT:5  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:4  IN:1
+            Dates 051320 051220 051420 051520 051120 "CKTSIMMC"  OUT:10  IN:1
+            Dates 051320 051220 051420 051520 051120 "CKTSIMSPICE"  OUT:9  IN:1
+            Dates 051320 051220 051420 051520 051120 "CKTSIMPROFS"  OUT:1  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-CompareEngine"  OUT:2  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICWB_PLUS"  OUT:0  IN:1
+            Dates 051320 051220 051420 051520 051120 "sx_apx"  OUT:1  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLEPlus"  OUT:1  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomSAE"  OUT:4  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomRouterAuto"  OUT:3  IN:1
+          Computer: pl01msemt001 OUT:27 IN: 7
+            Dates 051220 "hsim-sc"  OUT:11  IN:1
+            Dates 051220 "hsim-pra"  OUT:7  IN:1
+            Dates 051220 "hsim-sra"  OUT:5  IN:1
+            Dates 051220 "sx_wva"  OUT:1  IN:1
+            Dates 051220 "ICWBEV_PLUS"  OUT:1  IN:1
+            Dates 051220 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051220 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+          Computer: pl01msemt005 OUT:10 IN: 6
+            Dates 051220 051420 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051220 051420 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+            Dates 051220 051420 "SynopsysCustomRouterAuto"  OUT:1  IN:1
+            Dates 051220 051420 "SynopsysCustomSAE"  OUT:1  IN:1
+            Dates 051220 051420 "ICValidator-Manager"  OUT:3  IN:1
+            Dates 051220 051420 "ICValidator2-GeometryEngine"  OUT:3  IN:1
+          Computer: pl01msemt007 OUT:30 IN: 7
+            Dates 051320 051120 "hsim-sc"  OUT:12  IN:1
+            Dates 051320 051120 "hsim-pra"  OUT:8  IN:1
+            Dates 051320 051120 "hsim-sra"  OUT:6  IN:1
+            Dates 051320 051120 "sx_wva"  OUT:1  IN:1
+            Dates 051320 051120 "ICWBEV_PLUS"  OUT:1  IN:1
+            Dates 051320 051120 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051320 051120 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+          Computer: pl01dwemt007 OUT:25 IN: 6
+            Dates 051420 051120 "ICValidator-Manager"  OUT:17  IN:1
+            Dates 051420 051120 "ICValidator2-GeometryEngine"  OUT:3  IN:1
+            Dates 051420 051120 "hsim-sc"  OUT:1  IN:1
+            Dates 051420 051120 "hsim-pra"  OUT:1  IN:1
+            Dates 051420 051120 "hsim-sra"  OUT:1  IN:1
+            Dates 051420 051120 "sx_wva"  OUT:2  IN:1
+          Computer: pl01msemt003 OUT:45 IN: 7
+            Dates 051420 051520 051120 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+            Dates 051420 051520 051120 "ICValidator-Manager"  OUT:24  IN:1
+            Dates 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:9  IN:1
+            Dates 051420 051520 051120 "ICValidator2-CompareEngine"  OUT:5  IN:1
+            Dates 051420 051520 051120 "STAR-RC2_ULTRA_MANAGER"  OUT:4  IN:1
+            Dates 051420 051520 051120 "COSMOS_SCOPE"  OUT:1  IN:1
+8: User : tstanik
+     Number of Computers: 1
+     Number of logs: 85
+        Computers
+          Computer: tstanik-z420-lnx OUT:43 IN: 7
+            Dates 051120 051220 051420 051520 "hsim-sc"  OUT:13  IN:1
+            Dates 051120 051220 051420 051520 "hsim-sra"  OUT:10  IN:1
+            Dates 051120 051220 051420 051520 "ICWBEV_PLUS"  OUT:2  IN:1
+            Dates 051120 051220 051420 051520 "hsim-pra"  OUT:9  IN:1
+            Dates 051120 051220 051420 051520 "SynopsysCustomLayout"  OUT:3  IN:1
+            Dates 051120 051220 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:3  IN:1
+            Dates 051120 051220 051420 051520 "hsim-ms"  OUT:3  IN:1
+9: User : aklawik
+     Number of Computers: 7
+     Number of logs: 469
+        Computers
+          Computer: pl01msemt003 OUT:173 IN: 13
+            Dates 051120 051220 051520 051320 051420 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051120 051220 051520 051320 051420 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+            Dates 051120 051220 051520 051320 051420 "SynopsysCustomRouterAuto"  OUT:1  IN:1
+            Dates 051120 051220 051520 051320 051420 "SynopsysCustomSAE"  OUT:1  IN:1
+            Dates 051120 051220 051520 051320 051420 "hspice"  OUT:10  IN:1
+            Dates 051120 051220 051520 051320 051420 "sx_wva"  OUT:30  IN:1
+            Dates 051120 051220 051520 051320 051420 "COSMOS_SCOPE"  OUT:27  IN:1
+            Dates 051120 051220 051520 051320 051420 "CKTSIMSPICE"  OUT:40  IN:1
+            Dates 051120 051220 051520 051320 051420 "CKTSIMMC"  OUT:33  IN:1
+            Dates 051120 051220 051520 051320 051420 "sx_apx"  OUT:11  IN:1
+            Dates 051120 051220 051520 051320 051420 "ICValidator-Manager"  OUT:6  IN:1
+            Dates 051120 051220 051520 051320 051420 "ICValidator2-GeometryEngine"  OUT:6  IN:1
+            Dates 051120 051220 051520 051320 051420 "ICValidator2-CompareEngine"  OUT:4  IN:1
+          Computer: pl01msemt006 OUT:14 IN: 1
+            Dates 051320 051220 051420 "CKTSIMSPICE"  OUT:14  IN:1
+          Computer: pl01msemt005 OUT:42 IN: 8
+            Dates 051320 051220 051420 051120 "CKTSIMSPICE"  OUT:19  IN:1
+            Dates 051320 051220 051420 051120 "sx_wva"  OUT:5  IN:1
+            Dates 051320 051220 051420 051120 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051320 051220 051420 051120 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+            Dates 051320 051220 051420 051120 "ICValidator-Manager"  OUT:5  IN:1
+            Dates 051320 051220 051420 051120 "ICValidator2-GeometryEngine"  OUT:5  IN:1
+            Dates 051320 051220 051420 051120 "ICValidator2-CompareEngine"  OUT:1  IN:1
+            Dates 051320 051220 051420 051120 "STAR-RC2_ULTRA_MANAGER"  OUT:3  IN:1
+          Computer: pl01msemt007 OUT:2 IN: 1
+            Dates 051120 "CKTSIMSPICE"  OUT:2  IN:1
+          Computer: pl01dwemt005 OUT:1 IN: 1
+            Dates 051120 "CKTSIMSPICE"  OUT:1  IN:1
+          Computer: pl01msemt001 OUT:3 IN: 1
+            Dates 051120 "CKTSIMSPICE"  OUT:3  IN:1
+          Computer: pl01dwemt007 OUT:1 IN: 1
+            Dates 051120 "CKTSIMSPICE"  OUT:1  IN:1
+10: User : bkusy
+     Number of Computers: 1
+     Number of logs: 692
+        Computers
+          Computer: bkusy-z420-lnx OUT:346 IN: 14
+            Dates 051120 051220 051320 051420 051520 "NanoTime"  OUT:51  IN:1
+            Dates 051120 051220 051320 051420 051520 "Nanotime-Ultra"  OUT:51  IN:1
+            Dates 051120 051220 051320 051420 051520 "ICValidator-Manager"  OUT:43  IN:1
+            Dates 051120 051220 051320 051420 051520 "ICValidator2-GeometryEngine"  OUT:43  IN:1
+            Dates 051120 051220 051320 051420 051520 "ICValidator2-CompareEngine"  OUT:41  IN:1
+            Dates 051120 051220 051320 051420 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:20  IN:1
+            Dates 051120 051220 051320 051420 051520 "hspice"  OUT:40  IN:1
+            Dates 051120 051220 051320 051420 051520 "COSMOS_SCOPE"  OUT:46  IN:1
+            Dates 051120 051220 051320 051420 051520 "sx_wva"  OUT:3  IN:1
+            Dates 051120 051220 051320 051420 051520 "sx_apx"  OUT:1  IN:1
+            Dates 051120 051220 051320 051420 051520 "CKTSIMSPICE"  OUT:4  IN:1
+            Dates 051120 051220 051320 051420 051520 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051120 051220 051320 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+            Dates 051120 051220 051320 051420 051520 "FSSPICE"  OUT:1  IN:1
+11: User : pbanach
+     Number of Computers: 6
+     Number of logs: 322
+        Computers
+          Computer: pl01msemt006 OUT:73 IN: 3
+            Dates 051320 051220 051120 "sx_wva"  OUT:36  IN:1
+            Dates 051320 051220 051120 "sx_apx"  OUT:29  IN:1
+            Dates 051320 051220 051120 "CKTSIMSPICE"  OUT:8  IN:1
+          Computer: brzozows-z440-lnx OUT:73 IN: 3
+          Computer: radoslaw-z440-lnx OUT:4 IN: 4
+            Dates 051420 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051420 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+            Dates 051420 "SynopsysCustomRouterAuto"  OUT:1  IN:1
+            Dates 051420 "SynopsysCustomSAE"  OUT:1  IN:1
+          Computer: aklacz-z420-lnx OUT:67 IN: 2
+            Dates 051320 051120 "CKTSIMMC"  OUT:33  IN:1
+            Dates 051320 051120 "CKTSIMSPICE"  OUT:34  IN:1
+          Computer: pl01msemt003 OUT:5 IN: 1
+            Dates 051320 "CKTSIMSPICE"  OUT:5  IN:1
+          Computer: pl01msemt005 OUT:9 IN: 1
+            Dates 051320 "CKTSIMSPICE"  OUT:9  IN:1
+12: User : jkolasin
+     Number of Computers: 4
+     Number of logs: 104
+        Computers
+          Computer: pl01itcs2 OUT:28 IN: 6
+            Dates 051320 051220 051520 051120 "SynopsysCustomLayout"  OUT:9  IN:1
+            Dates 051320 051220 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:9  IN:1
+            Dates 051320 051220 051520 051120 "SynopsysCustomRouterAuto"  OUT:3  IN:1
+            Dates 051320 051220 051520 051120 "SynopsysCustomSAE"  OUT:3  IN:1
+            Dates 051320 051220 051520 051120 "ICValidator-Manager"  OUT:2  IN:1
+            Dates 051320 051220 051520 051120 "ICValidator2-GeometryEngine"  OUT:2  IN:1
+          Computer: pl01dwamd000 OUT:9 IN: 2
+            Dates 051320 "ICValidator-Manager"  OUT:8  IN:1
+            Dates 051320 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+          Computer: pl01msemt006 OUT:9 IN: 2
+            Dates 051320 "ICValidator-Manager"  OUT:8  IN:1
+            Dates 051320 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+          Computer: pl01msemt005 OUT:9 IN: 2
+            Dates 051320 "ICValidator-Manager"  OUT:8  IN:1
+            Dates 051320 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+13: User : gonka
+     Number of Computers: 5
+     Number of logs: 1918
+        Computers
+          Computer: pl01msemt006 OUT:397 IN: 8
+            Dates 051320 051220 051420 051520 051120 "ICValidator-Manager"  OUT:146  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:91  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICWBEV_PLUS"  OUT:125  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayout"  OUT:3  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:3  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-CompareEngine"  OUT:27  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomRouterAuto"  OUT:1  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomSAE"  OUT:1  IN:1
+          Computer: pl01msemt003 OUT:28 IN: 2
+            Dates 051120 051220 "ICValidator-Manager"  OUT:24  IN:1
+            Dates 051120 051220 "ICValidator2-GeometryEngine"  OUT:4  IN:1
+          Computer: pl01msemt005 OUT:472 IN: 8
+            Dates 051320 051220 051420 051120 051520 "ICValidator-Manager"  OUT:146  IN:1
+            Dates 051320 051220 051420 051120 051520 "ICValidator2-GeometryEngine"  OUT:101  IN:1
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomLayout"  OUT:4  IN:1
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomLayoutAdvanced"  OUT:4  IN:1
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomRouterAuto"  OUT:1  IN:1
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomSAE"  OUT:1  IN:1
+            Dates 051320 051220 051420 051120 051520 "ICValidator2-CompareEngine"  OUT:12  IN:1
+            Dates 051320 051220 051420 051120 051520 "ICWBEV_PLUS"  OUT:203  IN:1
+          Computer: pl01msemt007 OUT:49 IN: 2
+            Dates 051320 051220 051120 "ICValidator-Manager"  OUT:42  IN:1
+            Dates 051320 051220 051120 "ICValidator2-GeometryEngine"  OUT:7  IN:1
+          Computer: pl01msemt002 OUT:14 IN: 2
+            Dates 051320 051220 "ICValidator-Manager"  OUT:12  IN:1
+            Dates 051320 051220 "ICValidator2-GeometryEngine"  OUT:2  IN:1
+14: User : dlango
+     Number of Computers: 1
+     Number of logs: 2476
+        Computers
+          Computer: dlango-p5820t-lnx OUT:1237 IN: 6
+            Dates 051320 051220 051420 051520 051120 "ICValidator-Manager"  OUT:341  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:316  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICWBEV_PLUS"  OUT:525  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-CompareEngine"  OUT:53  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+15: User : tkniola
+     Number of Computers: 1
+     Number of logs: 1742
+        Computers
+          Computer: baranska-z440-lnx OUT:869 IN: 11
+            Dates 051320 051220 051420 051520 051120 "CKTSIMSPICE"  OUT:554  IN:1
+            Dates 051320 051220 051420 051520 051120 "sx_wva"  OUT:77  IN:1
+            Dates 051320 051220 051420 051520 051120 "CKTSIMMC"  OUT:4  IN:1
+            Dates 051320 051220 051420 051520 051120 "sx_apx"  OUT:52  IN:1
+            Dates 051320 051220 051420 051520 051120 "hspice"  OUT:149  IN:1
+            Dates 051320 051220 051420 051520 051120 "COSMOS_SCOPE"  OUT:1  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomSAE"  OUT:7  IN:1
+            Dates 051320 051220 051420 051520 051120 "CKTSIMPROFS"  OUT:10  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayout"  OUT:5  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:5  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomRouterAuto"  OUT:5  IN:1
+16: User : pcelejew
+     Number of Computers: 10
+     Number of logs: 231
+        Computers
+          Computer: pl01msemt003 OUT:59 IN: 8
+            Dates 051320 051220 051120 "sx_wva"  OUT:18  IN:1
+            Dates 051320 051220 051120 "COSMOS_SCOPE"  OUT:13  IN:1
+            Dates 051320 051220 051120 "SynopsysCustomLayout"  OUT:3  IN:1
+            Dates 051320 051220 051120 "SynopsysCustomLayoutAdvanced"  OUT:3  IN:1
+            Dates 051320 051220 051120 "SynopsysCustomRouterAuto"  OUT:3  IN:1
+            Dates 051320 051220 051120 "SynopsysCustomSAE"  OUT:3  IN:1
+            Dates 051320 051220 051120 "CKTSIMMC"  OUT:8  IN:1
+            Dates 051320 051220 051120 "CKTSIMSPICE"  OUT:8  IN:1
+          Computer: pl01msemt002 OUT:10 IN: 3
+            Dates 051120 051220 "CKTSIMMC"  OUT:3  IN:1
+            Dates 051120 051220 "CKTSIMSPICE"  OUT:3  IN:1
+            Dates 051120 051220 "sx_wva"  OUT:4  IN:1
+          Computer: pl01dwemt008 OUT:10 IN: 3
+          Computer: pl01dwamd000 OUT:10 IN: 3
+          Computer: pl01dwemt003 OUT:7 IN: 3
+            Dates 051320 051220 051120 "CKTSIMMC"  OUT:3  IN:1
+            Dates 051320 051220 051120 "CKTSIMSPICE"  OUT:3  IN:1
+            Dates 051320 051220 051120 "sx_wva"  OUT:1  IN:1
+          Computer: pl01dwemt000 OUT:7 IN: 3
+          Computer: pl01msemt007 OUT:15 IN: 3
+            Dates 051320 051420 051120 051220 "CKTSIMMC"  OUT:4  IN:1
+            Dates 051320 051420 051120 051220 "CKTSIMSPICE"  OUT:4  IN:1
+            Dates 051320 051420 051120 051220 "sx_wva"  OUT:7  IN:1
+          Computer: pl01msemt004 OUT:21 IN: 5
+            Dates 051320 051420 051520 "SynopsysCustomLayout"  OUT:6  IN:1
+            Dates 051320 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:5  IN:1
+            Dates 051320 051420 051520 "SynopsysCustomRouterAuto"  OUT:3  IN:1
+            Dates 051320 051420 051520 "SynopsysCustomSAE"  OUT:6  IN:1
+            Dates 051320 051420 051520 "SynopsysCustomLEPlus"  OUT:1  IN:1
+          Computer: pl01dwemt009 OUT:21 IN: 5
+          Computer: pl01msemt006 OUT:0 IN: 4
+            Dates 051320 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051320 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
+            Dates 051320 "SynopsysCustomRouterAuto"  OUT:0  IN:1
+            Dates 051320 "SynopsysCustomSAE"  OUT:0  IN:1
+17: User : edianow
+     Number of Computers: 3
+     Number of logs: 454
+        Computers
+          Computer: edianow-z440-lnx OUT:219 IN: 9
+            Dates 051320 051220 051520 051120 051420 "SynopsysCustomLayout"  OUT:13  IN:1
+            Dates 051320 051220 051520 051120 051420 "SynopsysCustomLayoutAdvanced"  OUT:13  IN:1
+            Dates 051320 051220 051520 051120 051420 "ICValidator2-Manager"  OUT:94  IN:1
+            Dates 051320 051220 051520 051120 051420 "ICValidator2-GeometryEngine"  OUT:63  IN:1
+            Dates 051320 051220 051520 051120 051420 "ICValidator2-CompareEngine"  OUT:22  IN:1
+            Dates 051320 051220 051520 051120 051420 "ICWBEV_PLUS"  OUT:1  IN:1
+            Dates 051320 051220 051520 051120 051420 "SynopsysCustomRouterAuto"  OUT:3  IN:1
+            Dates 051320 051220 051520 051120 051420 "SynopsysCustomSAE"  OUT:3  IN:1
+            Dates 051320 051220 051520 051120 051420 "ICValidator-Manager"  OUT:7  IN:1
+          Computer: kosma-z440-lnx OUT:2 IN: 1
+            Dates 051520 "ICValidator2-CompareEngine"  OUT:2  IN:1
+          Computer: dorota-z440-lnx OUT:1 IN: 1
+            Dates 051520 "ICValidator2-CompareEngine"  OUT:1  IN:1
+18: User : pianka
+     Number of Computers: 5
+     Number of logs: 2003
+        Computers
+          Computer: pl01msemt003 OUT:434 IN: 6
+            Dates 051320 051220 051420 051120 "ICValidator-Manager"  OUT:129  IN:1
+            Dates 051320 051220 051420 051120 "ICValidator2-GeometryEngine"  OUT:128  IN:1
+            Dates 051320 051220 051420 051120 "ICValidator2-CompareEngine"  OUT:83  IN:1
+            Dates 051320 051220 051420 051120 "ICWBEV_PLUS"  OUT:84  IN:1
+            Dates 051320 051220 051420 051120 "SynopsysCustomLayout"  OUT:5  IN:1
+            Dates 051320 051220 051420 051120 "SynopsysCustomLayoutAdvanced"  OUT:5  IN:1
+          Computer: pl01msemt006 OUT:100 IN: 8
+            Dates 051520 051420 051120 051220 "SynopsysCustomLayout"  OUT:4  IN:1
+            Dates 051520 051420 051120 051220 "SynopsysCustomLayoutAdvanced"  OUT:4  IN:1
+            Dates 051520 051420 051120 051220 "ICValidator-Manager"  OUT:25  IN:1
+            Dates 051520 051420 051120 051220 "ICValidator2-GeometryEngine"  OUT:25  IN:1
+            Dates 051520 051420 051120 051220 "ICValidator2-CompareEngine"  OUT:10  IN:1
+            Dates 051520 051420 051120 051220 "ICWBEV_PLUS"  OUT:30  IN:1
+            Dates 051520 051420 051120 051220 "SynopsysCustomRouterAuto"  OUT:1  IN:1
+            Dates 051520 051420 051120 051220 "SynopsysCustomSAE"  OUT:1  IN:1
+          Computer: pl01msemt004 OUT:381 IN: 14
+            Dates 051320 051420 051520 "ICValidator-Manager"  OUT:129  IN:1
+            Dates 051320 051420 051520 "ICValidator2-GeometryEngine"  OUT:87  IN:1
+            Dates 051320 051420 051520 "ICWBEV_PLUS"  OUT:108  IN:1
+            Dates 051320 051420 051520 "ICValidator2-CompareEngine"  OUT:19  IN:1
+            Dates 051320 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:4  IN:1
+            Dates 051320 051420 051520 "ICValidator2-Manager"  OUT:15  IN:1
+            Dates 051320 051420 051520 "HERCULES_MANAGER"  OUT:1  IN:1
+            Dates 051320 051420 051520 "HERCULES_MASK"  OUT:1  IN:1
+            Dates 051320 051420 051520 "HERCULES_VUE"  OUT:1  IN:1
+            Dates 051320 051420 051520 "SynopsysCustomLayout"  OUT:5  IN:1
+            Dates 051320 051420 051520 "SynopsysCustomRouterAuto"  OUT:4  IN:1
+            Dates 051320 051420 051520 "SynopsysCustomSAE"  OUT:5  IN:1
+            Dates 051320 051420 051520 "SynopsysCustomLEPlus"  OUT:1  IN:1
+            Dates 051320 051420 051520 "SynopsysCustomSchematic"  OUT:1  IN:1
+          Computer: pianka-p5820t-lnx OUT:9 IN: 6
+            Dates 051520 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051520 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+            Dates 051520 "SynopsysCustomRouterAuto"  OUT:1  IN:1
+            Dates 051520 "SynopsysCustomSAE"  OUT:1  IN:1
+            Dates 051520 "ICValidator-Manager"  OUT:4  IN:1
+            Dates 051520 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+          Computer: pl01msemt005 OUT:77 IN: 6
+            Dates 051120 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051120 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+            Dates 051120 "ICValidator-Manager"  OUT:23  IN:1
+            Dates 051120 "ICValidator2-GeometryEngine"  OUT:23  IN:1
+            Dates 051120 "ICValidator2-CompareEngine"  OUT:17  IN:1
+            Dates 051120 "ICWBEV_PLUS"  OUT:12  IN:1
+19: User : radoslaw
+     Number of Computers: 1
+     Number of logs: 368
+        Computers
+          Computer: radoslaw-z440-lnx OUT:184 IN: 10
+            Dates 051120 051220 051420 051520 051320 "ICValidator-Manager"  OUT:5  IN:1
+            Dates 051120 051220 051420 051520 051320 "ICValidator2-GeometryEngine"  OUT:5  IN:1
+            Dates 051120 051220 051420 051520 051320 "ICValidator2-CompareEngine"  OUT:5  IN:1
+            Dates 051120 051220 051420 051520 051320 "STAR-RC2_ULTRA_MANAGER"  OUT:4  IN:1
+            Dates 051120 051220 051420 051520 051320 "hsim-sc"  OUT:69  IN:1
+            Dates 051120 051220 051420 051520 051320 "hsim-pra"  OUT:49  IN:1
+            Dates 051120 051220 051420 051520 051320 "hsim-sra"  OUT:33  IN:1
+            Dates 051120 051220 051420 051520 051320 "sx_wva"  OUT:8  IN:1
+            Dates 051120 051220 051420 051520 051320 "sx_apx"  OUT:4  IN:1
+            Dates 051120 051220 051420 051520 051320 "COSMOS_SCOPE"  OUT:2  IN:1
+20: User : mtrzebia
+     Number of Computers: 13
+     Number of logs: 1716
+        Computers
+          Computer: mbledow-z420-lnx OUT:69 IN: 4
+            Dates 051320 051220 051420 051120 "CKTSIMMC"  OUT:33  IN:1
+            Dates 051320 051220 051420 051120 "CKTSIMSPICE"  OUT:31  IN:1
+            Dates 051320 051220 051420 051120 "CKTSIMPROFS"  OUT:2  IN:1
+            Dates 051320 051220 051420 051120 "sx_wva"  OUT:3  IN:1
+          Computer: tstanik-z420-lnx OUT:35 IN: 7
+            Dates 051120 051220 051420 "CKTSIMMC"  OUT:17  IN:1
+            Dates 051120 051220 051420 "CKTSIMSPICE"  OUT:17  IN:1
+            Dates 051120 051220 051420 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051120 051220 051420 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
+            Dates 051120 051220 051420 "SynopsysCustomRouterAuto"  OUT:0  IN:1
+            Dates 051120 051220 051420 "SynopsysCustomSAE"  OUT:0  IN:1
+            Dates 051120 051220 051420 "sx_wva"  OUT:1  IN:1
+          Computer: jheba-z420-lnx OUT:250 IN: 13
+            Dates 051320 051220 051420 051120 051520 "hspice"  OUT:62  IN:1
+            Dates 051320 051220 051420 051120 051520 "COSMOS_SCOPE"  OUT:27  IN:1
+            Dates 051320 051220 051420 051120 051520 "CKTSIMMC"  OUT:64  IN:1
+            Dates 051320 051220 051420 051120 051520 "CKTSIMSPICE"  OUT:74  IN:1
+            Dates 051320 051220 051420 051120 051520 "CKTSIMPROFS"  OUT:9  IN:1
+            Dates 051320 051220 051420 051120 051520 "sx_wva"  OUT:9  IN:1
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
+            Dates 051320 051220 051420 051120 051520 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051320 051220 051420 051120 051520 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+            Dates 051320 051220 051420 051120 051520 "ICValidator2-CompareEngine"  OUT:1  IN:1
+            Dates 051320 051220 051420 051120 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:1  IN:1
+            Dates 051320 051220 051420 051120 051520 "STAR-RC2-AGP"  OUT:1  IN:1
+          Computer: mtrzebia-p5820t-lnx OUT:74 IN: 13
+            Dates 051520 051420 051220 051320 051120 "SynopsysCustomLayout"  OUT:3  IN:1
+            Dates 051520 051420 051220 051320 051120 "SynopsysCustomLayoutAdvanced"  OUT:3  IN:1
+            Dates 051520 051420 051220 051320 051120 "SynopsysCustomRouterAuto"  OUT:2  IN:1
+            Dates 051520 051420 051220 051320 051120 "SynopsysCustomSAE"  OUT:2  IN:1
+            Dates 051520 051420 051220 051320 051120 "ICValidator-Manager"  OUT:6  IN:1
+            Dates 051520 051420 051220 051320 051120 "ICValidator2-GeometryEngine"  OUT:6  IN:1
+            Dates 051520 051420 051220 051320 051120 "ICValidator2-CompareEngine"  OUT:6  IN:1
+            Dates 051520 051420 051220 051320 051120 "STAR-RC2_ULTRA_MANAGER"  OUT:3  IN:1
+            Dates 051520 051420 051220 051320 051120 "CKTSIMSPICE"  OUT:25  IN:1
+            Dates 051520 051420 051220 051320 051120 "sx_wva"  OUT:6  IN:1
+            Dates 051520 051420 051220 051320 051120 "CKTSIMMC"  OUT:9  IN:1
+            Dates 051520 051420 051220 051320 051120 "CKTSIMPROFS"  OUT:2  IN:1
+            Dates 051520 051420 051220 051320 051120 "STAR-RC2-AGP"  OUT:1  IN:1
+          Computer: pl01msemt005 OUT:262 IN: 9
+            Dates 051320 051220 051420 051120 "ICValidator-Manager"  OUT:47  IN:1
+            Dates 051320 051220 051420 051120 "ICValidator2-GeometryEngine"  OUT:47  IN:1
+            Dates 051320 051220 051420 051120 "ICValidator2-CompareEngine"  OUT:46  IN:1
+            Dates 051320 051220 051420 051120 "STAR-RC2_ULTRA_MANAGER"  OUT:53  IN:1
+            Dates 051320 051220 051420 051120 "STAR-RC2-AGP"  OUT:53  IN:1
+            Dates 051320 051220 051420 051120 "SynopsysCustomLayout"  OUT:5  IN:1
+            Dates 051320 051220 051420 051120 "SynopsysCustomLayoutAdvanced"  OUT:5  IN:1
+            Dates 051320 051220 051420 051120 "SynopsysCustomRouterAuto"  OUT:3  IN:1
+            Dates 051320 051220 051420 051120 "SynopsysCustomSAE"  OUT:3  IN:1
+          Computer: cjozefow-z420-lnx OUT:120 IN: 10
+            Dates 051320 051420 051520 051120 "CKTSIMMC"  OUT:40  IN:1
+            Dates 051320 051420 051520 051120 "CKTSIMSPICE"  OUT:40  IN:1
+            Dates 051320 051420 051520 051120 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051320 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+            Dates 051320 051420 051520 051120 "ICValidator-Manager"  OUT:5  IN:1
+            Dates 051320 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:5  IN:1
+            Dates 051320 051420 051520 051120 "ICValidator2-CompareEngine"  OUT:5  IN:1
+            Dates 051320 051420 051520 051120 "STAR-RC2_ULTRA_MANAGER"  OUT:9  IN:1
+            Dates 051320 051420 051520 051120 "STAR-RC2-AGP"  OUT:9  IN:1
+            Dates 051320 051420 051520 051120 "sx_wva"  OUT:3  IN:1
+          Computer: pl01dwemt005 OUT:8 IN: 2
+            Dates 051420 "CKTSIMMC"  OUT:4  IN:1
+            Dates 051420 "CKTSIMSPICE"  OUT:4  IN:1
+          Computer: pl01dwemt000 OUT:8 IN: 2
+            Dates 051420 "CKTSIMMC"  OUT:4  IN:1
+            Dates 051420 "CKTSIMSPICE"  OUT:4  IN:1
+          Computer: pl01dwemt007 OUT:2 IN: 2
+            Dates 051420 "CKTSIMMC"  OUT:1  IN:1
+            Dates 051420 "CKTSIMSPICE"  OUT:1  IN:1
+          Computer: pl01msemt002 OUT:2 IN: 2
+            Dates 051420 "CKTSIMMC"  OUT:1  IN:1
+            Dates 051420 "CKTSIMSPICE"  OUT:1  IN:1
+          Computer: pl01msemt001 OUT:8 IN: 2
+            Dates 051420 "CKTSIMMC"  OUT:4  IN:1
+            Dates 051420 "CKTSIMSPICE"  OUT:4  IN:1
+          Computer: pl01msemt007 OUT:12 IN: 2
+            Dates 051420 "CKTSIMMC"  OUT:6  IN:1
+            Dates 051420 "CKTSIMSPICE"  OUT:6  IN:1
+          Computer: pl01msemt006 OUT:12 IN: 2
+21: User : aguz
+     Number of Computers: 1
+     Number of logs: 1314
+        Computers
+          Computer: pl01itcs2 OUT:656 IN: 6
+            Dates 051320 051220 051420 051520 051120 "ICValidator-Manager"  OUT:186  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:186  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-CompareEngine"  OUT:86  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICWBEV_PLUS"  OUT:198  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
+22: User : mlynska
+     Number of Computers: 13
+     Number of logs: 2168
+        Computers
+          Computer: mlynska-p5820t-lnx OUT:1004 IN: 5
+            Dates 051320 051220 051420 051520 051120 "ICValidator-Manager"  OUT:677  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:145  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICWBEV_PLUS"  OUT:157  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayout"  OUT:16  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:9  IN:1
+          Computer: edianow-z440-lnx OUT:5 IN: 1
+            Dates 051320 051220 051420 051120 "ICValidator2-CompareEngine"  OUT:5  IN:1
+          Computer: jmaj-z440-lnx OUT:2 IN: 1
+            Dates 051120 051220 "ICValidator2-CompareEngine"  OUT:2  IN:1
+          Computer: wielewsk-z440-lnx OUT:3 IN: 1
+            Dates 051120 051220 "ICValidator2-CompareEngine"  OUT:3  IN:1
+          Computer: gonka-z440-lnx OUT:2 IN: 1
+            Dates 051420 051220 "ICValidator2-CompareEngine"  OUT:2  IN:1
+          Computer: dorota-z440-lnx OUT:4 IN: 1
+            Dates 051320 051220 051120 "ICValidator2-CompareEngine"  OUT:4  IN:1
+          Computer: csiklick-z440-lnx OUT:2 IN: 1
+            Dates 051120 051420 "ICValidator2-CompareEngine"  OUT:2  IN:1
+          Computer: kglowac-z440-lnx OUT:1 IN: 1
+            Dates 051420 "ICValidator2-CompareEngine"  OUT:1  IN:1
+          Computer: rmalucki-z440-lnx OUT:6 IN: 1
+            Dates 051320 051420 "ICValidator2-CompareEngine"  OUT:6  IN:1
+          Computer: pl01msemt005 OUT:36 IN: 2
+            Dates 051520 "SynopsysCustomLayout"  OUT:24  IN:1
+            Dates 051520 "SynopsysCustomLayoutAdvanced"  OUT:12  IN:1
+          Computer: pl01msemt003 OUT:16 IN: 2
+            Dates 051520 "SynopsysCustomLayout"  OUT:11  IN:1
+            Dates 051520 "SynopsysCustomLayoutAdvanced"  OUT:5  IN:1
+          Computer: kosma-z440-lnx OUT:3 IN: 1
+            Dates 051320 051520 "ICValidator2-CompareEngine"  OUT:3  IN:1
+          Computer: skeller-z440-lnx OUT:2 IN: 1
+            Dates 051120 "ICValidator2-CompareEngine"  OUT:2  IN:1
+23: User : mmatczak
+     Number of Computers: 3
+     Number of logs: 124
+        Computers
+          Computer: mmatczak-z440-lnx OUT:56 IN: 9
+            Dates 051120 051220 051520 051420 "SynopsysCustomLayout"  OUT:13  IN:1
+            Dates 051120 051220 051520 051420 "SynopsysCustomLayoutAdvanced"  OUT:13  IN:1
+            Dates 051120 051220 051520 051420 "SynopsysCustomRouterAuto"  OUT:2  IN:1
+            Dates 051120 051220 051520 051420 "SynopsysCustomSAE"  OUT:2  IN:1
+            Dates 051120 051220 051520 051420 "ICValidator-Manager"  OUT:18  IN:1
+            Dates 051120 051220 051520 051420 "ICValidator2-GeometryEngine"  OUT:4  IN:1
+            Dates 051120 051220 051520 051420 "ICValidator2-Manager"  OUT:2  IN:1
+            Dates 051120 051220 051520 051420 "ICWBEV_PLUS"  OUT:1  IN:1
+            Dates 051120 051220 051520 051420 "SynopsysCustomShapes"  OUT:1  IN:1
+          Computer: pl01msemt006 OUT:6 IN: 3
+            Dates 051520 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051520 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+            Dates 051520 "ICValidator-Manager"  OUT:4  IN:1
+          Computer: szalygin-p5820t-lnx OUT:1 IN: 1
+            Dates 051520 "ICValidator-Manager"  OUT:1  IN:1
+24: User : andrzej
+     Number of Computers: 3
+     Number of logs: 529
+        Computers
+          Computer: andrzej-p5820t-lnx OUT:153 IN: 5
+            Dates 051320 051220 051420 051120 "CKTSIMSPICE"  OUT:17  IN:1
+            Dates 051320 051220 051420 051120 "sx_wva"  OUT:20  IN:1
+            Dates 051320 051220 051420 051120 "hspice"  OUT:111  IN:1
+            Dates 051320 051220 051420 051120 "sx_apx"  OUT:1  IN:1
+            Dates 051320 051220 051420 051120 "CKTSIMMC"  OUT:4  IN:1
+          Computer: pl01msemt004 OUT:112 IN: 8
+            Dates 051320 051220 051420 051520 "ICValidator-Manager"  OUT:22  IN:1
+            Dates 051320 051220 051420 051520 "ICValidator2-GeometryEngine"  OUT:22  IN:1
+            Dates 051320 051220 051420 051520 "ICWBEV_PLUS"  OUT:42  IN:1
+            Dates 051320 051220 051420 051520 "ICValidator2-CompareEngine"  OUT:8  IN:1
+            Dates 051320 051220 051420 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:15  IN:1
+            Dates 051320 051220 051420 051520 "sx_wva"  OUT:1  IN:1
+            Dates 051320 051220 051420 051520 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051320 051220 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+          Computer: pl01msemt006 OUT:112 IN: 8
+25: User : mbrzeski
+     Number of Computers: 2
+     Number of logs: 3846
+        Computers
+          Computer: mbrzeski-z440-lnx OUT:1849 IN: 8
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayout"  OUT:24  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:16  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomRouterAuto"  OUT:3  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomSAE"  OUT:3  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator-Manager"  OUT:1647  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:88  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-CompareEngine"  OUT:44  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICWBEV_PLUS"  OUT:24  IN:1
+          Computer: pl01itcs2 OUT:75 IN: 8
+            Dates 051320 051220 051420 051120 "SynopsysCustomLayout"  OUT:10  IN:1
+            Dates 051320 051220 051420 051120 "SynopsysCustomLayoutAdvanced"  OUT:7  IN:1
+            Dates 051320 051220 051420 051120 "SynopsysCustomRouterAuto"  OUT:2  IN:1
+            Dates 051320 051220 051420 051120 "SynopsysCustomSAE"  OUT:2  IN:1
+            Dates 051320 051220 051420 051120 "ICValidator-Manager"  OUT:31  IN:1
+            Dates 051320 051220 051420 051120 "ICValidator2-GeometryEngine"  OUT:16  IN:1
+            Dates 051320 051220 051420 051120 "ICValidator2-CompareEngine"  OUT:3  IN:1
+            Dates 051320 051220 051420 051120 "ICWBEV_PLUS"  OUT:4  IN:1
+26: User : prusinow
+     Number of Computers: 2
+     Number of logs: 182
+        Computers
+          Computer: prusinow-z440-lnx OUT:90 IN: 9
+            Dates 051320 051220 051520 051120 "SynopsysCustomLayout"  OUT:7  IN:1
+            Dates 051320 051220 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:7  IN:1
+            Dates 051320 051220 051520 051120 "ICValidator2-Manager"  OUT:6  IN:1
+            Dates 051320 051220 051520 051120 "ICValidator2-GeometryEngine"  OUT:22  IN:1
+            Dates 051320 051220 051520 051120 "ICValidator2-CompareEngine"  OUT:11  IN:1
+            Dates 051320 051220 051520 051120 "ICValidator-Manager"  OUT:25  IN:1
+            Dates 051320 051220 051520 051120 "ICWBEV_PLUS"  OUT:8  IN:1
+            Dates 051320 051220 051520 051120 "SynopsysCustomRouterAuto"  OUT:2  IN:1
+            Dates 051320 051220 051520 051120 "SynopsysCustomSAE"  OUT:2  IN:1
+          Computer: pl01msemt004 OUT:90 IN: 9
+27: User : tkolakow
+     Number of Computers: 6
+     Number of logs: 332
+        Computers
+          Computer: pl01msemt005 OUT:2 IN: 3
+            Dates 051220 051120 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051220 051120 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
+            Dates 051220 051120 "STAR-RC2_ULTRA_MANAGER"  OUT:2  IN:1
+          Computer: pl01msemt003 OUT:144 IN: 5
+            Dates 051320 051420 051520 051120 "NanoTime"  OUT:41  IN:1
+            Dates 051320 051420 051520 051120 "Nanotime-Ultra"  OUT:41  IN:1
+            Dates 051320 051420 051520 051120 "Design-Compiler"  OUT:41  IN:1
+            Dates 051320 051420 051520 051120 "Library-Compiler"  OUT:19  IN:1
+            Dates 051320 051420 051520 051120 "STAR-RC2_ULTRA_MANAGER"  OUT:2  IN:1
+          Computer: pl01msemt006 OUT:2 IN: 3
+            Dates 051520 051120 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
+            Dates 051520 051120 "STAR-RC2_ULTRA_MANAGER"  OUT:2  IN:1
+          Computer: pl01msemt004 OUT:12 IN: 3
+            Dates 051120 "ICValidator-Manager"  OUT:4  IN:1
+            Dates 051120 "ICValidator2-GeometryEngine"  OUT:4  IN:1
+            Dates 051120 "ICValidator2-CompareEngine"  OUT:4  IN:1
+          Computer: pl01msemt007 OUT:1 IN: 1
+            Dates 051120 "STAR-RC2_ULTRA_MANAGER"  OUT:1  IN:1
+          Computer: pl01msemt002 OUT:1 IN: 1
+            Dates 051120 "STAR-RC2_ULTRA_MANAGER"  OUT:1  IN:1
+28: User : baranska
+     Number of Computers: 1
+     Number of logs: 147
+        Computers
+          Computer: baranska-z440-lnx OUT:74 IN: 10
+            Dates 051120 051220 051520 051320 051420 "SynopsysCustomLayout"  OUT:16  IN:1
+            Dates 051120 051220 051520 051320 051420 "SynopsysCustomLayoutAdvanced"  OUT:16  IN:1
+            Dates 051120 051220 051520 051320 051420 "CKTSIMMC"  OUT:9  IN:1
+            Dates 051120 051220 051520 051320 051420 "CKTSIMSPICE"  OUT:10  IN:1
+            Dates 051120 051220 051520 051320 051420 "SynopsysCustomRouterAuto"  OUT:5  IN:1
+            Dates 051120 051220 051520 051320 051420 "SynopsysCustomSAE"  OUT:5  IN:1
+            Dates 051120 051220 051520 051320 051420 "sx_wva"  OUT:7  IN:1
+            Dates 051120 051220 051520 051320 051420 "hsim-sc"  OUT:2  IN:1
+            Dates 051120 051220 051520 051320 051420 "hsim-pra"  OUT:2  IN:1
+            Dates 051120 051220 051520 051320 051420 "hsim-sra"  OUT:2  IN:1
+29: User : kamil
+     Number of Computers: 2
+     Number of logs: 64
+        Computers
+          Computer: pl01msemt004 OUT:11 IN: 3
+            Dates 051220 "CKTSIMSPICE"  OUT:5  IN:1
+            Dates 051220 "sx_wva"  OUT:3  IN:1
+            Dates 051220 "sx_apx"  OUT:3  IN:1
+          Computer: pl01msemt006 OUT:19 IN: 7
+            Dates 051420 051320 "sx_wva"  OUT:6  IN:1
+            Dates 051420 051320 "sx_apx"  OUT:4  IN:1
+            Dates 051420 051320 "COSMOS_SCOPE"  OUT:5  IN:1
+            Dates 051420 051320 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051420 051320 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+            Dates 051420 051320 "SynopsysCustomRouterAuto"  OUT:1  IN:1
+            Dates 051420 051320 "SynopsysCustomSAE"  OUT:1  IN:1
+30: User : kglowac
+     Number of Computers: 1
+     Number of logs: 1136
+        Computers
+          Computer: kglowac-z440-lnx OUT:567 IN: 9
+            Dates 051320 051220 051520 051120 "ICValidator-Manager"  OUT:233  IN:1
+            Dates 051320 051220 051520 051120 "ICValidator2-GeometryEngine"  OUT:116  IN:1
+            Dates 051320 051220 051520 051120 "ICWBEV_PLUS"  OUT:177  IN:1
+            Dates 051320 051220 051520 051120 "ICValidator2-CompareEngine"  OUT:18  IN:1
+            Dates 051320 051220 051520 051120 "SynopsysCustomLayout"  OUT:5  IN:1
+            Dates 051320 051220 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:5  IN:1
+            Dates 051320 051220 051520 051120 "SynopsysCustomRouterAuto"  OUT:1  IN:1
+            Dates 051320 051220 051520 051120 "SynopsysCustomSAE"  OUT:1  IN:1
+            Dates 051320 051220 051520 051120 "ICValidator2-Manager"  OUT:11  IN:1
+31: User : kbaranow
+     Number of Computers: 3
+     Number of logs: 35
+        Computers
+          Computer: kbaranow-z420-lnx OUT:13 IN: 5
+            Dates 051120 051220 051420 051520 "SynopsysCustomLayout"  OUT:3  IN:1
+            Dates 051120 051220 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:3  IN:1
+            Dates 051120 051220 051420 051520 "SynopsysCustomRouterAuto"  OUT:2  IN:1
+            Dates 051120 051220 051420 051520 "SynopsysCustomSAE"  OUT:2  IN:1
+            Dates 051120 051220 051420 051520 "sx_wva"  OUT:3  IN:1
+          Computer: baranska-z440-lnx OUT:13 IN: 5
+          Computer: czyz-p5820t-lnx OUT:0 IN: 1
+            Dates 051120 "sx_wva"  OUT:0  IN:1
+32: User : marlena
+     Number of Computers: 3
+     Number of logs: 122
+        Computers
+          Computer: pl01msemt006 OUT:3 IN: 1
+            Dates 051320 051220 "spice_explorer"  OUT:3  IN:1
+          Computer: pl01msemt003 OUT:14 IN: 8
+            Dates 051320 051220 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051320 051220 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+            Dates 051320 051220 "sx_wva"  OUT:2  IN:1
+            Dates 051320 051220 "spice_explorer"  OUT:3  IN:1
+            Dates 051320 051220 "hspice"  OUT:2  IN:1
+            Dates 051320 051220 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051320 051220 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+            Dates 051320 051220 "ICValidator2-CompareEngine"  OUT:1  IN:1
+          Computer: pl01msemt004 OUT:42 IN: 6
+            Dates 051320 051520 "SynopsysCustomLayout"  OUT:10  IN:1
+            Dates 051320 051520 "SynopsysCustomLayoutAdvanced"  OUT:10  IN:1
+            Dates 051320 051520 "ICValidator-Manager"  OUT:4  IN:1
+            Dates 051320 051520 "ICValidator2-GeometryEngine"  OUT:4  IN:1
+            Dates 051320 051520 "ICValidator2-CompareEngine"  OUT:4  IN:1
+            Dates 051320 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:10  IN:1
+33: User : csiklick
+     Number of Computers: 3
+     Number of logs: 1384
+        Computers
+          Computer: pl01msemt005 OUT:487 IN: 6
+            Dates 051320 051220 051420 051120 051520 "ICValidator-Manager"  OUT:150  IN:1
+            Dates 051320 051220 051420 051120 051520 "ICValidator2-GeometryEngine"  OUT:149  IN:1
+            Dates 051320 051220 051420 051120 051520 "ICValidator2-CompareEngine"  OUT:53  IN:1
+            Dates 051320 051220 051420 051120 051520 "ICWBEV_PLUS"  OUT:133  IN:1
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+          Computer: pl01msemt003 OUT:4 IN: 2
+            Dates 051220 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051220 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+          Computer: csiklick-z440-lnx OUT:200 IN: 6
+            Dates 051520 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051520 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
+            Dates 051520 "ICValidator-Manager"  OUT:60  IN:1
+            Dates 051520 "ICValidator2-GeometryEngine"  OUT:51  IN:1
+            Dates 051520 "ICValidator2-CompareEngine"  OUT:13  IN:1
+            Dates 051520 "ICWBEV_PLUS"  OUT:76  IN:1
+34: User : olencki
+     Number of Computers: 1
+     Number of logs: 106
+        Computers
+          Computer: jnowako-z440-lnx OUT:49 IN: 13
+            Dates 051320 051420 "SynopsysCustomLayout"  OUT:3  IN:1
+            Dates 051320 051420 "SynopsysCustomLayoutAdvanced"  OUT:3  IN:1
+            Dates 051320 051420 "SynopsysCustomRouterAuto"  OUT:2  IN:1
+            Dates 051320 051420 "SynopsysCustomSAE"  OUT:2  IN:1
+            Dates 051320 051420 "ICValidator-Manager"  OUT:6  IN:1
+            Dates 051320 051420 "ICValidator2-GeometryEngine"  OUT:6  IN:1
+            Dates 051320 051420 "ICValidator2-CompareEngine"  OUT:6  IN:1
+            Dates 051320 051420 "STAR-RC2_ULTRA_MANAGER"  OUT:3  IN:1
+            Dates 051320 051420 "CKTSIMSPICE"  OUT:7  IN:1
+            Dates 051320 051420 "sx_wva"  OUT:5  IN:1
+            Dates 051320 051420 "CKTSIMMC"  OUT:2  IN:1
+            Dates 051320 051420 "hspice"  OUT:2  IN:1
+            Dates 051320 051420 "FSPRO"  OUT:2  IN:1
+35: User : drozd
+     Number of Computers: 6
+     Number of logs: 46
+        Computers
+          Computer: pl01msemt003 OUT:10 IN: 2
+            Dates 051420 051220 051320 "SynopsysCustomLayout"  OUT:5  IN:1
+            Dates 051420 051220 051320 "SynopsysCustomLayoutAdvanced"  OUT:5  IN:1
+          Computer: pl01msemt005 OUT:10 IN: 2
+          Computer: pl01msemt004 OUT:10 IN: 2
+          Computer: drozd-p5820t-lnx.internal.synopsys.com OUT:6 IN: 2
+            Dates 051320 051220 051520 "SynopsysCustomLayout"  OUT:3  IN:1
+            Dates 051320 051220 051520 "SynopsysCustomLayoutAdvanced"  OUT:3  IN:1
+          Computer: pl01msemt006 OUT:4 IN: 2
+            Dates 051520 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051520 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+          Computer: jmaj-z440-lnx OUT:0 IN: 2
+            Dates 051520 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051520 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
+36: User : lewandow
+     Number of Computers: 5
+     Number of logs: 345
+        Computers
+          Computer: lewandow-z440-lnx OUT:161 IN: 11
+            Dates 051220 051120 051320 051520 "CKTSIMPROFS"  OUT:11  IN:1
+            Dates 051220 051120 051320 051520 "spice_explorer"  OUT:8  IN:1
+            Dates 051220 051120 051320 051520 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051220 051120 051320 051520 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+            Dates 051220 051120 051320 051520 "ICValidator-Manager"  OUT:3  IN:1
+            Dates 051220 051120 051320 051520 "ICValidator2-GeometryEngine"  OUT:3  IN:1
+            Dates 051220 051120 051320 051520 "ICWBEV_PLUS"  OUT:6  IN:1
+            Dates 051220 051120 051320 051520 "ICValidator2-CompareEngine"  OUT:1  IN:1
+            Dates 051220 051120 051320 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:0  IN:1
+            Dates 051220 051120 051320 051520 "hspice"  OUT:124  IN:1
+            Dates 051220 051120 051320 051520 "CKTSIMSPICE"  OUT:1  IN:1
+          Computer: czyz-p5820t-lnx OUT:3 IN: 1
+            Dates 051220 "sx_wva"  OUT:3  IN:1
+          Computer: pl01msemt006 OUT:3 IN: 1
+          Computer: bblazew-p5820t-lnx OUT:3 IN: 1
+          Computer: nieradko-z440-lnx OUT:3 IN: 1
+37: User : bblazew
+     Number of Computers: 1
+     Number of logs: 1326
+        Computers
+          Computer: bblazew-p5820t-lnx OUT:663 IN: 11
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayout"  OUT:91  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:91  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomRouterAuto"  OUT:91  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomSAE"  OUT:91  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator-Manager"  OUT:50  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:50  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-CompareEngine"  OUT:50  IN:1
+            Dates 051320 051220 051420 051520 051120 "STAR-RC2_MANAGER"  OUT:55  IN:1
+            Dates 051320 051220 051420 051520 051120 "STAR-RC2_CUSTOM_MANAGER"  OUT:46  IN:1
+            Dates 051320 051220 051420 051520 051120 "CKTSIMSPICE"  OUT:46  IN:1
+            Dates 051320 051220 051420 051520 051120 "sx_wva"  OUT:2  IN:1
+38: User : mjaksina
+     Number of Computers: 9
+     Number of logs: 818
+        Computers
+          Computer: mjaksina-z440-lnx OUT:57 IN: 8
+            Dates 051320 051220 051120 "ICWBEV_PLUS"  OUT:13  IN:1
+            Dates 051320 051220 051120 "SynopsysCustomLayout"  OUT:4  IN:1
+            Dates 051320 051220 051120 "SynopsysCustomLayoutAdvanced"  OUT:4  IN:1
+            Dates 051320 051220 051120 "SynopsysCustomRouterAuto"  OUT:3  IN:1
+            Dates 051320 051220 051120 "SynopsysCustomSAE"  OUT:3  IN:1
+            Dates 051320 051220 051120 "ICValidator-Manager"  OUT:21  IN:1
+            Dates 051320 051220 051120 "ICValidator2-GeometryEngine"  OUT:6  IN:1
+            Dates 051320 051220 051120 "ICValidator2-Manager"  OUT:3  IN:1
+          Computer: pl01itcs2 OUT:251 IN: 7
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayout"  OUT:60  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:60  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICWBEV_PLUS"  OUT:35  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomRouterAuto"  OUT:41  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomSAE"  OUT:41  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator-Manager"  OUT:8  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:6  IN:1
+          Computer: pl01msemt005 OUT:21 IN: 3
+            Dates 051320 051220 051420 "ICValidator-Manager"  OUT:13  IN:1
+            Dates 051320 051220 051420 "ICValidator2-GeometryEngine"  OUT:6  IN:1
+            Dates 051320 051220 051420 "ICValidator2-CompareEngine"  OUT:2  IN:1
+          Computer: pl01msemt006 OUT:35 IN: 3
+            Dates 051320 051220 051420 051120 "ICValidator-Manager"  OUT:18  IN:1
+            Dates 051320 051220 051420 051120 "ICValidator2-GeometryEngine"  OUT:14  IN:1
+            Dates 051320 051220 051420 051120 "ICValidator2-CompareEngine"  OUT:3  IN:1
+          Computer: pl01msemt007 OUT:3 IN: 3
+            Dates 051220 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051220 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+            Dates 051220 "ICValidator2-CompareEngine"  OUT:1  IN:1
+          Computer: pl01dwemt000 OUT:12 IN: 3
+            Dates 051520 051420 "ICValidator-Manager"  OUT:7  IN:1
+            Dates 051520 051420 "ICValidator2-GeometryEngine"  OUT:4  IN:1
+            Dates 051520 051420 "ICValidator2-CompareEngine"  OUT:1  IN:1
+          Computer: pl01dwamd000 OUT:10 IN: 2
+            Dates 051520 "ICValidator-Manager"  OUT:8  IN:1
+            Dates 051520 "ICValidator2-GeometryEngine"  OUT:2  IN:1
+          Computer: pl01msemt002 OUT:8 IN: 2
+            Dates 051520 "ICValidator-Manager"  OUT:6  IN:1
+            Dates 051520 "ICValidator2-GeometryEngine"  OUT:2  IN:1
+          Computer: pl01dwemt008 OUT:10 IN: 2
+            Dates 051520 "ICValidator-Manager"  OUT:8  IN:1
+            Dates 051520 "ICValidator2-GeometryEngine"  OUT:2  IN:1
+39: User : msmiech
+     Number of Computers: 7
+     Number of logs: 1216
+        Computers
+          Computer: pl01msemt005 OUT:174 IN: 6
+            Dates 051320 051220 051420 051520 051120 "ICValidator-Manager"  OUT:46  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:25  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-CompareEngine"  OUT:11  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICWBEV_PLUS"  OUT:90  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+          Computer: pl01msemt006 OUT:174 IN: 6
+            Dates 051320 051220 051420 051520 051120 "ICValidator-Manager"  OUT:42  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:26  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-CompareEngine"  OUT:6  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICWBEV_PLUS"  OUT:98  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+          Computer: pl01msemt007 OUT:157 IN: 3
+            Dates 051320 051220 051520 051120 "ICValidator-Manager"  OUT:97  IN:1
+            Dates 051320 051220 051520 051120 "ICValidator2-GeometryEngine"  OUT:50  IN:1
+            Dates 051320 051220 051520 051120 "ICValidator2-CompareEngine"  OUT:10  IN:1
+          Computer: pl01msemt002 OUT:77 IN: 2
+            Dates 051320 051220 051520 "ICValidator-Manager"  OUT:53  IN:1
+            Dates 051320 051220 051520 "ICValidator2-GeometryEngine"  OUT:24  IN:1
+          Computer: msmiech-p5820t-lnx OUT:16 IN: 5
+            Dates 051520 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051520 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+            Dates 051520 "ICValidator-Manager"  OUT:3  IN:1
+            Dates 051520 "ICValidator2-GeometryEngine"  OUT:3  IN:1
+            Dates 051520 "ICWBEV_PLUS"  OUT:6  IN:1
+          Computer: pl01dwamd000 OUT:5 IN: 2
+            Dates 051520 "ICValidator-Manager"  OUT:4  IN:1
+            Dates 051520 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+          Computer: pl01dwemt000 OUT:5 IN: 2
+            Dates 051520 "ICValidator-Manager"  OUT:4  IN:1
+            Dates 051520 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+40: User : mgrzym
+     Number of Computers: 4
+     Number of logs: 570
+        Computers
+          Computer: pl01msemt007 OUT:10 IN: 3
+            Dates 051120 051220 051420 051520 "CKTSIMMC"  OUT:5  IN:1
+            Dates 051120 051220 051420 051520 "CKTSIMPROFS"  OUT:4  IN:1
+            Dates 051120 051220 051420 051520 "CKTSIMSPICE"  OUT:1  IN:1
+          Computer: pl01msemt006 OUT:280 IN: 13
+            Dates 051320 051420 051520 051120 "sx_wva"  OUT:103  IN:1
+            Dates 051320 051420 051520 051120 "sx_apx"  OUT:93  IN:1
+            Dates 051320 051420 051520 051120 "SynopsysCustomLayout"  OUT:16  IN:1
+            Dates 051320 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:16  IN:1
+            Dates 051320 051420 051520 051120 "SynopsysCustomRouterAuto"  OUT:6  IN:1
+            Dates 051320 051420 051520 051120 "SynopsysCustomSAE"  OUT:6  IN:1
+            Dates 051320 051420 051520 051120 "ICValidator-Manager"  OUT:8  IN:1
+            Dates 051320 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:8  IN:1
+            Dates 051320 051420 051520 051120 "ICWBEV_PLUS"  OUT:12  IN:1
+            Dates 051320 051420 051520 051120 "ICValidator2-CompareEngine"  OUT:4  IN:1
+            Dates 051320 051420 051520 051120 "STAR-RC2_ULTRA_MANAGER"  OUT:6  IN:1
+            Dates 051320 051420 051520 051120 "CKTSIMMC"  OUT:1  IN:1
+            Dates 051320 051420 051520 051120 "CKTSIMPROFS"  OUT:1  IN:1
+          Computer: pl01msemt002 OUT:2 IN: 2
+            Dates 051420 "CKTSIMMC"  OUT:1  IN:1
+            Dates 051420 "CKTSIMPROFS"  OUT:1  IN:1
+          Computer: pl01dwamd000 OUT:2 IN: 2
+            Dates 051520 "CKTSIMMC"  OUT:1  IN:1
+            Dates 051520 "CKTSIMPROFS"  OUT:1  IN:1
+41: User : lidia
+     Number of Computers: 2
+     Number of logs: 702
+        Computers
+          Computer: pl01msemt003 OUT:295 IN: 7
+            Dates 051320 051220 051420 051520 "ICValidator-Manager"  OUT:62  IN:1
+            Dates 051320 051220 051420 051520 "ICValidator2-GeometryEngine"  OUT:62  IN:1
+            Dates 051320 051220 051420 051520 "ICValidator2-CompareEngine"  OUT:32  IN:1
+            Dates 051320 051220 051420 051520 "ICWBEV_PLUS"  OUT:90  IN:1
+            Dates 051320 051220 051420 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:45  IN:1
+            Dates 051320 051220 051420 051520 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051320 051220 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+          Computer: lidia-p5820t-lnx OUT:56 IN: 8
+            Dates 051320 051420 051520 051120 051220 "hsim-sc"  OUT:19  IN:1
+            Dates 051320 051420 051520 051120 051220 "hsim-sra"  OUT:10  IN:1
+            Dates 051320 051420 051520 051120 051220 "hsim-pra"  OUT:14  IN:1
+            Dates 051320 051420 051520 051120 051220 "ICWBEV_PLUS"  OUT:1  IN:1
+            Dates 051320 051420 051520 051120 051220 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051320 051420 051520 051120 051220 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+            Dates 051320 051420 051520 051120 051220 "CKTSIMSPICE"  OUT:9  IN:1
+            Dates 051320 051420 051520 051120 051220 "sx_wva"  OUT:1  IN:1
+42: User : cjozefow
+     Number of Computers: 1
+     Number of logs: 241
+        Computers
+          Computer: cjozefow-z420-lnx OUT:118 IN: 13
+            Dates 051120 051220 051420 051520 051320 "ICValidator-Manager"  OUT:68  IN:1
+            Dates 051120 051220 051420 051520 051320 "ICValidator2-GeometryEngine"  OUT:22  IN:1
+            Dates 051120 051220 051420 051520 051320 "ICValidator2-Manager"  OUT:12  IN:1
+            Dates 051120 051220 051420 051520 051320 "ICWB_PLUS"  OUT:3  IN:1
+            Dates 051120 051220 051420 051520 051320 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051120 051220 051420 051520 051320 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+            Dates 051120 051220 051420 051520 051320 "ICValidator2-CompareEngine"  OUT:1  IN:1
+            Dates 051120 051220 051420 051520 051320 "SynopsysCustomRouterAuto"  OUT:1  IN:1
+            Dates 051120 051220 051420 051520 051320 "SynopsysCustomSAE"  OUT:1  IN:1
+            Dates 051120 051220 051420 051520 051320 "CKTSIMMC"  OUT:3  IN:1
+            Dates 051120 051220 051420 051520 051320 "CKTSIMPROFS"  OUT:2  IN:1
+            Dates 051120 051220 051420 051520 051320 "sx_wva"  OUT:0  IN:1
+            Dates 051120 051220 051420 051520 051320 "CKTSIMSPICE"  OUT:1  IN:1
+43: User : czyz
+     Number of Computers: 1
+     Number of logs: 302
+        Computers
+          Computer: czyz-p5820t-lnx OUT:152 IN: 14
+            Dates 051320 051220 051420 051120 051520 "sx_wva"  OUT:35  IN:1
+            Dates 051320 051220 051420 051120 051520 "CKTSIMMC"  OUT:12  IN:1
+            Dates 051320 051220 051420 051120 051520 "CKTSIMSPICE"  OUT:12  IN:1
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomLayout"  OUT:8  IN:1
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomLayoutAdvanced"  OUT:8  IN:1
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomRouterAuto"  OUT:7  IN:1
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomSAE"  OUT:7  IN:1
+            Dates 051320 051220 051420 051120 051520 "ICValidator-Manager"  OUT:6  IN:1
+            Dates 051320 051220 051420 051120 051520 "ICValidator2-GeometryEngine"  OUT:6  IN:1
+            Dates 051320 051220 051420 051120 051520 "ICWBEV_PLUS"  OUT:12  IN:1
+            Dates 051320 051220 051420 051120 051520 "ICValidator2-CompareEngine"  OUT:2  IN:1
+            Dates 051320 051220 051420 051120 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:4  IN:1
+            Dates 051320 051220 051420 051120 051520 "sx_apx"  OUT:17  IN:1
+            Dates 051320 051220 051420 051120 051520 "spice_explorer"  OUT:16  IN:1
+44: User : emam
+     Number of Computers: 13
+     Number of logs: 4398
+        Computers
+          Computer: pl01msemt006 OUT:124 IN: 10
+            Dates 051320 051220 051420 051120 051520 "sx_wva"  OUT:29  IN:1
+            Dates 051320 051220 051420 051120 051520 "hspice"  OUT:30  IN:1
+            Dates 051320 051220 051420 051120 051520 "sx_apx"  OUT:4  IN:1
+            Dates 051320 051220 051420 051120 051520 "ICValidator-Manager"  OUT:7  IN:1
+            Dates 051320 051220 051420 051120 051520 "ICValidator2-GeometryEngine"  OUT:7  IN:1
+            Dates 051320 051220 051420 051120 051520 "ICValidator2-CompareEngine"  OUT:7  IN:1
+            Dates 051320 051220 051420 051120 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:35  IN:1
+            Dates 051320 051220 051420 051120 051520 "spice_explorer"  OUT:1  IN:1
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+          Computer: pl01msemt007 OUT:691 IN: 3
+            Dates 051320 051420 051520 051120 "CKTSIMMC"  OUT:313  IN:1
+            Dates 051320 051420 051520 051120 "CKTSIMSPICE"  OUT:313  IN:1
+            Dates 051320 051420 051520 051120 "hspice"  OUT:65  IN:1
+          Computer: pl01msemt001 OUT:321 IN: 3
+            Dates 051320 051420 051520 051120 "CKTSIMMC"  OUT:137  IN:1
+            Dates 051320 051420 051520 051120 "CKTSIMSPICE"  OUT:137  IN:1
+            Dates 051320 051420 051520 051120 "hspice"  OUT:47  IN:1
+          Computer: pl01dwemt005 OUT:157 IN: 3
+            Dates 051320 051420 051520 "CKTSIMMC"  OUT:32  IN:1
+            Dates 051320 051420 051520 "CKTSIMSPICE"  OUT:32  IN:1
+            Dates 051320 051420 051520 "hspice"  OUT:93  IN:1
+          Computer: pl01dwamd000 OUT:94 IN: 2
+            Dates 051320 051420 051520 "CKTSIMMC"  OUT:47  IN:1
+            Dates 051320 051420 051520 "CKTSIMSPICE"  OUT:47  IN:1
+          Computer: pl01dwemt009 OUT:61 IN: 3
+            Dates 051320 051420 "CKTSIMMC"  OUT:20  IN:1
+            Dates 051320 051420 "CKTSIMSPICE"  OUT:20  IN:1
+            Dates 051320 051420 "hspice"  OUT:21  IN:1
+          Computer: pl01msemt002 OUT:236 IN: 3
+            Dates 051320 051420 051520 "CKTSIMMC"  OUT:102  IN:1
+            Dates 051320 051420 051520 "CKTSIMSPICE"  OUT:102  IN:1
+            Dates 051320 051420 051520 "hspice"  OUT:32  IN:1
+          Computer: pl01dwemt000 OUT:75 IN: 3
+            Dates 051320 051420 051520 "CKTSIMMC"  OUT:28  IN:1
+            Dates 051320 051420 051520 "CKTSIMSPICE"  OUT:28  IN:1
+            Dates 051320 051420 051520 "hspice"  OUT:19  IN:1
+          Computer: pl01dwemt003 OUT:144 IN: 3
+            Dates 051320 051420 051520 "CKTSIMMC"  OUT:51  IN:1
+            Dates 051320 051420 051520 "CKTSIMSPICE"  OUT:51  IN:1
+            Dates 051320 051420 051520 "hspice"  OUT:42  IN:1
+          Computer: pl01dwemt007 OUT:171 IN: 3
+            Dates 051320 051420 051520 051120 "CKTSIMMC"  OUT:57  IN:1
+            Dates 051320 051420 051520 051120 "CKTSIMSPICE"  OUT:57  IN:1
+            Dates 051320 051420 051520 051120 "hspice"  OUT:57  IN:1
+          Computer: pl01dwemt008 OUT:121 IN: 3
+            Dates 051320 051420 051520 "CKTSIMMC"  OUT:46  IN:1
+            Dates 051320 051420 051520 "CKTSIMSPICE"  OUT:46  IN:1
+            Dates 051320 051420 051520 "hspice"  OUT:29  IN:1
+          Computer: pl01msemt003 OUT:2 IN: 2
+            Dates 051420 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051420 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+          Computer: pl01msemt004 OUT:2 IN: 2
+            Dates 051520 "sx_wva"  OUT:1  IN:1
+            Dates 051520 "sx_apx"  OUT:1  IN:1
+45: User : kworonow
+     Number of Computers: 1
+     Number of logs: 1479
+        Computers
+          Computer: kworonow-z420-lnx OUT:739 IN: 14
+            Dates 051120 051220 051320 051420 051520 "hsim-sc"  OUT:89  IN:1
+            Dates 051120 051220 051320 051420 051520 "hsim-pra"  OUT:64  IN:1
+            Dates 051120 051220 051320 051420 051520 "hsim-sra"  OUT:32  IN:1
+            Dates 051120 051220 051320 051420 051520 "ICWBEV_PLUS"  OUT:156  IN:1
+            Dates 051120 051220 051320 051420 051520 "ICValidator-Manager"  OUT:88  IN:1
+            Dates 051120 051220 051320 051420 051520 "ICValidator2-GeometryEngine"  OUT:88  IN:1
+            Dates 051120 051220 051320 051420 051520 "sx_wva"  OUT:49  IN:1
+            Dates 051120 051220 051320 051420 051520 "sx_apx"  OUT:42  IN:1
+            Dates 051120 051220 051320 051420 051520 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051120 051220 051320 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+            Dates 051120 051220 051320 051420 051520 "CKTSIMMC"  OUT:5  IN:1
+            Dates 051120 051220 051320 051420 051520 "CKTSIMSPICE"  OUT:76  IN:1
+            Dates 051120 051220 051320 051420 051520 "ICValidator2-CompareEngine"  OUT:29  IN:1
+            Dates 051120 051220 051320 051420 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:17  IN:1
+46: User : lhablutz
+     Number of Computers: 3
+     Number of logs: 233
+        Computers
+          Computer: pl01msemt005 OUT:6 IN: 3
+            Dates 051120 051220 "SynopsysCustomLayout"  OUT:3  IN:1
+            Dates 051120 051220 "SynopsysCustomLayoutAdvanced"  OUT:3  IN:1
+            Dates 051120 051220 "sx_wva"  OUT:0  IN:1
+          Computer: ddabski-p5820t-lnx OUT:2 IN: 2
+            Dates 051320 051220 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051320 051220 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+          Computer: lhablutz-z420-lnx OUT:98 IN: 12
+            Dates 051120 051220 051320 051420 051520 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051120 051220 051320 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+            Dates 051120 051220 051320 051420 051520 "SynopsysCustomRouterAuto"  OUT:1  IN:1
+            Dates 051120 051220 051320 051420 051520 "SynopsysCustomSAE"  OUT:1  IN:1
+            Dates 051120 051220 051320 051420 051520 "hspice"  OUT:63  IN:1
+            Dates 051120 051220 051320 051420 051520 "sx_wva"  OUT:9  IN:1
+            Dates 051120 051220 051320 051420 051520 "sx_apx"  OUT:2  IN:1
+            Dates 051120 051220 051320 051420 051520 "COSMOS_SCOPE"  OUT:1  IN:1
+            Dates 051120 051220 051320 051420 051520 "ICValidator2-Manager"  OUT:5  IN:1
+            Dates 051120 051220 051320 051420 051520 "ICValidator2-GeometryEngine"  OUT:5  IN:1
+            Dates 051120 051220 051320 051420 051520 "ICValidator2-CompareEngine"  OUT:5  IN:1
+            Dates 051120 051220 051320 051420 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:4  IN:1
+47: User : arleta
+     Number of Computers: 1
+     Number of logs: 818
+        Computers
+          Computer: arleta-p5820t-lnx OUT:406 IN: 9
+            Dates 051120 051220 051420 051520 051320 "ICValidator-Manager"  OUT:179  IN:1
+            Dates 051120 051220 051420 051520 051320 "ICValidator2-GeometryEngine"  OUT:80  IN:1
+            Dates 051120 051220 051420 051520 051320 "ICValidator2-CompareEngine"  OUT:27  IN:1
+            Dates 051120 051220 051420 051520 051320 "SynopsysCustomLayout"  OUT:9  IN:1
+            Dates 051120 051220 051420 051520 051320 "SynopsysCustomLayoutAdvanced"  OUT:9  IN:1
+            Dates 051120 051220 051420 051520 051320 "ICWBEV_PLUS"  OUT:96  IN:1
+            Dates 051120 051220 051420 051520 051320 "SynopsysCustomRouterAuto"  OUT:2  IN:1
+            Dates 051120 051220 051420 051520 051320 "SynopsysCustomSAE"  OUT:3  IN:1
+            Dates 051120 051220 051420 051520 051320 "SynopsysCustomSchematic"  OUT:1  IN:1
+48: User : nieradko
+     Number of Computers: 3
+     Number of logs: 266
+        Computers
+          Computer: pl01msemt004 OUT:127 IN: 8
+            Dates 051320 051220 051520 051120 "SynopsysCustomLayout"  OUT:32  IN:1
+            Dates 051320 051220 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:32  IN:1
+            Dates 051320 051220 051520 051120 "SynopsysCustomRouterAuto"  OUT:21  IN:1
+            Dates 051320 051220 051520 051120 "SynopsysCustomSAE"  OUT:21  IN:1
+            Dates 051320 051220 051520 051120 "ICValidator-Manager"  OUT:5  IN:1
+            Dates 051320 051220 051520 051120 "ICValidator2-GeometryEngine"  OUT:5  IN:1
+            Dates 051320 051220 051520 051120 "ICValidator2-CompareEngine"  OUT:5  IN:1
+            Dates 051320 051220 051520 051120 "STAR-RC2_ULTRA_MANAGER"  OUT:6  IN:1
+          Computer: pl01msemt006 OUT:4 IN: 4
+            Dates 051320 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051320 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+            Dates 051320 "ICValidator2-CompareEngine"  OUT:1  IN:1
+            Dates 051320 "STAR-RC2_ULTRA_MANAGER"  OUT:1  IN:1
+          Computer: pl01msemt005 OUT:4 IN: 4
+            Dates 051320 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051320 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+            Dates 051320 "ICValidator2-CompareEngine"  OUT:1  IN:1
+            Dates 051320 "STAR-RC2_ULTRA_MANAGER"  OUT:1  IN:1
+49: User : llawicki
+     Number of Computers: 2
+     Number of logs: 160
+        Computers
+          Computer: lewandow-z440-lnx OUT:14 IN: 8
+            Dates 051420 051220 "SynopsysCustomLayout"  OUT:3  IN:1
+            Dates 051420 051220 "SynopsysCustomLayoutAdvanced"  OUT:3  IN:1
+            Dates 051420 051220 "SynopsysCustomRouterAuto"  OUT:2  IN:1
+            Dates 051420 051220 "SynopsysCustomSAE"  OUT:2  IN:1
+            Dates 051420 051220 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051420 051220 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+            Dates 051420 051220 "ICValidator2-CompareEngine"  OUT:1  IN:1
+            Dates 051420 051220 "STAR-RC2_ULTRA_MANAGER"  OUT:1  IN:1
+          Computer: llawicki-z420-lnx OUT:64 IN: 13
+            Dates 051320 051220 051420 051120 051520 "CKTSIMSPICE"  OUT:11  IN:1
+            Dates 051320 051220 051420 051120 051520 "sx_wva"  OUT:8  IN:1
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomLayout"  OUT:3  IN:1
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomLayoutAdvanced"  OUT:3  IN:1
+            Dates 051320 051220 051420 051120 051520 "ICValidator-Manager"  OUT:5  IN:1
+            Dates 051320 051220 051420 051120 051520 "ICValidator2-GeometryEngine"  OUT:5  IN:1
+            Dates 051320 051220 051420 051120 051520 "ICValidator2-CompareEngine"  OUT:5  IN:1
+            Dates 051320 051220 051420 051120 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:18  IN:1
+            Dates 051320 051220 051420 051120 051520 "CKTSIMMC"  OUT:2  IN:1
+            Dates 051320 051220 051420 051120 051520 "NanoTime"  OUT:1  IN:1
+            Dates 051320 051220 051420 051120 051520 "Nanotime-Ultra"  OUT:1  IN:1
+            Dates 051320 051220 051420 051120 051520 "hspice"  OUT:1  IN:1
+            Dates 051320 051220 051420 051120 051520 "COSMOS_SCOPE"  OUT:1  IN:1
+50: User : rcelmer
+     Number of Computers: 4
+     Number of logs: 76
+        Computers
+          Computer: pl01msemt003 OUT:33 IN: 6
+            Dates 051320 051220 051520 051120 051420 "sx_wva"  OUT:7  IN:1
+            Dates 051320 051220 051520 051120 051420 "SynopsysCustomLayout"  OUT:7  IN:1
+            Dates 051320 051220 051520 051120 051420 "SynopsysCustomLayoutAdvanced"  OUT:7  IN:1
+            Dates 051320 051220 051520 051120 051420 "SynopsysCustomRouterAuto"  OUT:3  IN:1
+            Dates 051320 051220 051520 051120 051420 "SynopsysCustomSAE"  OUT:3  IN:1
+            Dates 051320 051220 051520 051120 051420 "ICValidator2-Manager"  OUT:6  IN:1
+          Computer: pl01msemt007 OUT:2 IN: 2
+            Dates 051320 "CKTSIMMC"  OUT:1  IN:1
+            Dates 051320 "CKTSIMSPICE"  OUT:1  IN:1
+          Computer: pl01msemt001 OUT:2 IN: 2
+            Dates 051320 "CKTSIMMC"  OUT:1  IN:1
+            Dates 051320 "CKTSIMSPICE"  OUT:1  IN:1
+          Computer: pl01dwemt009 OUT:0 IN: 2
+            Dates 051320 "CKTSIMMC"  OUT:0  IN:1
+            Dates 051320 "CKTSIMSPICE"  OUT:0  IN:1
+51: User : szalygin
+     Number of Computers: 7
+     Number of logs: 1944
+        Computers
+          Computer: szalygin-p5820t-lnx OUT:959 IN: 6
+            Dates 051320 051220 051420 051520 051120 "ICValidator-Manager"  OUT:606  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:157  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-CompareEngine"  OUT:32  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayout"  OUT:8  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:8  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICWBEV_PLUS"  OUT:148  IN:1
+          Computer: mmatczak-z440-lnx OUT:4 IN: 1
+            Dates 051520 051420 "ICValidator2-CompareEngine"  OUT:4  IN:1
+          Computer: rmalucki-z440-lnx OUT:4 IN: 1
+            Dates 051520 "ICValidator2-CompareEngine"  OUT:4  IN:1
+          Computer: dorota-z440-lnx OUT:2 IN: 1
+            Dates 051520 "ICValidator2-CompareEngine"  OUT:2  IN:1
+          Computer: kglowac-z440-lnx OUT:1 IN: 1
+            Dates 051520 "ICValidator2-CompareEngine"  OUT:1  IN:1
+          Computer: csiklick-z440-lnx OUT:1 IN: 1
+            Dates 051520 "ICValidator2-CompareEngine"  OUT:1  IN:1
+          Computer: mjaksina-z440-lnx OUT:1 IN: 1
+            Dates 051520 "ICValidator2-CompareEngine"  OUT:1  IN:1
+52: User : tnaczyk
+     Number of Computers: 2
+     Number of logs: 1228
+        Computers
+          Computer: pl01itcs2 OUT:596 IN: 10
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayout"  OUT:28  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:28  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICWBEV_PLUS"  OUT:123  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator-Manager"  OUT:84  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:82  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-CompareEngine"  OUT:22  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomRouterAuto"  OUT:14  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomSAE"  OUT:14  IN:1
+            Dates 051320 051220 051420 051520 051120 "Library-Compiler"  OUT:200  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICWB_PLUS"  OUT:1  IN:1
+          Computer: pl01msemt006 OUT:24 IN: 8
+            Dates 051420 051520 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+            Dates 051420 051520 "SynopsysCustomRouterAuto"  OUT:1  IN:1
+            Dates 051420 051520 "SynopsysCustomSAE"  OUT:1  IN:1
+            Dates 051420 051520 "ICWBEV_PLUS"  OUT:7  IN:1
+            Dates 051420 051520 "ICValidator-Manager"  OUT:5  IN:1
+            Dates 051420 051520 "ICValidator2-GeometryEngine"  OUT:5  IN:1
+            Dates 051420 051520 "ICValidator2-CompareEngine"  OUT:1  IN:1
+53: User : muszynsk
+     Number of Computers: 10
+     Number of logs: 598
+        Computers
+          Computer: tzywica-p5820t-lnx OUT:78 IN: 3
+            Dates 051320 051220 051420 051120 "CKTSIMMC"  OUT:38  IN:1
+            Dates 051320 051220 051420 051120 "CKTSIMSPICE"  OUT:38  IN:1
+            Dates 051320 051220 051420 051120 "sx_wva"  OUT:2  IN:1
+          Computer: pl01msemt003 OUT:10 IN: 3
+            Dates 051120 051220 051420 051520 "sx_wva"  OUT:4  IN:1
+            Dates 051120 051220 051420 051520 "SynopsysCustomLayout"  OUT:3  IN:1
+            Dates 051120 051220 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:3  IN:1
+          Computer: pl01msemt001 OUT:36 IN: 2
+            Dates 051220 "CKTSIMMC"  OUT:18  IN:1
+            Dates 051220 "CKTSIMSPICE"  OUT:18  IN:1
+          Computer: pl01dwamd000 OUT:4 IN: 2
+            Dates 051220 "CKTSIMMC"  OUT:2  IN:1
+            Dates 051220 "CKTSIMSPICE"  OUT:2  IN:1
+          Computer: pl01msemt007 OUT:56 IN: 2
+            Dates 051220 "CKTSIMMC"  OUT:28  IN:1
+            Dates 051220 "CKTSIMSPICE"  OUT:28  IN:1
+          Computer: muszynsk-z400-lnx OUT:70 IN: 10
+            Dates 051120 051220 051420 051320 "SynopsysCustomLayout"  OUT:6  IN:1
+            Dates 051120 051220 051420 051320 "SynopsysCustomLayoutAdvanced"  OUT:5  IN:1
+            Dates 051120 051220 051420 051320 "SynopsysCustomRouterAuto"  OUT:4  IN:1
+            Dates 051120 051220 051420 051320 "SynopsysCustomSAE"  OUT:5  IN:1
+            Dates 051120 051220 051420 051320 "spice_explorer"  OUT:22  IN:1
+            Dates 051120 051220 051420 051320 "sx_wva"  OUT:11  IN:1
+            Dates 051120 051220 051420 051320 "CKTSIMMC"  OUT:6  IN:1
+            Dates 051120 051220 051420 051320 "CKTSIMSPICE"  OUT:6  IN:1
+            Dates 051120 051220 051420 051320 "SynopsysCustomLEPlus"  OUT:1  IN:1
+            Dates 051120 051220 051420 051320 "sx_apx"  OUT:4  IN:1
+          Computer: pl01msemt002 OUT:32 IN: 2
+            Dates 051220 "CKTSIMMC"  OUT:16  IN:1
+            Dates 051220 "CKTSIMSPICE"  OUT:16  IN:1
+          Computer: pl01msemt006 OUT:2 IN: 2
+            Dates 051420 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051420 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+          Computer: pl01msemt004 OUT:2 IN: 2
+            Dates 051420 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051420 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+          Computer: pl01msemt005 OUT:7 IN: 5
+            Dates 051320 051420 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051320 051420 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+            Dates 051320 051420 "SynopsysCustomRouterAuto"  OUT:1  IN:1
+            Dates 051320 051420 "SynopsysCustomSAE"  OUT:2  IN:1
+            Dates 051320 051420 "SynopsysCustomLEPlus"  OUT:1  IN:1
+54: User : rangiel
+     Number of Computers: 1
+     Number of logs: 42
+        Computers
+          Computer: rangiel-z440-lnx OUT:21 IN: 4
+            Dates 051120 051220 051520 "sx_wva"  OUT:12  IN:1
+            Dates 051120 051220 051520 "sx_apx"  OUT:9  IN:1
+            Dates 051120 051220 051520 "CKTSIMMC"  OUT:0  IN:1
+            Dates 051120 051220 051520 "CKTSIMSPICE"  OUT:0  IN:1
+55: User : ddabski
+     Number of Computers: 16
+     Number of logs: 1098
+        Computers
+          Computer: ddabski-p5820t-lnx OUT:243 IN: 12
+            Dates 051220 051120 051520 051320 051420 "CKTSIMMC"  OUT:6  IN:1
+            Dates 051220 051120 051520 051320 051420 "CKTSIMSPICE"  OUT:15  IN:1
+            Dates 051220 051120 051520 051320 051420 "sx_wva"  OUT:17  IN:1
+            Dates 051220 051120 051520 051320 051420 "ICValidator-Manager"  OUT:42  IN:1
+            Dates 051220 051120 051520 051320 051420 "ICValidator2-GeometryEngine"  OUT:42  IN:1
+            Dates 051220 051120 051520 051320 051420 "ICValidator2-CompareEngine"  OUT:26  IN:1
+            Dates 051220 051120 051520 051320 051420 "STAR-RC2_ULTRA_MANAGER"  OUT:33  IN:1
+            Dates 051220 051120 051520 051320 051420 "sx_apx"  OUT:10  IN:1
+            Dates 051220 051120 051520 051320 051420 "ICWBEV_PLUS"  OUT:48  IN:1
+            Dates 051220 051120 051520 051320 051420 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051220 051120 051520 051320 051420 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+            Dates 051220 051120 051520 051320 051420 "hspice"  OUT:2  IN:1
+          Computer: pl01msemt005 OUT:54 IN: 1
+            Dates 051320 051220 051120 "CKTSIMSPICE"  OUT:54  IN:1
+          Computer: pl01msemt006 OUT:48 IN: 1
+            Dates 051320 051220 051120 "CKTSIMSPICE"  OUT:48  IN:1
+          Computer: pl01msemt004 OUT:32 IN: 1
+            Dates 051320 051220 "CKTSIMSPICE"  OUT:32  IN:1
+          Computer: pl01msemt003 OUT:80 IN: 2
+            Dates 051320 051220 051120 "CKTSIMSPICE"  OUT:79  IN:1
+            Dates 051320 051220 051120 "sx_wva"  OUT:1  IN:1
+          Computer: pl01msemt007 OUT:32 IN: 1
+            Dates 051120 051520 "CKTSIMSPICE"  OUT:32  IN:1
+          Computer: pl01msemt002 OUT:11 IN: 1
+            Dates 051320 051520 051120 "CKTSIMSPICE"  OUT:11  IN:1
+          Computer: pl01msemt001 OUT:14 IN: 1
+            Dates 051320 051520 051120 "CKTSIMSPICE"  OUT:14  IN:1
+          Computer: pl01dwemt008 OUT:2 IN: 1
+            Dates 051120 051520 "CKTSIMSPICE"  OUT:2  IN:1
+          Computer: pl01dwemt003 OUT:6 IN: 1
+            Dates 051320 051520 051120 "CKTSIMSPICE"  OUT:6  IN:1
+          Computer: pl01dwemt000 OUT:3 IN: 1
+            Dates 051120 051520 "CKTSIMSPICE"  OUT:3  IN:1
+          Computer: pl01dwemt007 OUT:14 IN: 1
+            Dates 051320 051520 051120 "CKTSIMSPICE"  OUT:14  IN:1
+          Computer: pl01dwemt005 OUT:2 IN: 1
+            Dates 051120 051520 "CKTSIMSPICE"  OUT:2  IN:1
+          Computer: pl01dwamd000 OUT:4 IN: 1
+            Dates 051120 051520 "CKTSIMSPICE"  OUT:4  IN:1
+          Computer: lhablutz-z420-lnx OUT:1 IN: 1
+            Dates 051120 "COSMOS_SCOPE"  OUT:1  IN:1
+          Computer: pl01dwemt009 OUT:3 IN: 1
+            Dates 051320 051120 "CKTSIMSPICE"  OUT:3  IN:1
+56: User : lpacek
+     Number of Computers: 7
+     Number of logs: 1657
+        Computers
+          Computer: lpacek-p5820t-lnx OUT:312 IN: 21
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayout"  OUT:6  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:6  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomRouterAuto"  OUT:6  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomSAE"  OUT:6  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator-Manager"  OUT:39  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:39  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-CompareEngine"  OUT:31  IN:1
+            Dates 051320 051220 051420 051520 051120 "sx_wva"  OUT:9  IN:1
+            Dates 051320 051220 051420 051520 051120 "CKTSIMMC"  OUT:15  IN:1
+            Dates 051320 051220 051420 051520 051120 "CKTSIMSPICE"  OUT:13  IN:1
+            Dates 051320 051220 051420 051520 051120 "STAR-RC2_ULTRA_MANAGER"  OUT:8  IN:1
+            Dates 051320 051220 051420 051520 051120 "hsim-sc"  OUT:33  IN:1
+            Dates 051320 051220 051420 051520 051120 "hsim-pra"  OUT:22  IN:1
+            Dates 051320 051220 051420 051520 051120 "hsim-sra"  OUT:17  IN:1
+            Dates 051320 051220 051420 051520 051120 "COSMOS_SCOPE"  OUT:16  IN:1
+            Dates 051320 051220 051420 051520 051120 "FSPRO"  OUT:3  IN:1
+            Dates 051320 051220 051420 051520 051120 "CKTSIMPROFS"  OUT:8  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICWBEV_PLUS"  OUT:24  IN:1
+            Dates 051320 051220 051420 051520 051120 "STAR-RC2_MANAGER"  OUT:3  IN:1
+            Dates 051320 051220 051420 051520 051120 "STAR-RC2_CUSTOM_MANAGER"  OUT:3  IN:1
+            Dates 051320 051220 051420 051520 051120 "sx_apx"  OUT:5  IN:1
+          Computer: pl01msemt007 OUT:244 IN: 2
+            Dates 051320 "CKTSIMMC"  OUT:122  IN:1
+            Dates 051320 "CKTSIMPROFS"  OUT:122  IN:1
+          Computer: pl01msemt001 OUT:98 IN: 2
+            Dates 051320 "CKTSIMMC"  OUT:49  IN:1
+            Dates 051320 "CKTSIMPROFS"  OUT:49  IN:1
+          Computer: pl01msemt002 OUT:98 IN: 2
+            Dates 051320 "CKTSIMMC"  OUT:49  IN:1
+            Dates 051320 "CKTSIMPROFS"  OUT:49  IN:1
+          Computer: pl01dwemt008 OUT:24 IN: 2
+            Dates 051320 "CKTSIMMC"  OUT:12  IN:1
+            Dates 051320 "CKTSIMPROFS"  OUT:12  IN:1
+          Computer: pl01dwemt000 OUT:28 IN: 2
+            Dates 051320 "CKTSIMMC"  OUT:14  IN:1
+            Dates 051320 "CKTSIMPROFS"  OUT:14  IN:1
+          Computer: pl01dwemt005 OUT:22 IN: 2
+            Dates 051320 "CKTSIMMC"  OUT:11  IN:1
+            Dates 051320 "CKTSIMPROFS"  OUT:11  IN:1
+57: User : okruszyn
+     Number of Computers: 10
+     Number of logs: 826
+        Computers
+          Computer: jnowako-z440-lnx OUT:103 IN: 7
+            Dates 051320 051220 051420 051520 051120 "hsim-sc"  OUT:39  IN:1
+            Dates 051320 051220 051420 051520 051120 "hsim-pra"  OUT:28  IN:1
+            Dates 051320 051220 051420 051520 051120 "hsim-sra"  OUT:14  IN:1
+            Dates 051320 051220 051420 051520 051120 "sx_wva"  OUT:4  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICWBEV_PLUS"  OUT:6  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator-Manager"  OUT:6  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:6  IN:1
+          Computer: pl01msemt005 OUT:112 IN: 11
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayout"  OUT:10  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:6  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator-Manager"  OUT:11  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:11  IN:1
+            Dates 051320 051220 051420 051520 051120 "hsim-sc"  OUT:18  IN:1
+            Dates 051320 051220 051420 051520 051120 "hsim-sra"  OUT:6  IN:1
+            Dates 051320 051220 051420 051520 051120 "hsim-pra"  OUT:12  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICWBEV_PLUS"  OUT:33  IN:1
+            Dates 051320 051220 051420 051520 051120 "hspice"  OUT:1  IN:1
+            Dates 051320 051220 051420 051520 051120 "sx_wva"  OUT:2  IN:1
+            Dates 051320 051220 051420 051520 051120 "sx_apx"  OUT:2  IN:1
+          Computer: pl01msemt007 OUT:20 IN: 4
+            Dates 051320 051220 051420 051520 "ICValidator-Manager"  OUT:5  IN:1
+            Dates 051320 051220 051420 051520 "ICValidator2-GeometryEngine"  OUT:5  IN:1
+            Dates 051320 051220 051420 051520 "ICValidator2-CompareEngine"  OUT:5  IN:1
+            Dates 051320 051220 051420 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:5  IN:1
+          Computer: natalia-z440-lnx OUT:23 IN: 3
+            Dates 051320 051220 051420 "hsim-sc"  OUT:10  IN:1
+            Dates 051320 051220 051420 "hsim-pra"  OUT:7  IN:1
+            Dates 051320 051220 051420 "hsim-sra"  OUT:6  IN:1
+          Computer: mjaksina-z440-lnx OUT:57 IN: 7
+            Dates 051320 051220 051420 051520 051120 "hsim-sc"  OUT:20  IN:1
+            Dates 051320 051220 051420 051520 051120 "hsim-pra"  OUT:13  IN:1
+            Dates 051320 051220 051420 051520 051120 "hsim-sra"  OUT:12  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICWBEV_PLUS"  OUT:4  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator-Manager"  OUT:4  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:4  IN:1
+            Dates 051320 051220 051420 051520 051120 "sx_wva"  OUT:0  IN:1
+          Computer: pl01msemt006 OUT:16 IN: 7
+            Dates 051420 051320 "hsim-sc"  OUT:6  IN:1
+            Dates 051420 051320 "hsim-sra"  OUT:2  IN:1
+            Dates 051420 051320 "hsim-pra"  OUT:4  IN:1
+            Dates 051420 051320 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051420 051320 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+            Dates 051420 051320 "ICValidator2-CompareEngine"  OUT:1  IN:1
+            Dates 051420 051320 "STAR-RC2_ULTRA_MANAGER"  OUT:1  IN:1
+          Computer: mmatczak-z440-lnx OUT:45 IN: 9
+            Dates 051420 051520 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
+            Dates 051420 051520 "ICValidator-Manager"  OUT:7  IN:1
+            Dates 051420 051520 "ICValidator2-GeometryEngine"  OUT:7  IN:1
+            Dates 051420 051520 "ICValidator2-CompareEngine"  OUT:5  IN:1
+            Dates 051420 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:4  IN:1
+            Dates 051420 051520 "ICWBEV_PLUS"  OUT:8  IN:1
+            Dates 051420 051520 "CKTSIMMC"  OUT:7  IN:1
+            Dates 051420 051520 "CKTSIMSPICE"  OUT:7  IN:1
+          Computer: pl01dwemt007 OUT:12 IN: 3
+            Dates 051520 "hsim-sc"  OUT:6  IN:1
+            Dates 051520 "hsim-sra"  OUT:2  IN:1
+            Dates 051520 "hsim-pra"  OUT:4  IN:1
+          Computer: pl01dwemt003 OUT:12 IN: 3
+            Dates 051520 "hsim-sc"  OUT:6  IN:1
+            Dates 051520 "hsim-sra"  OUT:2  IN:1
+            Dates 051520 "hsim-pra"  OUT:4  IN:1
+          Computer: pl01msemt002 OUT:10 IN: 6
+            Dates 051520 051320 "ICValidator-Manager"  OUT:2  IN:1
+            Dates 051520 051320 "ICValidator2-GeometryEngine"  OUT:2  IN:1
+            Dates 051520 051320 "ICValidator2-CompareEngine"  OUT:2  IN:1
+            Dates 051520 051320 "STAR-RC2_ULTRA_MANAGER"  OUT:2  IN:1
+            Dates 051520 051320 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051520 051320 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+58: User : bartosz
+     Number of Computers: 2
+     Number of logs: 774
+        Computers
+          Computer: pl01itcs2 OUT:318 IN: 6
+            Dates 051320 051220 051120 051420 "ICValidator-Manager"  OUT:78  IN:1
+            Dates 051320 051220 051120 051420 "ICValidator2-GeometryEngine"  OUT:77  IN:1
+            Dates 051320 051220 051120 051420 "ICWBEV_PLUS"  OUT:150  IN:1
+            Dates 051320 051220 051120 051420 "SynopsysCustomLayout"  OUT:5  IN:1
+            Dates 051320 051220 051120 051420 "SynopsysCustomLayoutAdvanced"  OUT:5  IN:1
+            Dates 051320 051220 051120 051420 "ICValidator2-CompareEngine"  OUT:3  IN:1
+          Computer: arleta-z440-lnx OUT:69 IN: 6
+            Dates 051420 051520 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
+            Dates 051420 051520 "ICValidator-Manager"  OUT:18  IN:1
+            Dates 051420 051520 "ICValidator2-GeometryEngine"  OUT:18  IN:1
+            Dates 051420 051520 "ICWBEV_PLUS"  OUT:30  IN:1
+            Dates 051420 051520 "ICValidator2-CompareEngine"  OUT:3  IN:1
+59: User : lukaszt
+     Number of Computers: 3
+     Number of logs: 653
+        Computers
+          Computer: pl01msemt003 OUT:307 IN: 11
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayout"  OUT:43  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:43  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomRouterAuto"  OUT:32  IN:1
+            Dates 051320 051220 051420 051520 051120 "SynopsysCustomSAE"  OUT:32  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator-Manager"  OUT:32  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:31  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-CompareEngine"  OUT:7  IN:1
+            Dates 051320 051220 051420 051520 051120 "STAR-RC2_MANAGER"  OUT:9  IN:1
+            Dates 051320 051220 051420 051520 051120 "STAR-RC2_CUSTOM_MANAGER"  OUT:6  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICWBEV_PLUS"  OUT:70  IN:1
+            Dates 051320 051220 051420 051520 051120 "hspice"  OUT:2  IN:1
+          Computer: pl01msemt006 OUT:19 IN: 6
+            Dates 051220 "ICValidator-Manager"  OUT:3  IN:1
+            Dates 051220 "ICValidator2-GeometryEngine"  OUT:3  IN:1
+            Dates 051220 "ICValidator2-CompareEngine"  OUT:3  IN:1
+            Dates 051220 "STAR-RC2_ULTRA_MANAGER"  OUT:3  IN:1
+            Dates 051220 "STAR-RC2_MANAGER"  OUT:5  IN:1
+            Dates 051220 "STAR-RC2_CUSTOM_MANAGER"  OUT:2  IN:1
+          Computer: pl01msemt005 OUT:2 IN: 2
+            Dates 051220 "STAR-RC2_MANAGER"  OUT:1  IN:1
+            Dates 051220 "STAR-RC2_CUSTOM_MANAGER"  OUT:1  IN:1
+60: User : weronika
+     Number of Computers: 9
+     Number of logs: 1334
+        Computers
+          Computer: pl01msemt003 OUT:345 IN: 6
+            Dates 051320 051220 051120 "SynopsysCustomLayout"  OUT:55  IN:1
+            Dates 051320 051220 051120 "SynopsysCustomLayoutAdvanced"  OUT:55  IN:1
+            Dates 051320 051220 051120 "ICValidator-Manager"  OUT:44  IN:1
+            Dates 051320 051220 051120 "ICValidator2-GeometryEngine"  OUT:44  IN:1
+            Dates 051320 051220 051120 "ICValidator2-CompareEngine"  OUT:41  IN:1
+            Dates 051320 051220 051120 "STAR-RC2_ULTRA_MANAGER"  OUT:106  IN:1
+          Computer: pl01msemt004 OUT:237 IN: 6
+            Dates 051320 051220 "SynopsysCustomLayout"  OUT:23  IN:1
+            Dates 051320 051220 "SynopsysCustomLayoutAdvanced"  OUT:23  IN:1
+            Dates 051320 051220 "ICValidator-Manager"  OUT:25  IN:1
+            Dates 051320 051220 "ICValidator2-GeometryEngine"  OUT:25  IN:1
+            Dates 051320 051220 "ICValidator2-CompareEngine"  OUT:25  IN:1
+            Dates 051320 051220 "STAR-RC2_ULTRA_MANAGER"  OUT:116  IN:1
+          Computer: pl01msemt006 OUT:0 IN: 2
+            Dates 051320 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051320 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
+          Computer: pl01msemt007 OUT:42 IN: 3
+            Dates 051320 "hsim-sc"  OUT:14  IN:1
+            Dates 051320 "hsim-pra"  OUT:14  IN:1
+            Dates 051320 "hsim-sra"  OUT:14  IN:1
+          Computer: pl01dwemt007 OUT:9 IN: 3
+            Dates 051320 "hsim-sc"  OUT:3  IN:1
+            Dates 051320 "hsim-pra"  OUT:3  IN:1
+            Dates 051320 "hsim-sra"  OUT:3  IN:1
+          Computer: pl01msemt002 OUT:6 IN: 3
+            Dates 051320 "hsim-sc"  OUT:2  IN:1
+            Dates 051320 "hsim-pra"  OUT:2  IN:1
+            Dates 051320 "hsim-sra"  OUT:2  IN:1
+          Computer: pl01msemt001 OUT:9 IN: 3
+            Dates 051320 "hsim-sc"  OUT:3  IN:1
+            Dates 051320 "hsim-pra"  OUT:3  IN:1
+            Dates 051320 "hsim-sra"  OUT:3  IN:1
+          Computer: pl01dwemt003 OUT:6 IN: 3
+            Dates 051320 "hsim-sc"  OUT:2  IN:1
+            Dates 051320 "hsim-pra"  OUT:2  IN:1
+            Dates 051320 "hsim-sra"  OUT:2  IN:1
+          Computer: pl01msemt005 OUT:6 IN: 3
+61: User : mbiesik
+     Number of Computers: 2
+     Number of logs: 83
+        Computers
+          Computer: ddabski-p5820t-lnx OUT:26 IN: 5
+            Dates 051320 051420 051220 "CKTSIMMC"  OUT:8  IN:1
+            Dates 051320 051420 051220 "CKTSIMPROFS"  OUT:6  IN:1
+            Dates 051320 051420 051220 "sx_wva"  OUT:9  IN:1
+            Dates 051320 051420 051220 "CKTSIMSPICE"  OUT:2  IN:1
+            Dates 051320 051420 051220 "sx_apx"  OUT:1  IN:1
+          Computer: lpacek-p5820t-lnx OUT:16 IN: 4
+            Dates 051320 051420 051520 051120 "SynopsysCustomLayout"  OUT:5  IN:1
+            Dates 051320 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:5  IN:1
+            Dates 051320 051420 051520 051120 "SynopsysCustomRouterAuto"  OUT:3  IN:1
+            Dates 051320 051420 051520 051120 "SynopsysCustomSAE"  OUT:3  IN:1
+62: User : jbanasz
+     Number of Computers: 3
+     Number of logs: 276
+        Computers
+          Computer: aleksand-p5820t-lnx OUT:6 IN: 5
+            Dates 051120 051220 051520 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051120 051220 051520 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+            Dates 051120 051220 051520 "SynopsysCustomRouterAuto"  OUT:0  IN:1
+            Dates 051120 051220 051520 "SynopsysCustomSAE"  OUT:0  IN:1
+            Dates 051120 051220 051520 "hspice"  OUT:4  IN:1
+          Computer: pl01msemt006 OUT:87 IN: 3
+            Dates 051420 "cktcheck"  OUT:29  IN:1
+            Dates 051420 "hsim"  OUT:29  IN:1
+            Dates 051420 "hsim-sc"  OUT:29  IN:1
+          Computer: pl01msemt005 OUT:42 IN: 3
+            Dates 051420 "cktcheck"  OUT:14  IN:1
+            Dates 051420 "hsim"  OUT:14  IN:1
+            Dates 051420 "hsim-sc"  OUT:14  IN:1
+63: User : preiss
+     Number of Computers: 3
+     Number of logs: 1018
+        Computers
+          Computer: preiss-p5820t-lnx OUT:507 IN: 9
+            Dates 051320 051420 051520 051120 051220 "SynopsysCustomLayout"  OUT:10  IN:1
+            Dates 051320 051420 051520 051120 051220 "SynopsysCustomLayoutAdvanced"  OUT:10  IN:1
+            Dates 051320 051420 051520 051120 051220 "ICWBEV_PLUS"  OUT:82  IN:1
+            Dates 051320 051420 051520 051120 051220 "ICValidator-Manager"  OUT:303  IN:1
+            Dates 051320 051420 051520 051120 051220 "ICValidator2-GeometryEngine"  OUT:82  IN:1
+            Dates 051320 051420 051520 051120 051220 "SynopsysCustomRouterAuto"  OUT:2  IN:1
+            Dates 051320 051420 051520 051120 051220 "SynopsysCustomSAE"  OUT:2  IN:1
+            Dates 051320 051420 051520 051120 051220 "ICValidator2-CompareEngine"  OUT:1  IN:1
+            Dates 051320 051420 051520 051120 051220 "ICValidator2-Manager"  OUT:15  IN:1
+          Computer: edianow-z440-lnx OUT:2 IN: 1
+            Dates 051520 051420 "ICValidator2-CompareEngine"  OUT:2  IN:1
+          Computer: rmalucki-z440-lnx OUT:1 IN: 1
+            Dates 051520 "ICValidator2-CompareEngine"  OUT:1  IN:1
+64: User : aleksand
+     Number of Computers: 1
+     Number of logs: 508
+        Computers
+          Computer: pl01msemt006 OUT:252 IN: 8
+            Dates 051420 051220 "SynopsysCustomLayout"  OUT:26  IN:1
+            Dates 051420 051220 "SynopsysCustomLayoutAdvanced"  OUT:26  IN:1
+            Dates 051420 051220 "ICValidator-Manager"  OUT:25  IN:1
+            Dates 051420 051220 "ICValidator2-GeometryEngine"  OUT:25  IN:1
+            Dates 051420 051220 "ICValidator2-CompareEngine"  OUT:25  IN:1
+            Dates 051420 051220 "STAR-RC2_ULTRA_MANAGER"  OUT:125  IN:1
+            Dates 051420 051220 "SynopsysCustomRouterAuto"  OUT:0  IN:1
+            Dates 051420 051220 "SynopsysCustomSAE"  OUT:0  IN:1
+65: User : jmaj
+     Number of Computers: 12
+     Number of logs: 812
+        Computers
+          Computer: jmaj-z440-lnx OUT:374 IN: 6
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomLayout"  OUT:19  IN:1
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomLayoutAdvanced"  OUT:18  IN:1
+            Dates 051320 051220 051420 051120 051520 "ICValidator-Manager"  OUT:276  IN:1
+            Dates 051320 051220 051420 051120 051520 "ICValidator2-GeometryEngine"  OUT:37  IN:1
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomRouterAuto"  OUT:12  IN:1
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomSAE"  OUT:12  IN:1
+          Computer: skeller-z440-lnx OUT:2 IN: 1
+            Dates 051320 051220 "ICValidator2-CompareEngine"  OUT:2  IN:1
+          Computer: edianow-z440-lnx OUT:1 IN: 1
+            Dates 051220 "ICValidator2-CompareEngine"  OUT:1  IN:1
+          Computer: csiklick-z440-lnx OUT:1 IN: 1
+            Dates 051420 "ICValidator2-CompareEngine"  OUT:1  IN:1
+          Computer: rmalucki-z440-lnx OUT:11 IN: 1
+            Dates 051320 051420 051520 "ICValidator2-CompareEngine"  OUT:11  IN:1
+          Computer: dorota-z440-lnx OUT:2 IN: 1
+            Dates 051520 051420 "ICValidator2-CompareEngine"  OUT:2  IN:1
+          Computer: wielewsk-z440-lnx OUT:3 IN: 1
+            Dates 051320 051520 "ICValidator2-CompareEngine"  OUT:3  IN:1
+          Computer: mmatczak-z440-lnx OUT:1 IN: 1
+            Dates 051520 "ICValidator2-CompareEngine"  OUT:1  IN:1
+          Computer: kosma-z440-lnx OUT:1 IN: 1
+            Dates 051320 "ICValidator2-CompareEngine"  OUT:1  IN:1
+          Computer: akowal-z440-lnx OUT:1 IN: 1
+            Dates 051320 "ICValidator2-CompareEngine"  OUT:1  IN:1
+          Computer: mbrzeski-z440-lnx OUT:1 IN: 5
+            Dates 051320 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051320 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
+            Dates 051320 "SynopsysCustomRouterAuto"  OUT:0  IN:1
+            Dates 051320 "SynopsysCustomSAE"  OUT:0  IN:1
+            Dates 051320 "ICValidator2-CompareEngine"  OUT:1  IN:1
+          Computer: kglowac-z440-lnx OUT:1 IN: 1
+            Dates 051320 "ICValidator2-CompareEngine"  OUT:1  IN:1
+66: User : cze
+     Number of Computers: 1
+     Number of logs: 1072
+        Computers
+          Computer: pl01itcs2 OUT:536 IN: 4
+            Dates 051320 051220 051520 051120 "ICValidator-Manager"  OUT:218  IN:1
+            Dates 051320 051220 051520 051120 "ICValidator2-GeometryEngine"  OUT:133  IN:1
+            Dates 051320 051220 051520 051120 "ICValidator2-CompareEngine"  OUT:31  IN:1
+            Dates 051320 051220 051520 051120 "ICWBEV_PLUS"  OUT:154  IN:1
+67: User : blazej
+     Number of Computers: 3
+     Number of logs: 275
+        Computers
+          Computer: bblazew-p5820t-lnx OUT:22 IN: 10
+            Dates 051220 051320 051120 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051220 051320 051120 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+            Dates 051220 051320 051120 "ICValidator-Manager"  OUT:3  IN:1
+            Dates 051220 051320 051120 "ICValidator2-GeometryEngine"  OUT:3  IN:1
+            Dates 051220 051320 051120 "ICWBEV_PLUS"  OUT:6  IN:1
+            Dates 051220 051320 051120 "ICValidator2-CompareEngine"  OUT:1  IN:1
+            Dates 051220 051320 051120 "STAR-RC2_ULTRA_MANAGER"  OUT:1  IN:1
+            Dates 051220 051320 051120 "CKTSIMMC"  OUT:3  IN:1
+            Dates 051220 051320 051120 "CKTSIMSPICE"  OUT:3  IN:1
+            Dates 051220 051320 051120 "sx_wva"  OUT:0  IN:1
+          Computer: blazej-z440-lnx OUT:84 IN: 16
+            Dates 051520 051220 051420 051320 051120 "SynopsysCustomLayout"  OUT:7  IN:1
+            Dates 051520 051220 051420 051320 051120 "SynopsysCustomLayoutAdvanced"  OUT:7  IN:1
+            Dates 051520 051220 051420 051320 051120 "ICValidator-Manager"  OUT:5  IN:1
+            Dates 051520 051220 051420 051320 051120 "ICValidator2-GeometryEngine"  OUT:5  IN:1
+            Dates 051520 051220 051420 051320 051120 "ICWBEV_PLUS"  OUT:6  IN:1
+            Dates 051520 051220 051420 051320 051120 "ICValidator2-CompareEngine"  OUT:3  IN:1
+            Dates 051520 051220 051420 051320 051120 "SynopsysCustomRouterAuto"  OUT:6  IN:1
+            Dates 051520 051220 051420 051320 051120 "SynopsysCustomSAE"  OUT:6  IN:1
+            Dates 051520 051220 051420 051320 051120 "CKTSIMMC"  OUT:7  IN:1
+            Dates 051520 051220 051420 051320 051120 "CKTSIMSPICE"  OUT:9  IN:1
+            Dates 051520 051220 051420 051320 051120 "sx_wva"  OUT:9  IN:1
+            Dates 051520 051220 051420 051320 051120 "STAR-RC2_MANAGER"  OUT:2  IN:1
+            Dates 051520 051220 051420 051320 051120 "STAR-RC2_CUSTOM_MANAGER"  OUT:1  IN:1
+            Dates 051520 051220 051420 051320 051120 "sx_apx"  OUT:5  IN:1
+            Dates 051520 051220 051420 051320 051120 "hspice"  OUT:3  IN:1
+            Dates 051520 051220 051420 051320 051120 "COSMOS_SCOPE"  OUT:3  IN:1
+          Computer: baranska-z440-lnx OUT:28 IN: 10
+            Dates 051420 051520 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
+            Dates 051420 051520 "SynopsysCustomRouterAuto"  OUT:0  IN:1
+            Dates 051420 051520 "SynopsysCustomSAE"  OUT:0  IN:1
+            Dates 051420 051520 "ICValidator-Manager"  OUT:4  IN:1
+            Dates 051420 051520 "ICValidator2-GeometryEngine"  OUT:4  IN:1
+            Dates 051420 051520 "ICValidator2-CompareEngine"  OUT:4  IN:1
+            Dates 051420 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:4  IN:1
+            Dates 051420 051520 "STAR-RC2_MANAGER"  OUT:6  IN:1
+            Dates 051420 051520 "STAR-RC2_CUSTOM_MANAGER"  OUT:6  IN:1
+68: User : kosma
+     Number of Computers: 3
+     Number of logs: 126
+        Computers
+          Computer: pl01msemt003 OUT:38 IN: 4
+            Dates 051320 051220 051420 051520 "SynopsysCustomLayout"  OUT:12  IN:1
+            Dates 051320 051220 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:12  IN:1
+            Dates 051320 051220 051420 051520 "SynopsysCustomRouterAuto"  OUT:7  IN:1
+            Dates 051320 051220 051420 051520 "SynopsysCustomSAE"  OUT:7  IN:1
+          Computer: pl01msemt006 OUT:18 IN: 4
+            Dates 051520 051420 "SynopsysCustomLayout"  OUT:5  IN:1
+            Dates 051520 051420 "SynopsysCustomLayoutAdvanced"  OUT:5  IN:1
+            Dates 051520 051420 "SynopsysCustomRouterAuto"  OUT:4  IN:1
+            Dates 051520 051420 "SynopsysCustomSAE"  OUT:4  IN:1
+          Computer: kosma-z440-lnx OUT:6 IN: 4
+            Dates 051520 051420 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051520 051420 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+            Dates 051520 051420 "SynopsysCustomRouterAuto"  OUT:1  IN:1
+            Dates 051520 051420 "SynopsysCustomSAE"  OUT:1  IN:1
+69: User : wczapkow
+     Number of Computers: 1
+     Number of logs: 128
+        Computers
+          Computer: wczapkow-z420-lnx OUT:63 IN: 8
+            Dates 051420 051220 "SynopsysCustomLayout"  OUT:7  IN:1
+            Dates 051420 051220 "SynopsysCustomLayoutAdvanced"  OUT:7  IN:1
+            Dates 051420 051220 "ICValidator-Manager"  OUT:13  IN:1
+            Dates 051420 051220 "ICValidator2-GeometryEngine"  OUT:15  IN:1
+            Dates 051420 051220 "ICValidator2-CompareEngine"  OUT:13  IN:1
+            Dates 051420 051220 "SynopsysCustomRouterAuto"  OUT:3  IN:1
+            Dates 051420 051220 "SynopsysCustomSAE"  OUT:3  IN:1
+            Dates 051420 051220 "ICValidator2-Manager"  OUT:2  IN:1
+70: User : pdaniela
+     Number of Computers: 9
+     Number of logs: 146
+        Computers
+          Computer: pl01msemt005 OUT:44 IN: 2
+            Dates 051320 051220 "SynopsysCustomLayout"  OUT:22  IN:1
+            Dates 051320 051220 "SynopsysCustomLayoutAdvanced"  OUT:22  IN:1
+          Computer: pl01dwemt005 OUT:5 IN: 4
+            Dates 051520 "ICValidator2-Manager"  OUT:1  IN:1
+            Dates 051520 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+            Dates 051520 "ICValidator2-CompareEngine"  OUT:1  IN:1
+            Dates 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:2  IN:1
+          Computer: pl01dwemt008 OUT:4 IN: 4
+            Dates 051520 "ICValidator2-Manager"  OUT:1  IN:1
+            Dates 051520 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+            Dates 051520 "ICValidator2-CompareEngine"  OUT:1  IN:1
+            Dates 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:1  IN:1
+          Computer: pl01msemt002 OUT:5 IN: 4
+            Dates 051520 "ICValidator2-Manager"  OUT:1  IN:1
+            Dates 051520 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+            Dates 051520 "ICValidator2-CompareEngine"  OUT:1  IN:1
+            Dates 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:2  IN:1
+          Computer: pl01dwemt000 OUT:4 IN: 4
+            Dates 051520 "ICValidator2-Manager"  OUT:1  IN:1
+            Dates 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:1  IN:1
+            Dates 051520 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+            Dates 051520 "ICValidator2-CompareEngine"  OUT:1  IN:1
+          Computer: pl01dwemt007 OUT:2 IN: 1
+            Dates 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:2  IN:1
+          Computer: pl01dwamd000 OUT:2 IN: 1
+            Dates 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:2  IN:1
+          Computer: pl01msemt007 OUT:2 IN: 1
+            Dates 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:2  IN:1
+          Computer: pdaniela-z420-lnx OUT:4 IN: 2
+            Dates 051120 "CKTSIMMC"  OUT:2  IN:1
+            Dates 051120 "CKTSIMSPICE"  OUT:2  IN:1
+71: User : krzad
+     Number of Computers: 3
+     Number of logs: 187
+        Computers
+          Computer: pl01msemt003 OUT:67 IN: 9
+            Dates 051120 051420 051520 051220 "SynopsysCustomLayout"  OUT:7  IN:1
+            Dates 051120 051420 051520 051220 "SynopsysCustomLayoutAdvanced"  OUT:7  IN:1
+            Dates 051120 051420 051520 051220 "SynopsysCustomRouterAuto"  OUT:7  IN:1
+            Dates 051120 051420 051520 051220 "SynopsysCustomSAE"  OUT:7  IN:1
+            Dates 051120 051420 051520 051220 "SynopsysCustomLEPlus"  OUT:0  IN:1
+            Dates 051120 051420 051520 051220 "CKTSIMMC"  OUT:6  IN:1
+            Dates 051120 051420 051520 051220 "CKTSIMSPICE"  OUT:6  IN:1
+            Dates 051120 051420 051520 051220 "hspice"  OUT:24  IN:1
+            Dates 051120 051420 051520 051220 "sx_wva"  OUT:3  IN:1
+          Computer: lewandow-z440-lnx OUT:3 IN: 1
+            Dates 051420 "sx_wva"  OUT:3  IN:1
+          Computer: pl01msemt006 OUT:17 IN: 7
+            Dates 051420 051520 "sx_wva"  OUT:1  IN:1
+            Dates 051420 051520 "hspice"  OUT:3  IN:1
+            Dates 051420 051520 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
+            Dates 051420 051520 "SynopsysCustomRouterAuto"  OUT:0  IN:1
+            Dates 051420 051520 "SynopsysCustomSAE"  OUT:0  IN:1
+            Dates 051420 051520 "CKTSIMSPICE"  OUT:13  IN:1
+72: User : mkowalew
+     Number of Computers: 2
+     Number of logs: 13
+        Computers
+          Computer: mkowalew-z420-lnx OUT:2 IN: 2
+            Dates 051220 051420 "hspice"  OUT:2  IN:1
+            Dates 051220 051420 "sx_wva"  OUT:0  IN:1
+          Computer: pl01msemt007 OUT:4 IN: 2
+            Dates 051320 051220 "CKTSIMMC"  OUT:2  IN:1
+            Dates 051320 051220 "CKTSIMSPICE"  OUT:2  IN:1
+73: User : brzozows
+     Number of Computers: 11
+     Number of logs: 292
+        Computers
+          Computer: brzozows-z440-lnx OUT:104 IN: 12
+            Dates 051320 051420 051220 051520 051120 "SynopsysCustomLayout"  OUT:15  IN:1
+            Dates 051320 051420 051220 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:15  IN:1
+            Dates 051320 051420 051220 051520 051120 "SynopsysCustomRouterAuto"  OUT:15  IN:1
+            Dates 051320 051420 051220 051520 051120 "SynopsysCustomSAE"  OUT:15  IN:1
+            Dates 051320 051420 051220 051520 051120 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051320 051420 051220 051520 051120 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+            Dates 051320 051420 051220 051520 051120 "ICValidator2-CompareEngine"  OUT:1  IN:1
+            Dates 051320 051420 051220 051520 051120 "sx_wva"  OUT:12  IN:1
+            Dates 051320 051420 051220 051520 051120 "sx_apx"  OUT:12  IN:1
+            Dates 051320 051420 051220 051520 051120 "CKTSIMSPICE"  OUT:9  IN:1
+            Dates 051320 051420 051220 051520 051120 "CKTSIMMC"  OUT:7  IN:1
+            Dates 051320 051420 051220 051520 051120 "hspice"  OUT:1  IN:1
+          Computer: pl01msemt007 OUT:8 IN: 1
+            Dates 051520 "hspice"  OUT:8  IN:1
+          Computer: pl01msemt002 OUT:5 IN: 1
+            Dates 051520 "hspice"  OUT:5  IN:1
+          Computer: pl01msemt001 OUT:4 IN: 1
+            Dates 051520 "hspice"  OUT:4  IN:1
+          Computer: pl01dwemt000 OUT:1 IN: 1
+            Dates 051520 "hspice"  OUT:1  IN:1
+          Computer: pl01dwemt003 OUT:1 IN: 1
+            Dates 051520 "hspice"  OUT:1  IN:1
+          Computer: pl01dwemt007 OUT:3 IN: 1
+            Dates 051520 "hspice"  OUT:3  IN:1
+          Computer: pl01dwemt008 OUT:2 IN: 1
+            Dates 051520 "hspice"  OUT:2  IN:1
+          Computer: pl01dwemt005 OUT:3 IN: 1
+            Dates 051520 "hspice"  OUT:3  IN:1
+          Computer: pl01dwamd000 OUT:3 IN: 1
+            Dates 051520 "hspice"  OUT:3  IN:1
+          Computer: pl01msemt005 OUT:7 IN: 4
+            Dates 051320 "ICValidator-Manager"  OUT:2  IN:1
+            Dates 051320 "ICValidator2-GeometryEngine"  OUT:2  IN:1
+            Dates 051320 "ICValidator2-CompareEngine"  OUT:2  IN:1
+            Dates 051320 "STAR-RC2_ULTRA_MANAGER"  OUT:1  IN:1
+74: User : kuleczka
+     Number of Computers: 4
+     Number of logs: 48
+        Computers
+          Computer: pl01msemt003 OUT:10 IN: 4
+            Dates 051320 051220 051520 "SynopsysCustomLayout"  OUT:4  IN:1
+            Dates 051320 051220 051520 "SynopsysCustomLayoutAdvanced"  OUT:4  IN:1
+            Dates 051320 051220 051520 "SynopsysCustomRouterAuto"  OUT:1  IN:1
+            Dates 051320 051220 051520 "SynopsysCustomSAE"  OUT:1  IN:1
+          Computer: pl01msemt004 OUT:0 IN: 4
+            Dates 051220 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051220 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
+            Dates 051220 "SynopsysCustomRouterAuto"  OUT:0  IN:1
+            Dates 051220 "SynopsysCustomSAE"  OUT:0  IN:1
+          Computer: pl01msemt006 OUT:6 IN: 2
+            Dates 051520 051220 "SynopsysCustomLayout"  OUT:3  IN:1
+            Dates 051520 051220 "SynopsysCustomLayoutAdvanced"  OUT:3  IN:1
+          Computer: pl01msemt002 OUT:6 IN: 2
+            Dates 051520 "ICValidator-Manager"  OUT:4  IN:1
+            Dates 051520 "ICValidator2-GeometryEngine"  OUT:2  IN:1
+75: User : tomasz
+     Number of Computers: 1
+     Number of logs: 256
+        Computers
+          Computer: tomasz-p5820t-lnx OUT:126 IN: 7
+            Dates 051120 051220 051520 051420 "SynopsysCustomLayout"  OUT:4  IN:1
+            Dates 051120 051220 051520 051420 "SynopsysCustomLayoutAdvanced"  OUT:4  IN:1
+            Dates 051120 051220 051520 051420 "SynopsysCustomRouterAuto"  OUT:4  IN:1
+            Dates 051120 051220 051520 051420 "SynopsysCustomSAE"  OUT:4  IN:1
+            Dates 051120 051220 051520 051420 "ICValidator-Manager"  OUT:48  IN:1
+            Dates 051120 051220 051520 051420 "ICValidator2-GeometryEngine"  OUT:41  IN:1
+            Dates 051120 051220 051520 051420 "ICValidator2-CompareEngine"  OUT:21  IN:1
+76: User : elhemei
+     Number of Computers: 14
+     Number of logs: 2152
+        Computers
+          Computer: pl01msemt003 OUT:53 IN: 12
+            Dates 051420 051220 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051420 051220 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+            Dates 051420 051220 "CKTSIMMC"  OUT:1  IN:1
+            Dates 051420 051220 "CKTSIMSPICE"  OUT:1  IN:1
+            Dates 051420 051220 "sx_wva"  OUT:7  IN:1
+            Dates 051420 051220 "sx_apx"  OUT:1  IN:1
+            Dates 051420 051220 "COSMOS_SCOPE"  OUT:1  IN:1
+            Dates 051420 051220 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051420 051220 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+            Dates 051420 051220 "ICValidator2-CompareEngine"  OUT:1  IN:1
+            Dates 051420 051220 "STAR-RC2_ULTRA_MANAGER"  OUT:5  IN:1
+            Dates 051420 051220 "hspice"  OUT:30  IN:1
+          Computer: pl01msemt002 OUT:155 IN: 3
+            Dates 051320 051220 051420 051520 "CKTSIMMC"  OUT:66  IN:1
+            Dates 051320 051220 051420 051520 "CKTSIMSPICE"  OUT:66  IN:1
+            Dates 051320 051220 051420 051520 "hspice"  OUT:23  IN:1
+          Computer: pl01msemt007 OUT:317 IN: 3
+            Dates 051320 051420 "CKTSIMMC"  OUT:148  IN:1
+            Dates 051320 051420 "CKTSIMSPICE"  OUT:148  IN:1
+            Dates 051320 051420 "hspice"  OUT:21  IN:1
+          Computer: pl01dwemt009 OUT:30 IN: 3
+            Dates 051320 051420 051520 "CKTSIMMC"  OUT:12  IN:1
+            Dates 051320 051420 051520 "CKTSIMSPICE"  OUT:12  IN:1
+            Dates 051320 051420 051520 "hspice"  OUT:6  IN:1
+          Computer: pl01msemt001 OUT:146 IN: 3
+            Dates 051320 051420 "CKTSIMMC"  OUT:59  IN:1
+            Dates 051320 051420 "CKTSIMSPICE"  OUT:59  IN:1
+            Dates 051320 051420 "hspice"  OUT:28  IN:1
+          Computer: pl01dwemt005 OUT:66 IN: 3
+            Dates 051320 051420 051520 "CKTSIMMC"  OUT:28  IN:1
+            Dates 051320 051420 051520 "CKTSIMSPICE"  OUT:28  IN:1
+            Dates 051320 051420 051520 "hspice"  OUT:10  IN:1
+          Computer: pl01dwemt000 OUT:76 IN: 3
+            Dates 051320 051420 051520 "CKTSIMMC"  OUT:34  IN:1
+            Dates 051320 051420 051520 "CKTSIMSPICE"  OUT:34  IN:1
+            Dates 051320 051420 051520 "hspice"  OUT:8  IN:1
+          Computer: pl01dwemt003 OUT:46 IN: 3
+            Dates 051320 051420 "CKTSIMMC"  OUT:21  IN:1
+            Dates 051320 051420 "CKTSIMSPICE"  OUT:21  IN:1
+            Dates 051320 051420 "hspice"  OUT:4  IN:1
+          Computer: pl01dwemt008 OUT:58 IN: 3
+            Dates 051320 051420 "CKTSIMMC"  OUT:26  IN:1
+            Dates 051320 051420 "CKTSIMSPICE"  OUT:26  IN:1
+            Dates 051320 051420 "hspice"  OUT:6  IN:1
+          Computer: pl01dwamd000 OUT:49 IN: 3
+            Dates 051320 051420 "CKTSIMMC"  OUT:20  IN:1
+            Dates 051320 051420 "CKTSIMSPICE"  OUT:20  IN:1
+            Dates 051320 051420 "hspice"  OUT:9  IN:1
+          Computer: pl01dwemt007 OUT:32 IN: 3
+            Dates 051320 051420 "CKTSIMMC"  OUT:12  IN:1
+            Dates 051320 051420 "CKTSIMSPICE"  OUT:12  IN:1
+            Dates 051320 051420 "hspice"  OUT:8  IN:1
+          Computer: pl01msemt006 OUT:16 IN: 1
+            Dates 051420 "hspice"  OUT:16  IN:1
+          Computer: pl01msemt005 OUT:16 IN: 1
+            Dates 051420 "hspice"  OUT:16  IN:1
+          Computer: pl01msemt004 OUT:16 IN: 1
+            Dates 051420 "hspice"  OUT:16  IN:1
+77: User : wielewsk
+     Number of Computers: 10
+     Number of logs: 344
+        Computers
+          Computer: pl01msemt005 OUT:34 IN: 6
+            Dates 051120 051220 "SynopsysCustomLayout"  OUT:4  IN:1
+            Dates 051120 051220 "SynopsysCustomLayoutAdvanced"  OUT:4  IN:1
+            Dates 051120 051220 "ICWBEV_PLUS"  OUT:18  IN:1
+            Dates 051120 051220 "ICValidator-Manager"  OUT:5  IN:1
+            Dates 051120 051220 "ICValidator2-GeometryEngine"  OUT:2  IN:1
+            Dates 051120 051220 "ICValidator2-CompareEngine"  OUT:1  IN:1
+          Computer: pl01msemt004 OUT:4 IN: 2
+            Dates 051320 051520 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051320 051520 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+          Computer: pl01dwemt003 OUT:3 IN: 2
+            Dates 051520 "ICValidator-Manager"  OUT:2  IN:1
+            Dates 051520 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+          Computer: pl01dwemt000 OUT:3 IN: 2
+            Dates 051520 "ICValidator-Manager"  OUT:2  IN:1
+            Dates 051520 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+          Computer: pl01dwemt007 OUT:18 IN: 3
+            Dates 051120 "ICValidator-Manager"  OUT:10  IN:1
+            Dates 051120 "ICValidator2-GeometryEngine"  OUT:5  IN:1
+            Dates 051120 "ICValidator2-CompareEngine"  OUT:3  IN:1
+          Computer: pl01msemt007 OUT:17 IN: 3
+            Dates 051120 "ICValidator-Manager"  OUT:12  IN:1
+            Dates 051120 "ICValidator2-GeometryEngine"  OUT:4  IN:1
+            Dates 051120 "ICValidator2-CompareEngine"  OUT:1  IN:1
+          Computer: pl01dwemt005 OUT:12 IN: 3
+            Dates 051120 "ICValidator-Manager"  OUT:6  IN:1
+            Dates 051120 "ICValidator2-GeometryEngine"  OUT:3  IN:1
+            Dates 051120 "ICValidator2-CompareEngine"  OUT:3  IN:1
+          Computer: pl01msemt003 OUT:36 IN: 3
+            Dates 051120 "ICValidator-Manager"  OUT:22  IN:1
+            Dates 051120 "ICValidator2-GeometryEngine"  OUT:9  IN:1
+            Dates 051120 "ICValidator2-CompareEngine"  OUT:5  IN:1
+          Computer: pl01msemt001 OUT:27 IN: 3
+            Dates 051120 "ICValidator-Manager"  OUT:16  IN:1
+            Dates 051120 "ICValidator2-GeometryEngine"  OUT:8  IN:1
+            Dates 051120 "ICValidator2-CompareEngine"  OUT:3  IN:1
+          Computer: pl01msemt006 OUT:21 IN: 3
+            Dates 051120 "ICValidator-Manager"  OUT:14  IN:1
+            Dates 051120 "ICValidator2-GeometryEngine"  OUT:5  IN:1
+            Dates 051120 "ICValidator2-CompareEngine"  OUT:2  IN:1
+78: User : aejsmont
+     Number of Computers: 4
+     Number of logs: 258
+        Computers
+          Computer: aejsmont-z420-lnx OUT:16 IN: 6
+            Dates 051220 051120 051420 051520 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051220 051120 051420 051520 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+            Dates 051220 051120 051420 051520 "ICValidator2-CompareEngine"  OUT:1  IN:1
+            Dates 051220 051120 051420 051520 "SynopsysCustomLayout"  OUT:4  IN:1
+            Dates 051220 051120 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:4  IN:1
+            Dates 051220 051120 051420 051520 "ICWBEV_PLUS"  OUT:5  IN:1
+          Computer: pl01msemt006 OUT:99 IN: 6
+            Dates 051120 051220 051420 051520 "ICValidator-Manager"  OUT:30  IN:1
+            Dates 051120 051220 051420 051520 "ICValidator2-GeometryEngine"  OUT:30  IN:1
+            Dates 051120 051220 051420 051520 "ICValidator2-CompareEngine"  OUT:30  IN:1
+            Dates 051120 051220 051420 051520 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051120 051220 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+            Dates 051120 051220 051420 051520 "ICWBEV_PLUS"  OUT:5  IN:1
+          Computer: pl01msemt005 OUT:16 IN: 6
+            Dates 051420 051520 051120 "SynopsysCustomLayout"  OUT:5  IN:1
+            Dates 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:5  IN:1
+            Dates 051420 051520 051120 "SynopsysCustomRouterAuto"  OUT:2  IN:1
+            Dates 051420 051520 051120 "SynopsysCustomSAE"  OUT:2  IN:1
+            Dates 051420 051520 051120 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+          Computer: pl01msemt003 OUT:4 IN: 2
+            Dates 051420 051520 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+79: User : trudnik
+     Number of Computers: 16
+     Number of logs: 2686
+        Computers
+          Computer: jakub-z440-lnx OUT:476 IN: 10
+            Dates 051320 051220 051120 051420 051520 "CKTSIMMC"  OUT:14  IN:1
+            Dates 051320 051220 051120 051420 051520 "CKTSIMSPICE"  OUT:219  IN:1
+            Dates 051320 051220 051120 051420 051520 "sx_wva"  OUT:19  IN:1
+            Dates 051320 051220 051120 051420 051520 "hspice"  OUT:186  IN:1
+            Dates 051320 051220 051120 051420 051520 "COSMOS_SCOPE"  OUT:31  IN:1
+            Dates 051320 051220 051120 051420 051520 "sx_apx"  OUT:5  IN:1
+            Dates 051320 051220 051120 051420 051520 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051320 051220 051120 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+            Dates 051320 051220 051120 051420 051520 "SynopsysCustomRouterAuto"  OUT:0  IN:1
+            Dates 051320 051220 051120 051420 051520 "SynopsysCustomSAE"  OUT:0  IN:1
+          Computer: pl01msemt007 OUT:105 IN: 4
+            Dates 051520 051220 051420 051120 "sx_wva"  OUT:2  IN:1
+            Dates 051520 051220 051420 051120 "CKTSIMMC"  OUT:0  IN:1
+            Dates 051520 051220 051420 051120 "CKTSIMSPICE"  OUT:0  IN:1
+            Dates 051520 051220 051420 051120 "hspice"  OUT:103  IN:1
+          Computer: tkolakow-z420-lnx OUT:7 IN: 3
+            Dates 051320 051420 051520 "sx_wva"  OUT:1  IN:1
+            Dates 051320 051420 051520 "CKTSIMMC"  OUT:3  IN:1
+            Dates 051320 051420 051520 "CKTSIMPROFS"  OUT:3  IN:1
+          Computer: pl01msemt003 OUT:65 IN: 2
+            Dates 051420 051120 "CKTSIMSPICE"  OUT:60  IN:1
+            Dates 051420 051120 "hspice"  OUT:5  IN:1
+          Computer: pl01msemt006 OUT:151 IN: 2
+            Dates 051420 051120 "CKTSIMSPICE"  OUT:144  IN:1
+            Dates 051420 051120 "hspice"  OUT:7  IN:1
+          Computer: pl01msemt004 OUT:107 IN: 1
+            Dates 051420 "CKTSIMSPICE"  OUT:107  IN:1
+          Computer: pl01msemt001 OUT:60 IN: 2
+            Dates 051420 051120 051520 "CKTSIMSPICE"  OUT:17  IN:1
+            Dates 051420 051120 051520 "hspice"  OUT:43  IN:1
+          Computer: pl01msemt005 OUT:165 IN: 2
+            Dates 051420 051120 "CKTSIMSPICE"  OUT:158  IN:1
+            Dates 051420 051120 "hspice"  OUT:7  IN:1
+          Computer: pl01dwemt009 OUT:6 IN: 1
+            Dates 051420 "CKTSIMSPICE"  OUT:6  IN:1
+          Computer: pl01dwemt000 OUT:21 IN: 2
+            Dates 051420 051520 "CKTSIMSPICE"  OUT:1  IN:1
+            Dates 051420 051520 "hspice"  OUT:20  IN:1
+          Computer: pl01dwemt003 OUT:29 IN: 2
+            Dates 051420 051520 "CKTSIMSPICE"  OUT:2  IN:1
+            Dates 051420 051520 "hspice"  OUT:27  IN:1
+          Computer: pl01msemt002 OUT:48 IN: 1
+            Dates 051120 051520 "hspice"  OUT:48  IN:1
+          Computer: pl01dwemt007 OUT:23 IN: 1
+            Dates 051120 051520 "hspice"  OUT:23  IN:1
+          Computer: pl01dwemt005 OUT:28 IN: 1
+            Dates 051120 051520 "hspice"  OUT:28  IN:1
+          Computer: pl01dwamd000 OUT:39 IN: 1
+            Dates 051120 051520 "hspice"  OUT:39  IN:1
+          Computer: pl01dwemt008 OUT:11 IN: 1
+            Dates 051520 "hspice"  OUT:11  IN:1
+80: User : krymarsk
+     Number of Computers: 2
+     Number of logs: 25
+        Computers
+          Computer: jakub-z440-lnx OUT:11 IN: 1
+          Computer: tkolakow-z420-lnx OUT:8 IN: 10
+            Dates 051220 051420 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051220 051420 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
+            Dates 051220 051420 "SynopsysCustomRouterAuto"  OUT:0  IN:1
+            Dates 051220 051420 "SynopsysCustomSAE"  OUT:0  IN:1
+            Dates 051220 051420 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051220 051420 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+            Dates 051220 051420 "ICValidator2-CompareEngine"  OUT:1  IN:1
+            Dates 051220 051420 "STAR-RC2_MANAGER"  OUT:3  IN:1
+            Dates 051220 051420 "CKTSIMMC"  OUT:1  IN:1
+            Dates 051220 051420 "CKTSIMSPICE"  OUT:1  IN:1
+81: User : krybicki
+     Number of Computers: 8
+     Number of logs: 262
+        Computers
+          Computer: pl01msemt005 OUT:38 IN: 6
+            Dates 051120 051220 051420 051320 "SynopsysCustomLayout"  OUT:4  IN:1
+            Dates 051120 051220 051420 051320 "SynopsysCustomLayoutAdvanced"  OUT:4  IN:1
+            Dates 051120 051220 051420 051320 "ICValidator2-CompareEngine"  OUT:2  IN:1
+            Dates 051120 051220 051420 051320 "ICValidator-Manager"  OUT:22  IN:1
+            Dates 051120 051220 051420 051320 "ICValidator2-GeometryEngine"  OUT:4  IN:1
+            Dates 051120 051220 051420 051320 "ICValidator2-Manager"  OUT:2  IN:1
+          Computer: pl01msemt006 OUT:37 IN: 6
+            Dates 051420 051220 051120 051520 "ICValidator2-Manager"  OUT:4  IN:1
+            Dates 051420 051220 051120 051520 "ICValidator2-GeometryEngine"  OUT:4  IN:1
+            Dates 051420 051220 051120 051520 "ICValidator2-CompareEngine"  OUT:1  IN:1
+            Dates 051420 051220 051120 051520 "ICValidator-Manager"  OUT:16  IN:1
+            Dates 051420 051220 051120 051520 "SynopsysCustomLayout"  OUT:6  IN:1
+            Dates 051420 051220 051120 051520 "SynopsysCustomLayoutAdvanced"  OUT:6  IN:1
+          Computer: krybicki-z440-lnx OUT:36 IN: 6
+            Dates 051420 051520 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
+            Dates 051420 051520 "ICValidator-Manager"  OUT:8  IN:1
+            Dates 051420 051520 "ICValidator2-Manager"  OUT:2  IN:1
+            Dates 051420 051520 "ICValidator2-GeometryEngine"  OUT:2  IN:1
+            Dates 051420 051520 "ICWBEV_PLUS"  OUT:24  IN:1
+          Computer: edianow-z440-lnx OUT:1 IN: 1
+            Dates 051420 "ICValidator2-CompareEngine"  OUT:1  IN:1
+          Computer: pl01msemt001 OUT:7 IN: 2
+            Dates 051120 "ICValidator-Manager"  OUT:6  IN:1
+            Dates 051120 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+          Computer: pl01dwemt005 OUT:2 IN: 2
+            Dates 051120 "ICValidator2-Manager"  OUT:1  IN:1
+            Dates 051120 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+          Computer: pl01msemt007 OUT:1 IN: 1
+            Dates 051120 "ICValidator2-CompareEngine"  OUT:1  IN:1
+          Computer: pl01msemt002 OUT:9 IN: 2
+            Dates 051120 "ICValidator-Manager"  OUT:8  IN:1
+            Dates 051120 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+82: User : poczekaj
+     Number of Computers: 3
+     Number of logs: 1488
+        Computers
+          Computer: pl01msemt004 OUT:530 IN: 5
+            Dates 051320 051220 051120 "ICValidator-Manager"  OUT:131  IN:1
+            Dates 051320 051220 051120 "ICValidator2-GeometryEngine"  OUT:131  IN:1
+            Dates 051320 051220 051120 "ICWBEV_PLUS"  OUT:264  IN:1
+            Dates 051320 051220 051120 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051320 051220 051120 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+          Computer: pl01msemt006 OUT:2 IN: 2
+            Dates 051420 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051420 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+          Computer: poczekaj-p5820t-lnx OUT:212 IN: 6
+            Dates 051320 051420 051520 "SynopsysCustomLayout"  OUT:4  IN:1
+            Dates 051320 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:4  IN:1
+            Dates 051320 051420 051520 "ICValidator-Manager"  OUT:56  IN:1
+            Dates 051320 051420 051520 "ICValidator2-GeometryEngine"  OUT:55  IN:1
+            Dates 051320 051420 051520 "ICWBEV_PLUS"  OUT:78  IN:1
+            Dates 051320 051420 051520 "ICValidator2-CompareEngine"  OUT:15  IN:1
+83: User : kmalek
+     Number of Computers: 4
+     Number of logs: 158
+        Computers
+          Computer: pl01msemt004 OUT:29 IN: 6
+            Dates 051420 051220 "SynopsysCustomLayout"  OUT:8  IN:1
+            Dates 051420 051220 "SynopsysCustomLayoutAdvanced"  OUT:8  IN:1
+            Dates 051420 051220 "ICValidator-Manager"  OUT:3  IN:1
+            Dates 051420 051220 "ICValidator2-GeometryEngine"  OUT:3  IN:1
+            Dates 051420 051220 "ICValidator-LCA"  OUT:1  IN:1
+            Dates 051420 051220 "ICWBEV_PLUS"  OUT:6  IN:1
+          Computer: pl01msemt006 OUT:10 IN: 2
+            Dates 051320 051420 051120 "SynopsysCustomLayout"  OUT:5  IN:1
+            Dates 051320 051420 051120 "SynopsysCustomLayoutAdvanced"  OUT:5  IN:1
+          Computer: kmalek-z420-lnx OUT:34 IN: 6
+            Dates 051120 051420 051520 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051120 051420 051520 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+            Dates 051120 051420 051520 "ICValidator-Manager"  OUT:3  IN:1
+            Dates 051120 051420 051520 "ICValidator2-GeometryEngine"  OUT:3  IN:1
+            Dates 051120 051420 051520 "ICValidator-LCA"  OUT:1  IN:1
+            Dates 051120 051420 051520 "ICWBEV_PLUS"  OUT:23  IN:1
+          Computer: tomasz-p5820t-lnx OUT:2 IN: 2
+            Dates 051220 051320 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051220 051320 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+84: User : zruszala
+     Number of Computers: 1
+     Number of logs: 9
+        Computers
+          Computer: zruszala-z400-lnx OUT:4 IN: 5
+            Dates 051220 051320 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051220 051320 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+            Dates 051220 051320 "SynopsysCustomRouterAuto"  OUT:1  IN:1
+            Dates 051220 051320 "SynopsysCustomSAE"  OUT:1  IN:1
+            Dates 051220 051320 "sx_wva"  OUT:0  IN:1
+85: User : bhinc
+     Number of Computers: 2
+     Number of logs: 90
+        Computers
+          Computer: pl01msemt003 OUT:43 IN: 8
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomLayout"  OUT:10  IN:1
+            Dates 051320 051220 051420 051120 051520 "SynopsysCustomLayoutAdvanced"  OUT:10  IN:1
+            Dates 051320 051220 051420 051120 051520 "hspice"  OUT:5  IN:1
+            Dates 051320 051220 051420 051120 051520 "sx_wva"  OUT:5  IN:1
+            Dates 051320 051220 051420 051120 051520 "sx_apx"  OUT:2  IN:1
+            Dates 051320 051220 051420 051120 051520 "COSMOS_SCOPE"  OUT:1  IN:1
+            Dates 051320 051220 051420 051120 051520 "CKTSIMMC"  OUT:5  IN:1
+            Dates 051320 051220 051420 051120 051520 "CKTSIMSPICE"  OUT:5  IN:1
+          Computer: pl01msemt005 OUT:43 IN: 8
+86: User : wiktoria
+     Number of Computers: 1
+     Number of logs: 234
+        Computers
+          Computer: rangiel-z420-lnx OUT:117 IN: 7
+            Dates 051320 051220 051520 051120 051420 "ICValidator-Manager"  OUT:49  IN:1
+            Dates 051320 051220 051520 051120 051420 "ICValidator2-GeometryEngine"  OUT:46  IN:1
+            Dates 051320 051220 051520 051120 051420 "ICValidator2-CompareEngine"  OUT:18  IN:1
+            Dates 051320 051220 051520 051120 051420 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051320 051220 051520 051120 051420 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+            Dates 051320 051220 051520 051120 051420 "SynopsysCustomRouterAuto"  OUT:1  IN:1
+            Dates 051320 051220 051520 051120 051420 "SynopsysCustomSAE"  OUT:1  IN:1
+87: User : amandat
+     Number of Computers: 3
+     Number of logs: 122
+        Computers
+          Computer: pl01msemt006 OUT:24 IN: 6
+            Dates 051520 051220 "SynopsysCustomLayout"  OUT:9  IN:1
+            Dates 051520 051220 "SynopsysCustomLayoutAdvanced"  OUT:7  IN:1
+            Dates 051520 051220 "SynopsysCustomRouterAuto"  OUT:2  IN:1
+            Dates 051520 051220 "SynopsysCustomSAE"  OUT:2  IN:1
+            Dates 051520 051220 "ICValidator-Manager"  OUT:2  IN:1
+            Dates 051520 051220 "ICValidator2-GeometryEngine"  OUT:2  IN:1
+          Computer: pl01msemt004 OUT:35 IN: 4
+            Dates 051320 051420 "SynopsysCustomLayout"  OUT:15  IN:1
+            Dates 051320 051420 "SynopsysCustomLayoutAdvanced"  OUT:10  IN:1
+            Dates 051320 051420 "ICValidator-Manager"  OUT:5  IN:1
+            Dates 051320 051420 "ICValidator2-GeometryEngine"  OUT:5  IN:1
+          Computer: pl01msemt003 OUT:2 IN: 2
+            Dates 051420 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051420 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+88: User : akowal
+     Number of Computers: 1
+     Number of logs: 2166
+        Computers
+          Computer: akowal-z440-lnx OUT:1083 IN: 3
+            Dates 051320 051220 051420 051520 051120 "ICValidator-Manager"  OUT:967  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-GeometryEngine"  OUT:64  IN:1
+            Dates 051320 051220 051420 051520 051120 "ICValidator2-CompareEngine"  OUT:52  IN:1
+89: User : mkaniew
+     Number of Computers: 2
+     Number of logs: 1913
+        Computers
+          Computer: mkaniew-z420-lnx OUT:947 IN: 5
+            Dates 051320 051420 051520 051120 "CKTSIMMC"  OUT:467  IN:1
+            Dates 051320 051420 051520 051120 "CKTSIMSPICE"  OUT:467  IN:1
+            Dates 051320 051420 051520 051120 "SynopsysCustomLayout"  OUT:6  IN:1
+            Dates 051320 051420 051520 051120 "SynopsysCustomLayoutAdvanced"  OUT:6  IN:1
+            Dates 051320 051420 051520 051120 "sx_wva"  OUT:1  IN:1
+          Computer: radoslaw-z440-lnx OUT:10 IN: 3
+            Dates 051420 051520 "CKTSIMMC"  OUT:5  IN:1
+            Dates 051420 051520 "CKTSIMSPICE"  OUT:5  IN:1
+            Dates 051420 051520 "sx_wva"  OUT:0  IN:1
+90: User : ctlei
+     Number of Computers: 2
+     Number of logs: 8
+        Computers
+          Computer: pl01msemt005 OUT:2 IN: 2
+            Dates 051420 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051420 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+          Computer: jmaj-z440-lnx OUT:2 IN: 2
+            Dates 051320 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051320 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+91: User : knlei
+     Number of Computers: 1
+     Number of logs: 8
+        Computers
+          Computer: pl01msemt005 OUT:4 IN: 4
+            Dates 051420 "SynopsysCustomLayout"  OUT:1  IN:1
+            Dates 051420 "SynopsysCustomLayoutAdvanced"  OUT:1  IN:1
+            Dates 051420 "SynopsysCustomRouterAuto"  OUT:1  IN:1
+            Dates 051420 "SynopsysCustomSAE"  OUT:1  IN:1
+92: User : gorska
+     Number of Computers: 5
+     Number of logs: 1054
+        Computers
+          Computer: gorska-p5820t-lnx OUT:522 IN: 8
+            Dates 051320 051420 051120 051520 "SynopsysCustomLayout"  OUT:4  IN:1
+            Dates 051320 051420 051120 051520 "SynopsysCustomLayoutAdvanced"  OUT:4  IN:1
+            Dates 051320 051420 051120 051520 "ICValidator-Manager"  OUT:386  IN:1
+            Dates 051320 051420 051120 051520 "ICValidator2-GeometryEngine"  OUT:49  IN:1
+            Dates 051320 051420 051120 051520 "ICWBEV_PLUS"  OUT:72  IN:1
+            Dates 051320 051420 051120 051520 "ICValidator2-CompareEngine"  OUT:5  IN:1
+            Dates 051320 051420 051120 051520 "SynopsysCustomRouterAuto"  OUT:1  IN:1
+            Dates 051320 051420 051120 051520 "SynopsysCustomSAE"  OUT:1  IN:1
+          Computer: dorota-z440-lnx OUT:1 IN: 1
+            Dates 051520 "ICValidator2-CompareEngine"  OUT:1  IN:1
+          Computer: kglowac-z440-lnx OUT:1 IN: 1
+            Dates 051120 "ICValidator2-CompareEngine"  OUT:1  IN:1
+          Computer: csiklick-z440-lnx OUT:2 IN: 1
+            Dates 051120 "ICValidator2-CompareEngine"  OUT:2  IN:1
+          Computer: kosma-z440-lnx OUT:1 IN: 1
+            Dates 051120 "ICValidator2-CompareEngine"  OUT:1  IN:1
+93: User : nmaia
+     Number of Computers: 2
+     Number of logs: 40
+        Computers
+          Computer: pl01msemt003 OUT:18 IN: 4
+            Dates 051320 051420 "SynopsysCustomLayout"  OUT:6  IN:1
+            Dates 051320 051420 "SynopsysCustomLayoutAdvanced"  OUT:6  IN:1
+            Dates 051320 051420 "ICValidator-Manager"  OUT:3  IN:1
+            Dates 051320 051420 "ICValidator2-GeometryEngine"  OUT:3  IN:1
+          Computer: pl01msemt005 OUT:2 IN: 2
+            Dates 051320 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051320 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+94: User : tzywica
+     Number of Computers: 3
+     Number of logs: 161
+        Computers
+          Computer: tzywica-p5820t-lnx OUT:68 IN: 9
+            Dates 051520 051420 "ICValidator-Manager"  OUT:5  IN:1
+            Dates 051520 051420 "ICValidator2-GeometryEngine"  OUT:5  IN:1
+            Dates 051520 051420 "ICValidator2-CompareEngine"  OUT:5  IN:1
+            Dates 051520 051420 "STAR-RC2_ULTRA_MANAGER"  OUT:15  IN:1
+            Dates 051520 051420 "CKTSIMMC"  OUT:4  IN:1
+            Dates 051520 051420 "CKTSIMSPICE"  OUT:4  IN:1
+            Dates 051520 051420 "SynopsysCustomLayout"  OUT:3  IN:1
+            Dates 051520 051420 "SynopsysCustomLayoutAdvanced"  OUT:3  IN:1
+            Dates 051520 051420 "VCSCompiler_Net"  OUT:24  IN:1
+          Computer: pl01msemt007 OUT:9 IN: 4
+            Dates 051520 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051520 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+            Dates 051520 "ICValidator2-CompareEngine"  OUT:1  IN:1
+            Dates 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:6  IN:1
+          Computer: pl01msemt002 OUT:3 IN: 1
+            Dates 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:3  IN:1
+95: User : bsobala
+     Number of Computers: 1
+     Number of logs: 12
+        Computers
+          Computer: pl01msemt006 OUT:4 IN: 4
+            Dates 051520 051420 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051520 051420 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+            Dates 051520 051420 "SynopsysCustomRouterAuto"  OUT:0  IN:1
+            Dates 051520 051420 "SynopsysCustomSAE"  OUT:0  IN:1
+96: User : kanthak
+     Number of Computers: 1
+     Number of logs: 146
+        Computers
+          Computer: kanthak-p5820t-lnx OUT:72 IN: 4
+            Dates 051520 051420 "ICValidator-Manager"  OUT:26  IN:1
+            Dates 051520 051420 "ICValidator2-GeometryEngine"  OUT:26  IN:1
+            Dates 051520 051420 "ICValidator2-CompareEngine"  OUT:8  IN:1
+            Dates 051520 051420 "ICWBEV_PLUS"  OUT:12  IN:1
+97: User : mohannad
+     Number of Computers: 2
+     Number of logs: 5
+        Computers
+          Computer: pl01msemt003 OUT:72 IN: 4
+          Computer: pl01msemt006 OUT:0 IN: 2
+            Dates 051420 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051420 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
+98: User : dkrolik
+     Number of Computers: 1
+     Number of logs: 4
+        Computers
+          Computer: pl01msemt004 OUT:0 IN: 2
+99: User : gtrojak
+     Number of Computers: 1
+     Number of logs: 24
+        Computers
+          Computer: pl01msemt003 OUT:13 IN: 8
+            Dates 051120 051420 "SynopsysCustomLayout"  OUT:3  IN:1
+            Dates 051120 051420 "SynopsysCustomLayoutAdvanced"  OUT:3  IN:1
+            Dates 051120 051420 "ICWBEV_PLUS"  OUT:2  IN:1
+            Dates 051120 051420 "SynopsysCustomRouterAuto"  OUT:1  IN:1
+            Dates 051120 051420 "SynopsysCustomSAE"  OUT:1  IN:1
+            Dates 051120 051420 "ICValidator-Manager"  OUT:1  IN:1
+            Dates 051120 051420 "ICValidator2-GeometryEngine"  OUT:1  IN:1
+            Dates 051120 051420 "ICValidator2-CompareEngine"  OUT:1  IN:1
+100: User : kfwong
+     Number of Computers: 1
+     Number of logs: 2
+        Computers
+          Computer: pl01msemt004 OUT:1 IN: 1
+            Dates 051520 "sx_wva"  OUT:1  IN:1
+101: User : josebp
+     Number of Computers: 2
+     Number of logs: 42
+        Computers
+          Computer: pl01msemt005 OUT:15 IN: 7
+            Dates 051520 "SynopsysCustomLayout"  OUT:3  IN:1
+            Dates 051520 "SynopsysCustomLayoutAdvanced"  OUT:3  IN:1
+            Dates 051520 "ICValidator-Manager"  OUT:2  IN:1
+            Dates 051520 "ICValidator2-GeometryEngine"  OUT:2  IN:1
+            Dates 051520 "ICValidator2-CompareEngine"  OUT:2  IN:1
+            Dates 051520 "STAR-RC2_ULTRA_MANAGER"  OUT:2  IN:1
+            Dates 051520 "sx_wva"  OUT:1  IN:1
+          Computer: pl01msemt006 OUT:5 IN: 3
+            Dates 051520 "SynopsysCustomLayout"  OUT:2  IN:1
+            Dates 051520 "SynopsysCustomLayoutAdvanced"  OUT:2  IN:1
+            Dates 051520 "sx_wva"  OUT:1  IN:1
+102: User : tgorny
+     Number of Computers: 1
+     Number of logs: 2
+        Computers
+          Computer: pl01itcs2 OUT:1 IN: 1
+            Dates 051520 "ICValidator-Manager"  OUT:1  IN:1
+103: User : janowski
+     Number of Computers: 1
+     Number of logs: 2
+        Computers
+          Computer: mtrzebia-p5820t-lnx OUT:0 IN: 2
+            Dates 051120 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051120 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
+104: User : jheba
+     Number of Computers: 2
+     Number of logs: 86
+        Computers
+          Computer: jheba-z420-lnx OUT:34 IN: 6
+            Dates 051320 "SynopsysCustomLayout"  OUT:12  IN:1
+            Dates 051320 "SynopsysCustomLayoutAdvanced"  OUT:12  IN:1
+            Dates 051320 "ICValidator-Manager"  OUT:3  IN:1
+            Dates 051320 "ICValidator2-GeometryEngine"  OUT:3  IN:1
+            Dates 051320 "ICValidator2-CompareEngine"  OUT:3  IN:1
+            Dates 051320 "STAR-RC2_ULTRA_MANAGER"  OUT:1  IN:1
+          Computer: pl01msemt005 OUT:8 IN: 2
+            Dates 051320 "SynopsysCustomLayout"  OUT:4  IN:1
+            Dates 051320 "SynopsysCustomLayoutAdvanced"  OUT:4  IN:1
+105: User : nneto
+     Number of Computers: 1
+     Number of logs: 2
+        Computers
+          Computer: pl01msemt004 OUT:0 IN: 2
+            Dates 051320 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051320 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
+106: User : ppabis
+     Number of Computers: 1
+     Number of logs: 2
+        Computers
+          Computer: pl01msemt005 OUT:0 IN: 2
+            Dates 051320 "SynopsysCustomLayout"  OUT:0  IN:1
+            Dates 051320 "SynopsysCustomLayoutAdvanced"  OUT:0  IN:1
