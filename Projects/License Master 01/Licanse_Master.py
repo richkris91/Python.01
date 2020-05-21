@@ -13,8 +13,7 @@ def user_creator(users, log_fracts):
             lic_count = ''
             if 'licenses)' in str(element):
                 lic_count = str(element).split('(',)[-1]
-                lic_count = lic_count.[0].replace
-                lic_count = lic_count.replace(')', '')
+                lic_count = lic_count[0].replace("'", '')
                 lic_count = int(lic_count)
             username = element[4].split('@')[0]
             computer = element[4].split('@')[1]
