@@ -268,6 +268,7 @@ class Unit(Tile):
         if self.hp <= 0:
             del self
     def moving(self):
+        pass
 
 class Goblin(Unit):
     def __init__(self, y, x, player=None, nr=None, movement=5, hp=10, content='Gob'):

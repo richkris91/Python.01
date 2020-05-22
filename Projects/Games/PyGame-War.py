@@ -9,4 +9,5 @@ class game(object):
         self.clock = pygame.time.Clock()
         pygame.key.set_repeat()
     def run(self):
+        pass
 
