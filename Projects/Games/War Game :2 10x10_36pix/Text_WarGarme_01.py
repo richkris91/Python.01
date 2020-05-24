@@ -1,10 +1,10 @@
 Tile_sets = {
     'Short_Grass_1': [
         '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
+        '.', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
         '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
-        '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
-        '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
-        '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
+        '~', '~', '~', '~', '~', '~', '~', '~', '~', '.', '~', '~',
+        '~', '~', '~', ',', '~', '~', '~', '~', '~', '~', '~', '~',
         '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~'
     ]
 }
@@ -26,7 +26,7 @@ class border_obj(object):
     def __init__(self, graphic):
         self.graphic = graphic
 
-    def show_graphic(self):
+    def show_graphics(self):
         return self.graphic
 
 
@@ -58,9 +58,12 @@ def tiles_maker():
         counter_t_o = 1
         counter_t_b = 1
         if 'Obj' in key:
-            while counter_t_o != 11:
+            while counter_t_o != 20:
                 Tiles[key][0]['Obj_' + str(counter_t_o)] = []
                 counter_t_o += 1
+                if counter_t_o != 20:
+                    Tiles[key][0]['Bor_' + str(counter_t_o)] = []
+                    counter_t_o += 1
         if 'Bor' in key:
             while counter_t_b != 10:
                 Tiles[key][0]['Bor_' + str(counter_t_b)] = []
@@ -76,6 +79,10 @@ def border_adder(tiles):
         if 'Bor' in key1:
             for key in tiles[key1][0]:
                 tiles[key1][0][key].append(add_bor)
+        if 'Obj' in key1:
+            for key in tiles[key1][0]:
+                if 'Bor' in key:
+                    tiles[key1][0][key].append(add_bor)
     return tiles
 
 
@@ -83,20 +90,101 @@ def terrain_adder(Tiles, Terrain_map):
     ter_count = 0
     for key in Tiles:
         key1 = key
-        if 'Obj' in Tiles:
+        if 'Obj' in key1:
             for key in Tiles[key1][0]:
-                Tiles[key1][0][key].append(Terrain_map[ter_count])
-                ter_count += 1
-    return (Tiles)
+                if 'Obj' in key:
+                    Tiles[key1][0][key].append(Terrain_map[ter_count])
+                    ter_count += 1
+    return Tiles
+
+
+def tiles_printer(Tiles):
+    Index = ['====']
+    letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+    numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    for element in letters:
+        Index.append('|__' + element + '____' + element + '__')
+    Index.append('|')
+    Index = str(Index).replace('[', '')
+    Index = Index.replace(']', '')
+    Index = Index.replace("'", '')
+    Index = Index.replace(',', '')
+    Index = Index.replace(' ', '')
+    print(Index)
+    Lines = []
+    line_c = 0
+    while line_c != 69:
+        Lines.append([])
+        line_c += 1
+    counter_min = 0
+    for key in Tiles:
+        key1 = key
+        if 'Obj' in key1:
+            for key in Tiles[key1][0]:
+                if 'Obj' in key:
+                    obj_graphics = Tiles[key1][0][key][0].show_ter()
+                    Lines[counter_min].append(list_str(obj_graphics[0:12]))
+                    Lines[counter_min + 1].append(list_str(obj_graphics[12:24]))
+                    Lines[counter_min + 2].append(list_str(obj_graphics[24:36]))
+                    Lines[counter_min + 3].append(list_str(obj_graphics[36:48]))
+                    Lines[counter_min + 4].append(list_str(obj_graphics[48:60]))
+                    Lines[counter_min + 5].append(list_str(obj_graphics[60:72]))
+                if 'Bor' in key:
+                    bor_graphics = Tiles[key1][0][key][0].show_graphics()
+                    Lines[counter_min].append(list_str(bor_graphics[0]))
+                    Lines[counter_min + 1].append(list_str(bor_graphics[1]))
+                    Lines[counter_min + 2].append(list_str(bor_graphics[2]))
+                    Lines[counter_min + 3].append(list_str(bor_graphics[3]))
+                    Lines[counter_min + 4].append(list_str(bor_graphics[4]))
+                    Lines[counter_min + 5].append(list_str(bor_graphics[5]))
+            counter_min += 6
+        if 'Bor' in key1:
+            for key in Tiles[key1][0]:
+                bor_graphics = Tiles[key1][0][key][0].show_graphics()
+                Lines[counter_min].append(
+                    '+' * 2 +
+                    str(bor_graphics[0]) + str(bor_graphics[1]) + str(bor_graphics[2]) +
+                    str(bor_graphics[3]) + str(bor_graphics[4]) + str(bor_graphics[5]) +
+                    '+' * 2)
+            counter_min += 1
+    Final_Lines = []
+    for element in Lines:
+        element = str(element).replace(' ', '')
+        element = element.replace('[', '')
+        element = element.replace(']', '')
+        element = element.replace("'", '')
+        element = element.replace(',', '')
+        Final_Lines.append(element)
+    Final_line_count = 0
+    for element in numbers:
+        print('----|' + Final_Lines[Final_line_count])
+        print('----|' + Final_Lines[Final_line_count + 1])
+        print('_' + element * 2 + '_|' + Final_Lines[Final_line_count + 2])
+        print('_' + element * 2 + '_|' + Final_Lines[Final_line_count + 3])
+        print('----|' + Final_Lines[Final_line_count + 4])
+        print('----|' + Final_Lines[Final_line_count + 5])
+        print('====|' + Final_Lines[Final_line_count + 6])
+        Final_line_count += 7
 
 
 def map_vanilla():
     Terrain_map = []
     counter_map_vanilla = 1
     while counter_map_vanilla != 101:
-        Terrain_map.append(Tile_sets['Short_Grass_1'])
+        add_terr = terrain_obj(Tile_sets['Short_Grass_1'])
+        Terrain_map.append(add_terr)
         counter_map_vanilla += 1
     return Terrain_map
+
+
+def list_str(list_):
+    list_1 = str(list_).replace(' ', '')
+    list_2 = list_1.replace('[', '')
+    list_3 = list_2.replace(']', '')
+    list_4 = list_3.replace("'", '')
+    list_5 = list_4.replace(',', '')
+    return list_5
+
 
 
 def war_game():
@@ -104,6 +192,7 @@ def war_game():
     Tiles_1 = border_adder(TILES_0)
     Terrain_map = map_vanilla()
     Tiles_2 = terrain_adder(Tiles_1, Terrain_map)
+    tiles_printer(Tiles_2)
 
 
 war_game()
