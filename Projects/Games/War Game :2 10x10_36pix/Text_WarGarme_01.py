@@ -1,12 +1,18 @@
+Tile_sets = {
+    'Short_Grass_1': [
+        '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
+        '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
+        '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
+        '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
+        '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
+        '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~'
+    ]
+}
+
+
 class terrain_obj(object):
     def __init__(self, ter, move_mod=1):
         self.terrain = ter
-        if self.terrain == '~':
-            self.terrain = []
-            counter_ter = 36
-            while counter_ter != 0:
-                self.terrain.append(ter)
-                counter_ter -= 1
         self.movement_modifier = move_mod
 
     def show_ter(self):
@@ -17,92 +23,87 @@ class terrain_obj(object):
 
 
 class border_obj(object):
-    def __init__(self, graphic='+'):
+    def __init__(self, graphic):
         self.graphic = graphic
 
     def show_graphic(self):
         return self.graphic
 
 
-def graphic_map_creator(Input_terrain='~'):
-    Terrain = Input_terrain
-    # Terrain obj maker
-    ter_obj = terrain_obj(Terrain)
-    # Terrain Adder
+def tiles_maker():
     Tiles = {
-        'A': [],
-        'B': [],
-        'C': [],
-        'D': [],
-        'E': [],
-        'F': [],
-        'G': [],
-        'H': [],
-        'I': [],
-        'J': []
+        'Obj1': [],
+        'Bor1': [],
+        'Obj2': [],
+        'Bor2': [],
+        'Obj3': [],
+        'Bor3': [],
+        'Obj4': [],
+        'Bor4': [],
+        'Obj5': [],
+        'Bor5': [],
+        'Obj6': [],
+        'Bor6': [],
+        'Obj7': [],
+        'Bor7': [],
+        'Obj8': [],
+        'Bor8': [],
+        'Obj9': [],
+        'Bor9': [],
+        'Obj10': [],
     }
+    counter_t = 1
     for key in Tiles:
-        counter = 0
-        if counter == 0:
-            Tiles[key].append({})
-        while counter != 10:
-            Tiles[key][0][str(counter)]: [ter_obj]
-            counter += 1
-    # Border maker
-    bor_obj = border_obj()
-    # Battlefield_border_maker
-    Borders = {
-        'Horizontally':
-            [{
-                'A': [],
-                'B': [],
-                'C': [],
-                'D': [],
-                'E': [],
-                'F': [],
-                'G': [],
-                'H': [],
-                'I': [],
-                'J': []
-            }],
-        'Vertically':
-            [{
-                'A': [],
-                'B': [],
-                'C': [],
-                'D': [],
-                'E': [],
-                'F': [],
-                'G': [],
-                'H': [],
-                'I': [],
-                'J': []
-            }]
-    }
-    for key in Borders['Horizontally'][0]:
-        counter = 0
-        if counter == 0:
-            Borders['Horizontally'][0][key].append({})
-        while counter != 9:
-            Borders['Horizontally'][0][key][0][str(counter)]: bor_obj
-            counter += 1
-    for key in Borders['Vertically'][0]:
-        counter = 0
-        if counter == 0:
-            Borders['Vertically'][0][key].append({})
-        while counter != 9:
-            Borders['Vertically'][0][key][0][str(counter)]: bor_obj
-            counter += 1
-    return [Tiles, Borders]
+        Tiles[key].append({})
+        counter_t_o = 1
+        counter_t_b = 1
+        if 'Obj' in key:
+            while counter_t_o != 11:
+                Tiles[key][0]['Obj_' + str(counter_t_o)] = []
+                counter_t_o += 1
+        if 'Bor' in key:
+            while counter_t_b != 10:
+                Tiles[key][0]['Bor_' + str(counter_t_b)] = []
+                counter_t_b += 1
+        counter_t += 1
+    return Tiles
 
 
-def map_printer():
-    pass
+def border_adder(tiles):
+    add_bor = border_obj(['+', '+', '+', '+', '+', '+'])
+    for key in tiles:
+        key1 = key
+        if 'Bor' in key1:
+            for key in tiles[key1][0]:
+                tiles[key1][0][key].append(add_bor)
+    return tiles
+
+
+def terrain_adder(Tiles, Terrain_map):
+    ter_count = 0
+    for key in Tiles:
+        key1 = key
+        if 'Obj' in Tiles:
+            for key in Tiles[key1][0]:
+                Tiles[key1][0][key].append(Terrain_map[ter_count])
+                ter_count += 1
+    return (Tiles)
+
+
+def map_vanilla():
+    Terrain_map = []
+    counter_map_vanilla = 1
+    while counter_map_vanilla != 101:
+        Terrain_map.append(Tile_sets['Short_Grass_1'])
+        counter_map_vanilla += 1
+    return Terrain_map
 
 
 def war_game():
-    MAP = graphic_map_creator()
-    map_printer()
+    TILES_0 = tiles_maker()
+    Tiles_1 = border_adder(TILES_0)
+    Terrain_map = map_vanilla()
+    Tiles_2 = terrain_adder(Tiles_1, Terrain_map)
 
 
 war_game()
