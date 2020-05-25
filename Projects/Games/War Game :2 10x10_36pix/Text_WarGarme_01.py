@@ -1,10 +1,10 @@
 Tile_sets = {
     'Short_Grass_1': [
         '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
-        '.', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
         '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
-        '~', '~', '~', '~', '~', '~', '~', '~', '~', '.', '~', '~',
-        '~', '~', '~', ',', '~', '~', '~', '~', '~', '~', '~', '~',
+        '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
+        '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
+        '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
         '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~'
     ]
 }
@@ -28,6 +28,16 @@ class border_obj(object):
 
     def show_graphics(self):
         return self.graphic
+
+
+class squad(object):
+    def __init__(self, player, units, squad_formation):
+        self.player = player
+        self.units = units
+        self.squad_formation = squad_formation
+
+    def move(self, where):
+        pass
 
 
 def tiles_maker():
@@ -65,7 +75,7 @@ def tiles_maker():
                     Tiles[key][0]['Bor_' + str(counter_t_o)] = []
                     counter_t_o += 1
         if 'Bor' in key:
-            while counter_t_b != 10:
+            while counter_t_b != 11:
                 Tiles[key][0]['Bor_' + str(counter_t_b)] = []
                 counter_t_b += 1
         counter_t += 1
@@ -103,7 +113,7 @@ def tiles_printer(Tiles):
     letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
     numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     for element in letters:
-        Index.append('|__' + element + '____' + element + '__')
+        Index.append('|___' + element + '____' + element + '___')
     Index.append('|')
     Index = str(Index).replace('[', '')
     Index = Index.replace(']', '')
@@ -121,8 +131,9 @@ def tiles_printer(Tiles):
         key1 = key
         if 'Obj' in key1:
             for key in Tiles[key1][0]:
+                if_unit = len(Tiles[key1][0][key]) - 1
                 if 'Obj' in key:
-                    obj_graphics = Tiles[key1][0][key][0].show_ter()
+                    obj_graphics = Tiles[key1][0][key][if_unit].show_ter()
                     Lines[counter_min].append(list_str(obj_graphics[0:12]))
                     Lines[counter_min + 1].append(list_str(obj_graphics[12:24]))
                     Lines[counter_min + 2].append(list_str(obj_graphics[24:36]))
@@ -142,10 +153,10 @@ def tiles_printer(Tiles):
             for key in Tiles[key1][0]:
                 bor_graphics = Tiles[key1][0][key][0].show_graphics()
                 Lines[counter_min].append(
-                    '+' * 2 +
+                    '+++' +
                     str(bor_graphics[0]) + str(bor_graphics[1]) + str(bor_graphics[2]) +
                     str(bor_graphics[3]) + str(bor_graphics[4]) + str(bor_graphics[5]) +
-                    '+' * 2)
+                    '+++' + 'X')
             counter_min += 1
     Final_Lines = []
     for element in Lines:
@@ -154,7 +165,9 @@ def tiles_printer(Tiles):
         element = element.replace(']', '')
         element = element.replace("'", '')
         element = element.replace(',', '')
+        element = element + '|'
         Final_Lines.append(element)
+    Final_Lines.append(('=' * 12 + 'X') * 10)
     Final_line_count = 0
     for element in numbers:
         print('----|' + Final_Lines[Final_line_count])
@@ -184,7 +197,6 @@ def list_str(list_):
     list_4 = list_3.replace("'", '')
     list_5 = list_4.replace(',', '')
     return list_5
-
 
 
 def war_game():
