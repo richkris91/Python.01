@@ -32,15 +32,53 @@ class border_obj(object):
         return self.graphic
 
 
+# Weapons
+class weapon(object):
+    def __init__(self, name, tier, hand_space, reach, raw_dmg, penetration, def_mod, speed_mod, prize, material=None):
+        self.name = name
+        self.hand_space = hand_space
+        self.reach = reach
+        self.tier = tier
+        self.raw_dmg = raw_dmg + raw_dmg * (material / 2)
+        self.penetration = penetration * material
+        self.speed_mod = speed_mod
+
+    def show_tier(self):
+        return self.tier
+
+
 # Squads
 class squad(object):
-    def __init__(self, player, units, squad_formation):
+    def __init__(self, player, units, squad_formation, name=None):
         self.player = player
         self.units = units
         self.squad_formation = squad_formation
+        self.name = name
+
+    def show_name(self):
+        return self.name
 
     def move(self, where):
         pass
+
+
+# Human
+class Men_at_arms_squad(squad):
+    def __init__(self, player, units, squad_formation, name):
+        super().__init__(player, units, squad_formation, name)
+        self.player = player
+        self.units = units
+        self.squad_formation = squad_formation
+        self.name = name
+
+
+# Orc
+class Goblin_mercenaries_horde(squad):
+    def __init__(self, player, units, squad_formation):
+        super().__init__(player, units, squad_formation)
+        self.player = player
+        self.units = units
+        self.squad_formation = squad_formation
 
 
 # Game setter
@@ -112,6 +150,7 @@ def terrain_adder(Tiles, Terrain_map):
     return Tiles
 
 
+# Map printer
 def tiles_printer(Tiles):
     Index = ['====']
     letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
@@ -242,14 +281,46 @@ def can_move(Tiles_2, key1, key2, direction):
 
 
 # The game itself
+# ? bugs/features ?
 race_army_title = {
     'Human': ["s' Righteous Legions"],
     'Orc': ["s' Vile Forces"]
 }
+race_recruitment = {
+    'Human': "Your army is not ready to battle commander!",
+    'Orc': "Send orders to gather the Biggest Army! "
+}
+# Races
 players = {
     '1': 'Human',
     '2': 'Orc'
 }
+# Units
+all_units = {
+    'Human': [{
+        Men_at_arms_squad: ['Men at arms squad', 60]
+    }],
+    'Orc': [{
+        Goblin_mercenaries_horde: ['Goblin mercenaries horde', 30]
+    }]
+}
+
+
+def weapon_creator(race):
+    re_weapons = {
+        '1': [],
+        '2': [],
+        '3': []
+    }
+    weapon_reminder = ['1name', '2tier', '3hand_space', '4reach', '5raw_dmg', '6penetration', 'def_mod', 'speed_mod', 'prize']
+    Club = weapon( 'Club' , '1', 1,    1, 8,  30, 15, -1, 5)
+    Pike = weapon( 'Pike' , '1', 2,    2, 12, 60, 10, -4, 10)
+    Bow = weapon(  'Bow'  , '1', 2, None, 4,  10, 0,  -1, 20)
+    Axe = weapon(  'Axe'  , '1', 1,    1, )
+    Sword = weapon('Sword','2' , 1,    1, 10, 15, 30, -3, 60)
+
+    if race == 'Human':
+
 
 
 def game_start():
@@ -272,6 +343,36 @@ def game_start():
             print('You have not managed to chose map properly')
 
 
+def unit_recruitment(player, race, money):
+    re_squads_list = []
+    available_units = all_units[race][0]
+    go = 1
+    while go == 0:
+        print('=' * 20)
+        if len(re_squads_list) == 0:
+            print(race_recruitment[race])
+        else:
+            count = 1
+            for element in re_squads_list:
+                print(str(count) + ' : ' + element.show())
+                count += 1
+        print('=' * 30)
+        print('You have: ' + str(money) + ' left')
+        print('=' * 30)
+        print('1: Recruit new squad'
+              '2: Remove squad from army'
+              '0: Finish')
+        command = input(': ')
+        if command == '1':
+            count = 1
+            key_list = []
+            for key in available_units:
+                key_list.append(key)
+                print(str(count) + available_units[key][0] + ' cost: ' + str(available_units[key][1]))
+
+    return re_squads_list
+
+
 def war_game():
     Terrain_map = game_start()
     TILES_0 = tiles_maker()
@@ -283,16 +384,29 @@ def war_game():
     current_player = ''
     player_num = 0
     while game == 1:
+        player1_money = 1000
+        player2_money = 1000
+        player1_squads = []
+        player2_squads = []
         print('Its: ' + str(Turn) + ' Turn')
         if Turn % 2 != 0:
             current_player = 'Player 1'
             player_num = 1
+            players_race = players[str(player_num)]
+            print('Its ' + current_player + ' turn, commanding ' +
+                  players_race + str(race_army_title[players_race][0]))
+            if Turn <= 2:
+                player1_squads = unit_recruitment(player_num, players_race, player1_money)
+            Turn += 1
         else:
             current_player = 'Player 2'
             player_num = 2
-        players_race = players[str(player_num)]
-        print('Its ' + current_player + ' turn, commanding ' +
-              players_race + str(race_army_title[players_race][0]))
+            players_race = players[str(player_num)]
+            print('Its ' + current_player + ' turn, commanding ' +
+                  players_race + str(race_army_title[players_race][0]))
+            if Turn <= 2:
+                player2_squads = unit_recruitment(player_num, players_race, player2_money)
+            Turn += 1
 
 
 war_game()
