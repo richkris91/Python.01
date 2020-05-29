@@ -36,36 +36,35 @@ class border_obj(object):
 class weapon(object):
     def __init__(self, name,
                  hand_space, reach,
-                 raw_dmg, penetration,
-                 def_mod, block_mod, speed_mod,
+                 dmg, penetration, accuracy, block_mod,
+                 weight,
                  prize,
                  material=None):
         if material is None:
-            material = [1, None]
+            material = [1, '']
+        # name
         self.name = name
+        # hand_space, reach and material
         self.hand_space = hand_space
         self.reach = reach
         self.material = material
-        self.raw_dmg = raw_dmg + raw_dmg * int(self.material[0] / 2)
+        # combat parameters
+        self.dmg = dmg + dmg * int(self.material[0] / 2)
         self.penetration = penetration * self.material[0]
-        self.def_mod = def_mod
         self.block_mod = block_mod
         self.prize = prize
-        self.speed_mod = speed_mod
+        self.weight = weight
 
     def show_all(self):
         return self.name + ': it is a: ' + str(self.hand_space) + ' handed weapon, with reach of: ' + str(self.reach) + \
                ' and it costs: ' + str(self.prize) + ' by default.\n' + '+' * 30 + '\n' + \
-               'It can apply: ' + str(self.raw_dmg) + ' dmg, and has: ' + str(
+               'It can apply: ' + str(self.dmg) + ' dmg, and has: ' + str(
             self.penetration) + ' penetration ratio.\n' + \
                'It allows its wielder to block: ' + str(self.def_mod) + ' % of hits, and it can be blocked: ' + \
                str(self.block_mod) + ' out of 100 times.\n' + 'It weights: ' + str(self.speed_mod) + ' .'
 
     def show_name(self):
-        material = ''
-        if self.material[1] is not None:
-            material = str(self.material[1])
-        return material + ' ' + str(self.name)
+        return self.material[1] + ' ' + str(self.name)
 
     def show_hand_space(self):
         return self.hand_space
@@ -75,6 +74,26 @@ class weapon(object):
 
     def show_prize(self):
         return self.prize
+
+    def material(self, material):
+        self.material = [material[0], material[1]]
+
+
+class armour(object):
+    def __init__(self, name, def_mod, attack_mod, speed_mod, material=None):
+        self.name = name
+        if self.material is None:
+            self.material = [1, '']
+        self.def_mod = def_mod * material
+        self.speed_mod = speed_mod
+        self.attack_mod = attack_mod
+
+    def show_name(self):
+        return self.material[1] + ' ' + self.name
+
+    def show_mods(self):
+        mods = [self.def_mod, self.attack_mod, self.speed_mod]
+        return mods
 
 
 # Squads
@@ -95,15 +114,14 @@ class squad(object):
 class unit(object):
     def __init__(self, name,
                  size, sq_size,
-                 Attack_skill, Defence_Skill,
+                 combat_skill,
                  Morale, Hp,
                  Movement, Strength, Vigor,
                  objects, hand_space=2):
         self.name = name
         self.size = size
         self.sq_size = sq_size
-        self.Attack_skill = Attack_skill
-        self.Defence_Skill = Defence_Skill
+        self.combat_skill = combat_skill
         self.Morale = Morale
         self.Hp = Hp
         self.Movement = Movement
@@ -368,13 +386,20 @@ players = {
 
 # Units/Weapons
 def armour_creator():
-    armour = {
-        'Bronze Chain_mail': [100, -1, 30],
-        'Bronze Plate_Armour': [150, -4, 50],
-        'Iron Chain_mail': [150, -2, 60],
-        'Iron Plate_Armour': [200, -4, 100]
-    }
-    return armour
+    armour_shield = [[], []]
+    # Armour
+    Chain_vest = armour('Chain vest', 30, -15, 2)
+    Plate_armor = armour('Plate armour', 70, -40, 5)
+    armour_shield[0].append(Chain_vest)
+    armour_shield[0].append(Plate_armor)
+    # Shields
+    Buckler = armour('Buckler', 15, 0, 1)
+    Shield = armour('Shield', 30, 10, 2)
+    Tower_shield = armour('Tower shield', 50, 30, 4)
+    armour_shield[1].append(Buckler)
+    armour_shield[1].append(Shield)
+    armour_shield[1].append(Tower_shield)
+    return armour_shield
 
 
 def weapon_creator():
@@ -438,6 +463,12 @@ def game_start():
 
 
 def unit_recruitment(race, money, units, weapons, armour):
+    materials = {
+        'Bronze': [100, 0],
+        'Iron': [130, 30],
+        'Steel': [160, 80]
+
+    }
     shopping_cart = {}
     available_units = units[race]
     go = 1
@@ -503,6 +534,7 @@ def unit_recruitment(race, money, units, weapons, armour):
                         print('=' * 30)
                         print('You have :' + str(money) + ' gold left')
                         print('=' * 30)
+                        info_1 = input('Now chose squads weapon material')
                         print(chosen_unit.show_name() + 'squad :' + str(chosen_unit.show_objects()))
                         print('This unit can carry ' + str(chosen_unit.show_strength()) + ' more weight units' + \
                               ' and has ' + str(chosen_unit.show_hand_space()) + ' hand space left')
