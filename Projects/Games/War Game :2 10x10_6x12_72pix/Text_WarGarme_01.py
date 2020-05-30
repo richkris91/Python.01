@@ -52,16 +52,18 @@ class weapon(object):
         self.dmg = dmg + dmg * int(self.material[0] / 2)
         self.penetration = penetration * self.material[0]
         self.block_mod = block_mod
+        self.accuracy = accuracy
+        # Rest
         self.prize = prize
         self.weight = weight
 
     def show_all(self):
         return self.name + ': it is a: ' + str(self.hand_space) + ' handed weapon, with reach of: ' + str(self.reach) + \
                ' and it costs: ' + str(self.prize) + ' by default.\n' + '+' * 30 + '\n' + \
-               'It can apply: ' + str(self.dmg) + ' dmg, and has: ' + str(
-            self.penetration) + ' penetration ratio.\n' + \
-               'It allows its wielder to block: ' + str(self.def_mod) + ' % of hits, and it can be blocked: ' + \
-               str(self.block_mod) + ' out of 100 times.\n' + 'It weights: ' + str(self.speed_mod) + ' .'
+               'It can apply: ' + str(self.dmg) + ' dmg, and has: ' + str(self.penetration) + \
+               ' penetration ratio and: ' + str(self.accuracy) + ' accuracy block\n' + \
+               'It allows its wielder to block: ' + str(self.block_mod) + \
+               ' out of 100 times.\n' + 'It weights: ' + str(self.weight) + ' .'
 
     def show_name(self):
         return self.material[1] + ' ' + str(self.name)
@@ -70,7 +72,7 @@ class weapon(object):
         return self.hand_space
 
     def show_speed_mod(self):
-        return self.speed_mod
+        return self.weight
 
     def show_prize(self):
         return self.prize
@@ -403,16 +405,16 @@ def armour_creator():
 
 
 def weapon_creator():
-    weapon_reminder = ['1name', '2hand_space', '3reach', '4raw_dmg', '5penetration',
-                       '6def_mod', '7block_mod', '8speed_mod', '9prize']
-    Mace = weapon('Mace', 1, 1, 12, 30, 20, 30, 2, 20)
-    War_Hammer = weapon('War_Hammer', 1, 1, 10, 60, 15, 20, 3, 30)
-    Axe = weapon('Axe', 1, 1, 16, 10, 15, 15, 2, 20)
-    Sword = weapon('Sword', 1, 1, 12, 20, 25, 15, 2, 30)
-    Long_Sword = weapon('Long_Sword', 2, 1, 24, 20, 30, 30, 4, 50)
-    Pike = weapon('Pike', 2, 2, 10, 60, 10, 10, 3, 10)
-    Halberd = weapon('Halberd', 2, 2, 20, 20, 20, 20, 4, 40)
-    Long_Axe = weapon('Long_Axe', 2, 2, 26, 20, 20, 40, 3, 30)
+    weapon_reminder = ['name', 'hand_space', 'reach', 'dmg', 'penetration', 'accuracy', 'block_mod',
+                       'weight', 'prize']
+    Mace = weapon('Mace', 1, 1, 16, 40, 70, 30, 2, 20)
+    War_Hammer = weapon('War_Hammer', 1, 1, 16, 60, 70, 30, 3, 30)
+    Axe = weapon('Axe', 1, 1, 20, 10, 70, 30, 1, 20)
+    Sword = weapon('Sword', 1, 1, 14, 20, 80, 40, 2, 30)
+    Long_Sword = weapon('Long_Sword', 2, 1, 24, 30, 70, 40, 4, 50)
+    Pike = weapon('Pike', 2, 2, 14, 60, 60, 20, 1, 10)
+    Halberd = weapon('Halberd', 2, 2, 26, 30, 60, 20, 4, 40)
+    Long_Axe = weapon('Long_Axe', 2, 2, 30, 20, 60, 20, 3, 30)
     re_weapons = [Mace, War_Hammer, Axe, Sword, Long_Sword, Pike, Halberd, Long_Axe, ]
     return re_weapons
 
