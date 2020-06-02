@@ -1,3 +1,4 @@
+rly = [1, 2, 3]
 # Tile Graphics
 Tile_sets = {
     'Short_Grass_1': [
@@ -77,15 +78,16 @@ class weapon(object):
     def show_prize(self):
         return self.prize
 
-    def material(self, material):
-        self.material = [material[0], material[1]]
+    def material(self, material_mod, material_name):
+        self.material = [material_mod, material_name]
 
 
 class armour(object):
     def __init__(self, name, def_mod, attack_mod, speed_mod, material=None):
+        if material is None:
+            material = [1, '']
         self.name = name
-        if self.material is None:
-            self.material = [1, '']
+        self.material = material
         self.def_mod = def_mod * material
         self.speed_mod = speed_mod
         self.attack_mod = attack_mod
@@ -387,6 +389,10 @@ players = {
 
 
 # Units/Weapons
+def print_():
+    print('=' * 30)
+
+
 def armour_creator():
     armour_shield = [[], []]
     # Armour
@@ -419,6 +425,40 @@ def weapon_creator():
     return re_weapons
 
 
+def material_pick(materials):
+    mat_name = ''
+    weapon_mat_mod = 100
+    mat_cost = 0
+    chose_idiot = 1
+    while chose_idiot == 1:
+        materials_keys = {}
+        count_mat_1 = 1
+        for key in materials:
+            materials_keys[str(count_mat_1)] = key
+            print(
+                str(count_mat_1) + ': ' + key + ': material mod :' + str(materials[key][0]) + ' cost of object :' + str(
+                    materials[key][1]) + ' %')
+            count_mat_1 += 1
+        input_material = input('Witch material do you chose ?\n')
+        for key in materials_keys:
+            if input_material == key:
+                weapon_mat_mod = materials[materials_keys[input_material]][0]
+                mat_cost = materials[materials_keys[input_material]][1]
+                mat_name = materials_keys[input_material]
+                chose_idiot -= 1
+        if chose_idiot != 1:
+            return [weapon_mat_mod, mat_cost, mat_name]
+
+
+def show_unit_re(money, chosen_unit):
+    print_()
+    print('You have :' + str(money) + ' gold left')
+    print_()
+    print(chosen_unit.show_name() + 'squad :' + str(chosen_unit.show_objects()))
+    print('Units in this squad can carry ' + str(chosen_unit.show_strength()) + ' more weight units' + \
+          ' and has ' + str(chosen_unit.show_hand_space()) + ' hand space left')
+
+
 def unit_creator():
     objects = {
         'weapon': [],
@@ -426,17 +466,17 @@ def unit_creator():
     }
     Example = ['name',
                '1size', '2sq_size',
-               '3Attack_skill', '4Defence_Skill',
-               '5Morale', '6Hp',
-               '7Movement', '8Strength', '9Vigor']
+               '3 Combat Skill',
+               '4Morale', '5Hp',
+               '6Movement', '7Strength', '8Vigor']
     # Human
-    Peasant = unit('Peasant', 1, 30, 8, 10, 75, 20, 6, 6, 24, objects)
-    Mercenary = unit('Mercenary', 1, 26, 13, 15, 100, 24, 8, 8, 28, objects)
-    Knight = unit('Knight', 1, 20, 18, 18, 150, 26, 8, 10, 30, objects)
+    Peasant = unit('Peasant', 1, 30, 8, 75, 20, 6, 6, 24, objects)
+    Mercenary = unit('Mercenary', 1, 26, 13, 100, 24, 8, 8, 28, objects)
+    Knight = unit('Knight', 1, 20, 18, 150, 26, 8, 10, 30, objects)
     # Orc
-    Goblin = unit('Goblin', 0.75, 40, 6, 8, 75, 24, 10, 6, 24, objects)
-    Orc = unit('Orc', 1.25, 26, 14, 14, 150, 36, 8, 10, 30, objects)
-    Ogre = unit('Ogre', 6, 6, 12, 6, 200, 80, 6, 36, 30, objects)
+    Goblin = unit('Goblin', 0.75, 40, 8, 75, 24, 10, 6, 24, objects)
+    Orc = unit('Orc', 1.25, 26, 14, 150, 36, 8, 10, 30, objects)
+    Ogre = unit('Ogre', 6, 6, 6, 200, 80, 6, 36, 30, objects)
     re_units = {
         'Human': [[Peasant, 30], [Mercenary, 50], [Knight, 80]],
         'Orc': [[Goblin, 20], [Orc, 60], [Ogre, 100]]
@@ -466,9 +506,9 @@ def game_start():
 
 def unit_recruitment(race, money, units, weapons, armour):
     materials = {
-        'Bronze': [100, 0],
-        'Iron': [130, 30],
-        'Steel': [160, 80]
+        'Bronze': [100, 100],
+        'Iron': [130, 150],
+        'Steel': [160, 220]
 
     }
     shopping_cart = {}
@@ -482,9 +522,9 @@ def unit_recruitment(race, money, units, weapons, armour):
             for key in shopping_cart:
                 print(key + ' : ' + shopping_cart[key][0].show_name() + "'s squad " + \
                       shopping_cart[key][0].show_objects() + ' , costing you: ' + str(shopping_cart[key][1]))
-        print('=' * 30)
+        print_()
         print('You have: ' + str(money) + ' gold left')
-        print('=' * 30)
+        print_()
         print('1: Recruit new squad\n'
               '2: Remove squad from army\n'
               '0: Finish')
@@ -508,11 +548,6 @@ def unit_recruitment(race, money, units, weapons, armour):
                 chosen_unit = available_units[int(input_rec) - 1][0]
                 shopping_cart[str(num)] = [chosen_unit, chosen_unit_cost]
                 money -= chosen_unit_cost
-                print('You have :' + str(money) + ' gold left')
-                print('=' * 30)
-                print(chosen_unit.show_name() + 'squad :' + str(chosen_unit.show_objects()))
-                print('Units in this squad can carry ' + str(chosen_unit.show_strength()) + ' more weight units' + \
-                      ' and has ' + str(chosen_unit.show_hand_space()) + ' hand space left')
                 info = input('=' * 30 + '\nNow supply this squad with weapons:(Press anything to continue):')
                 go_weapon = 1
                 while go_weapon == 1:
@@ -520,26 +555,30 @@ def unit_recruitment(race, money, units, weapons, armour):
                     weapon_keys = []
                     count_w = 1
                     for element in weapons:
-                        print('=' * 30)
+                        print_()
                         print(str(count_w) + ' :' + element.show_all())
                         weapon_shop[str(count_w)] = [element.show_name(), element.show_prize()]
                         count_w += 1
-                    print('=' * 30)
+                    print_()
                     for key in weapon_shop:
                         weapon_keys.append(key)
                         print(key + ': ' + weapon_shop[key][0] + "'s: cost : " + str(weapon_shop[key][1]))
                     input_w = input('Which weapon do you chose?')
                     if input_w in weapon_keys:
-                        chosen_unit.add_weapon(weapons[int(input_w) - 1])
-                        money -= weapon_shop[input_w][1]
-                        shopping_cart[str(num)][1] += weapon_shop[input_w][1]
-                        print('=' * 30)
-                        print('You have :' + str(money) + ' gold left')
-                        print('=' * 30)
+                        chosen_weapon = weapons[int(input_w) - 1]
+                        print_()
                         info_1 = input('Now chose squads weapon material')
-                        print(chosen_unit.show_name() + 'squad :' + str(chosen_unit.show_objects()))
-                        print('This unit can carry ' + str(chosen_unit.show_strength()) + ' more weight units' + \
-                              ' and has ' + str(chosen_unit.show_hand_space()) + ' hand space left')
+                        # Material
+                        weapon_re = material_pick(materials)
+                        weapon_mat = weapon_re[0] / 100
+                        weapon_cost = weapon_re[1]
+                        weapon_mat_name = weapon_re[2]
+                        chosen_weapon.material(weapon_mat, weapon_mat_name)
+                        chosen_unit.add_weapon(chosen_weapon)
+                        # Money
+                        money -= weapon_shop[input_w][1] * weapon_cost / 100
+                        shopping_cart[str(num)][1] += weapon_shop[input_w][1] * weapon_cost / 100
+                        show_unit_re(money, chosen_unit)
                     else:
                         print('Please, try again')
 
