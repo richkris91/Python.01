@@ -40,9 +40,7 @@ class weapon(object):
                  dmg, penetration, accuracy, block_mod,
                  weight,
                  prize,
-                 material=None):
-        if material is None:
-            material = [1, '']
+                 material):
         # name
         self.name = name
         # hand_space, reach and material
@@ -78,7 +76,7 @@ class weapon(object):
     def show_prize(self):
         return self.prize
 
-    def material(self, material_mod, material_name):
+    def set_material(self, material_mod, material_name):
         self.material = [material_mod, material_name]
 
 
@@ -99,10 +97,13 @@ class armour(object):
         mods = [self.def_mod, self.attack_mod, self.speed_mod]
         return mods
 
+    def set_material(self, mod, name):
+        self.material = [mod, name]
+
 
 # Squads
 class squad(object):
-    def __init__(self, player, units, squad_formation, name=None):
+    def __init__(self, player, units, squad_formation=None, name=None):
         self.player = player
         self.units = units
         self.squad_formation = squad_formation
@@ -170,6 +171,9 @@ class unit(object):
         self.objects['weapon'][0].append()
         self.hand_space -= shield.show_hand_space()
         self.Strength -= shield.show_speed_mod()
+
+    def set_objects(self, new_objects):
+        self.objects = new_objects
 
 
 # Game setter
@@ -386,6 +390,13 @@ players = {
     '1': 'Human',
     '2': 'Orc'
 }
+# Materials
+materials = {
+    'Leather': 100,
+    'Bronze': 140,
+    'Iron': 180,
+    'Steel': 220
+}
 
 
 # Units/Weapons
@@ -396,14 +407,14 @@ def print_():
 def armour_creator():
     armour_shield = [[], []]
     # Armour
-    Chain_vest = armour('Chain vest', 30, -15, 2)
-    Plate_armor = armour('Plate armour', 70, -40, 5)
+    Chain_vest = armour('Chain vest', 30, 15, 2)
+    Plate_armor = armour('Plate armour', 70, 20, 5)
     armour_shield[0].append(Chain_vest)
     armour_shield[0].append(Plate_armor)
     # Shields
     Buckler = armour('Buckler', 15, 0, 1)
     Shield = armour('Shield', 30, 10, 2)
-    Tower_shield = armour('Tower shield', 50, 30, 4)
+    Tower_shield = armour('Tower shield', 60, 40, 3)
     armour_shield[1].append(Buckler)
     armour_shield[1].append(Shield)
     armour_shield[1].append(Tower_shield)
@@ -413,19 +424,19 @@ def armour_creator():
 def weapon_creator():
     weapon_reminder = ['name', 'hand_space', 'reach', 'dmg', 'penetration', 'accuracy', 'block_mod',
                        'weight', 'prize']
-    Mace = weapon('Mace', 1, 1, 16, 40, 70, 30, 2, 20)
-    War_Hammer = weapon('War_Hammer', 1, 1, 16, 60, 70, 30, 3, 30)
-    Axe = weapon('Axe', 1, 1, 20, 10, 70, 30, 1, 20)
-    Sword = weapon('Sword', 1, 1, 14, 20, 80, 40, 2, 30)
-    Long_Sword = weapon('Long_Sword', 2, 1, 24, 30, 70, 40, 4, 50)
-    Pike = weapon('Pike', 2, 2, 14, 60, 60, 20, 1, 10)
-    Halberd = weapon('Halberd', 2, 2, 26, 30, 60, 20, 4, 40)
-    Long_Axe = weapon('Long_Axe', 2, 2, 30, 20, 60, 20, 3, 30)
+    Mace = weapon('Mace', 1, 1, 16, 40, 70, 30, 2, 20, [1, ''])
+    War_Hammer = weapon('War_Hammer', 1, 1, 16, 60, 70, 30, 3, 30, [1, ''])
+    Axe = weapon('Axe', 1, 1, 20, 10, 70, 30, 1, 20, [1, ''])
+    Sword = weapon('Sword', 1, 1, 14, 20, 80, 40, 2, 30, [1, ''])
+    Long_Sword = weapon('Long_Sword', 2, 1, 24, 30, 70, 40, 4, 50, [1, ''])
+    Pike = weapon('Pike', 2, 2, 14, 60, 60, 20, 1, 10, [1, ''])
+    Halberd = weapon('Halberd', 2, 2, 26, 30, 60, 20, 4, 40, [1, ''])
+    Long_Axe = weapon('Long_Axe', 2, 2, 30, 20, 60, 20, 3, 30, [1, ''])
     re_weapons = [Mace, War_Hammer, Axe, Sword, Long_Sword, Pike, Halberd, Long_Axe, ]
     return re_weapons
 
 
-def material_pick(materials):
+def material_pick(materials_):
     mat_name = ''
     weapon_mat_mod = 100
     mat_cost = 0
@@ -504,6 +515,23 @@ def game_start():
             print('You have not managed to chose map properly')
 
 
+def create_squad(unit, weapon, shield, armour):
+    unit_list = []
+    count = unit.show_sq_size()
+    objects = {
+        'weapon': [weapon],
+        'armour': [armour]
+    }
+    if shield is not None:
+        objects['armour'].append(shield)
+    while count != 0:
+        new_unit = unit
+        new_unit.set_objects(objects)
+        unit_list.append(new_unit)
+        count -= 1
+    return unit_list
+
+
 def unit_recruitment(race, money, units, weapons, armour):
     materials = {
         'Bronze': [100, 100],
@@ -515,7 +543,7 @@ def unit_recruitment(race, money, units, weapons, armour):
     available_units = units[race]
     go = 1
     while go == 1:
-        print('=' * 30)
+        print_()
         if len(shopping_cart) == 0:
             print(race_recruitment[race])
         else:
@@ -533,56 +561,165 @@ def unit_recruitment(race, money, units, weapons, armour):
             count = 1
             shop = {}
             shop_keys = []
-            for element in available_units:
-                print(str(count) + ': ' + element[0].show_name() + "'s squad - costs " + str(element[1]))
-                shop[str(count)] = element
-                count += 1
-            for key in shop:
-                shop_keys.append(key)
-            input_rec = input('Chose desirable squad: ')
-            if input_rec not in shop_keys:
-                print('Try again)')
-            else:
-                num = len(shopping_cart) + 1
-                chosen_unit_cost = available_units[int(input_rec) - 1][1]
-                chosen_unit = available_units[int(input_rec) - 1][0]
-                shopping_cart[str(num)] = [chosen_unit, chosen_unit_cost]
-                money -= chosen_unit_cost
-                info = input('=' * 30 + '\nNow supply this squad with weapons:(Press anything to continue):')
-                go_weapon = 1
-                while go_weapon == 1:
-                    weapon_shop = {}
-                    weapon_keys = []
-                    count_w = 1
-                    for element in weapons:
-                        print_()
-                        print(str(count_w) + ' :' + element.show_all())
-                        weapon_shop[str(count_w)] = [element.show_name(), element.show_prize()]
-                        count_w += 1
+            unit_c = 1
+            chosen_unit = ''
+            num = 0
+            while unit_c == 1:
+                for element in available_units:
+                    print(str(count) + ': ' + element[0].show_name() + "'s squad - costs " + str(element[1]))
+                    shop[str(count)] = element
+                    count += 1
+                for key in shop:
+                    shop_keys.append(key)
+                input_rec = input('Chose desirable squad: ')
+                if input_rec not in shop_keys:
+                    print('Try again)')
+                else:
+                    num = len(shopping_cart) + 1
+                    chosen_unit_cost = available_units[int(input_rec) - 1][1]
+                    chosen_unit = available_units[int(input_rec) - 1][0]
+                    shopping_cart[str(num)] = [chosen_unit, chosen_unit_cost]
+                    money -= chosen_unit_cost
+                    unit_c -= 1
+            info = input('=' * 30 + '\nNow supply this squad with weapons:(Press anything to continue):')
+            go_weapon = 1
+            while go_weapon == 1:
+                weapon_shop = {}
+                weapon_keys = []
+                count_w = 1
+                for element in weapons:
                     print_()
-                    for key in weapon_shop:
-                        weapon_keys.append(key)
-                        print(key + ': ' + weapon_shop[key][0] + "'s: cost : " + str(weapon_shop[key][1]))
-                    input_w = input('Which weapon do you chose?')
-                    if input_w in weapon_keys:
-                        chosen_weapon = weapons[int(input_w) - 1]
-                        print_()
-                        info_1 = input('Now chose squads weapon material')
-                        # Material
-                        weapon_re = material_pick(materials)
-                        weapon_mat = weapon_re[0] / 100
-                        weapon_cost = weapon_re[1]
-                        weapon_mat_name = weapon_re[2]
-                        chosen_weapon.material(weapon_mat, weapon_mat_name)
-                        chosen_unit.add_weapon(chosen_weapon)
-                        # Money
-                        money -= weapon_shop[input_w][1] * weapon_cost / 100
-                        shopping_cart[str(num)][1] += weapon_shop[input_w][1] * weapon_cost / 100
-                        show_unit_re(money, chosen_unit)
-                    else:
-                        print('Please, try again')
+                    print(str(count_w) + ' :' + element.show_all())
+                    weapon_shop[str(count_w)] = [element.show_name(), element.show_prize()]
+                    count_w += 1
+                print_()
+                for key in weapon_shop:
+                    weapon_keys.append(key)
+                    print(key + ': ' + weapon_shop[key][0] + "'s: cost : " + str(weapon_shop[key][1]))
+                input_w = input('Which weapon do you chose?')
+                if input_w in weapon_keys:
+                    chosen_weapon = weapons[int(input_w) - 1]
+                    print_()
+                    info_1 = input('Now chose squads weapon material')
+                    # Material
+                    weapon_re = material_pick(materials)
+                    weapon_mat = weapon_re[0] / 100
+                    weapon_cost = weapon_re[1]
+                    weapon_mat_name = weapon_re[2]
+                    print(chosen_weapon)
+                    print(str(weapon_mat) + ' ' + str(weapon_mat_name))
+                    print(chosen_weapon.material)
+                    chosen_weapon.set_material(weapon_mat, weapon_mat_name)
+                    chosen_unit.add_weapon(chosen_weapon)
+                    # Money
+                    money -= weapon_shop[input_w][1] * weapon_cost / 100
+                    shopping_cart[str(num)][1] += weapon_shop[input_w][1] * weapon_cost / 100
+                    go_weapon -= 1
+                else:
+                    print('Please, try again')
+            show_unit_re(money, chosen_unit)
+            if chosen_unit.show_hand_space() > 0:
+                pass
 
     return 1
+
+
+def boring_squad_recruitment(units, weapons, armour, race, num):
+    sq_re = []
+    units = units[race]
+    all_w = {}
+    all_a = {}
+    all_s = {}
+    for key in materials:
+        if key != 'Leather':
+            for element in weapons:
+                new_weapon = element
+                new_weapon.set_material(materials[key], key)
+                all_w[new_weapon.show_name()] = new_weapon
+            for element in armour[1]:
+                new_shield = element
+                new_shield.set_material(materials[key], key)
+                all_s[new_shield.show_name()] = new_shield
+        for element in armour[0]:
+            new_armour = element
+            new_armour.set_material(materials[key], key)
+            all_a[new_armour.show_name()] = new_armour
+    count = 0
+    for key in all_w:
+        print(str(count) + ': ' + key)
+        count += 1
+    count = 0
+    for key in all_a:
+        print(str(count) + ': ' + key)
+        count += 1
+    count = 0
+    for key in all_s:
+        print(str(count) + ': ' + key)
+        count += 1
+    if race is 'Human':
+        # Peasant squads
+        u_01 =\
+            squad(num, create_squad(units[0][0],
+                                    all_w['Bronze Axe'],
+                                    None,
+                                    all_a['Leather Chain vest']))
+        sq_re.append(u_01)
+        u_02 =\
+            squad(num, create_squad(units[0][0],
+                                    all_w['Bronze Mace'],
+                                    all_s['Bronze Buckler'],
+                                    all_a['Leather Plate armour']))
+        sq_re.append(u_02)
+        u_03 =\
+            squad(num, create_squad(units[0][0],
+                                    all_w['Bronze Pike'],
+                                    None,
+                                    all_a['Leather Plate armour']))
+        sq_re.append(u_03)
+        u_04 = \
+            squad(num, create_squad(units[0][0],
+                                    all_w['Iron Pike'],
+                                    None,
+                                    all_a['Leather Chain vest']))
+        sq_re.append(u_04)
+        # Mercenaries squad
+        u_05 = \
+            squad(num, create_squad(units[1][0],
+                                    all_w['Iron War_Hammer'],
+                                    all_s['Bronze Shield'],
+                                    all_a['Bronze Plate armour']))
+        sq_re.append(u_05)
+        u_06 = \
+            squad(num, create_squad(units[1][0],
+                                    all_w['Iron Sword'],
+                                    all_s['Iron Buckler'],
+                                    all_a['Iron Chain vest']))
+        sq_re.append(u_06)
+        u_07 = \
+            squad(num, create_squad(units[1][0],
+                                    all_w['Iron Axe'],
+                                    all_s['Iron Buckler'],
+                                    all_a['Iron Plate armour']))
+        sq_re.append(u_07)
+        u_08 = \
+            squad(num, create_squad(units[1][0],
+                                    all_w['Iron Mace'],
+                                    all_s['Bronze Tower shield'],
+                                    all_a['Iron Plate armour']))
+        sq_re.append(u_08)
+        # Knights
+        u_09 = \
+            squad(num, create_squad(units[2][0],
+                                    all_w['Steel Long_Axe'],
+                                    None,
+                                    all_a['Steel Plate armour']))
+        sq_re.append(u_09)
+        u_10 = \
+            squad(num, create_squad(units[2][0],
+                                    all_w['Steel Long_Sword'],
+                                    None,
+                                    all_a['Steel Plate armour']))
+    return sq_re
 
 
 def war_game():
@@ -600,8 +737,6 @@ def war_game():
         armour = armour_creator()
         weapons = weapon_creator()
         units = unit_creator()
-        player1_money = 1000
-        player2_money = 1000
         player1_squads = []
         player2_squads = []
         print('Its: ' + str(Turn) + ' Turn')
@@ -612,7 +747,8 @@ def war_game():
             print('Its ' + current_player + ' turn, commanding ' +
                   players_race + str(race_army_title[players_race][0]))
             if Turn <= 2:
-                player1_squads = unit_recruitment(players_race, player1_money, units, weapons, armour)
+                players1_squads = boring_squad_recruitment(units, weapons, armour, players_race, player_num)
+                x = input('stop')
             Turn += 1
         else:
             current_player = 'Player 2'
@@ -621,7 +757,7 @@ def war_game():
             print('Its ' + current_player + ' turn, commanding ' +
                   players_race + str(race_army_title[players_race][0]))
             if Turn <= 2:
-                player2_squads = unit_recruitment(players_race, player2_money, units, weapons, armour)
+                player2_squads = boring_squad_recruitment(units, weapons, armour, players_race, player_num)
                 print(player2_squads)
             Turn += 1
 
