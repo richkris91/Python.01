@@ -103,14 +103,21 @@ class armour(object):
 
 # Squads
 class squad(object):
-    def __init__(self, player, units, squad_formation=None, name=None):
+    def __init__(self, player, unit_placement, squad_formation, desc=None, name=None, ):
         self.player = player
-        self.units = units
         self.squad_formation = squad_formation
+        self.name = name
+        self.unit_placement = unit_placement
+        self.desc = desc
+
+    def set_name(self, name):
         self.name = name
 
     def show_name(self):
         return self.name
+
+    def show_desc(self):
+        return self.desc
 
     def move(self, where):
         pass
@@ -174,6 +181,21 @@ class unit(object):
 
     def set_objects(self, new_objects):
         self.objects = new_objects
+
+
+class formation(object):
+    def __init__(self, name, sign,
+                 form_cost, stability,
+                 move_mod,
+                 attack_mod_1, def_mod_1,
+                 attack_mod_2, def_mod_2):
+        self.name = name
+        self.sign = sign
+        self.form_cost = form_cost
+        self.stability = stability
+        self.move_mod = move_mod
+        self.attack_mods = [attack_mod_1, attack_mod_2]
+        self.def_mod = [def_mod_1, def_mod_2]
 
 
 # Game setter
@@ -339,7 +361,25 @@ def list_str(list_):
     return list_5
 
 
-# Squads programs
+# Squad related programs
+def formation_creator():
+    # Formations 1name, 2sign, 3form_cost, 4stability, 5move_mod,
+    # 6attack_mod_1, 7def_mod_1, 8attack_mod_2, 9def_mod_2
+    formations = {}
+    # Basics
+    formations['Broken'] = formation('Broken', 'B', 0, 10, -2, -3, -3, -3, -3)
+    formations['Lose'] = formation('Lose', 'L', 1, 10, +1, -0, -0, -0, -0)
+    formations['Square'] = formation('Square', 'Q', 2, 12, -1, +2, +1, +2, +2)
+    formations['Spear_head'] = formation('Spear_head', 'S', 2, 10, -1, +3, +1, +2, +1)
+    # Pike, Halberd
+    formations['Phalanx'] = formation('Phalanx', 'P', 3, 12, -2, 0, +3, +1, +3)
+    # Shields
+    formations['Shield_wall'] = formation('Shield_wall', 'W', 2, 12, -1, +2, +2, +2, +1)
+    # Wild
+    formations['Wild'] = formation('Wild', 'D', 1, 8, -1, +4, +3, +1, 0)
+    return formations
+
+
 def can_move(Tiles_2, key1, key2, direction):
     letters_key = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 8, 'J': 9}
     letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
@@ -486,8 +526,8 @@ def unit_creator():
     Knight = unit('Knight', 1, 20, 18, 150, 26, 8, 10, 30, objects)
     # Orc
     Goblin = unit('Goblin', 0.75, 40, 8, 75, 24, 10, 6, 24, objects)
-    Orc = unit('Orc', 1.25, 26, 14, 150, 36, 8, 10, 30, objects)
-    Ogre = unit('Ogre', 6, 6, 6, 200, 80, 6, 36, 30, objects)
+    Orc = unit('Orc', 1.25, 26, 14, 150, 36, 8, 11, 30, objects)
+    Ogre = unit('Ogre', 5, 6, 6, 200, 80, 6, 36, 30, objects)
     re_units = {
         'Human': [[Peasant, 30], [Mercenary, 50], [Knight, 80]],
         'Orc': [[Goblin, 20], [Orc, 60], [Ogre, 100]]
@@ -515,21 +555,38 @@ def game_start():
             print('You have not managed to chose map properly')
 
 
-def create_squad(unit, weapon, shield, armour):
+def create_squad(player, unit, weapon, shield, armour):
     unit_list = []
     count = unit.show_sq_size()
     objects = {
         'weapon': [weapon],
         'armour': [armour]
     }
+    shield_desc = ''
     if shield is not None:
         objects['armour'].append(shield)
+        shield_desc = 'and ' + shield.show_name()
+    desc = unit.show_name() + ' squad, wielding ' + weapon.show_name() + ' ' + shield_desc \
+           + ' ,armoured with ' + armour.show_name()
     while count != 0:
         new_unit = unit
         new_unit.set_objects(objects)
         unit_list.append(new_unit)
         count -= 1
-    return unit_list
+    unit_placement = {
+        'N': [],
+        'E': [],
+        'S': [],
+        'W': [],
+        'R': []
+    }
+    for element in unit_list:
+        unit_placement['R'].append(element)
+    formation = 'Lose'
+    if unit.show_name() == 'Ogre':
+        formation = 'Wild'
+    new_squad = squad(player, unit_placement, formation, desc)
+    return new_squad
 
 
 def unit_recruitment(race, money, units, weapons, armour):
@@ -644,82 +701,170 @@ def boring_squad_recruitment(units, weapons, armour, race, num):
             new_armour = element
             new_armour.set_material(materials[key], key)
             all_a[new_armour.show_name()] = new_armour
-    count = 0
     for key in all_w:
-        print(str(count) + ': ' + key)
-        count += 1
-    count = 0
-    for key in all_a:
-        print(str(count) + ': ' + key)
-        count += 1
-    count = 0
-    for key in all_s:
-        print(str(count) + ': ' + key)
-        count += 1
+        print(all_w[key].show_name())
     if race is 'Human':
         # Peasant squads
-        u_01 =\
-            squad(num, create_squad(units[0][0],
-                                    all_w['Bronze Axe'],
-                                    None,
-                                    all_a['Leather Chain vest']))
+        u_01 = create_squad(num,
+                            units[0][0],
+                            all_w['Bronze Axe'],
+                            None,
+                            all_a['Leather Chain vest'])
         sq_re.append(u_01)
-        u_02 =\
-            squad(num, create_squad(units[0][0],
-                                    all_w['Bronze Mace'],
-                                    all_s['Bronze Buckler'],
-                                    all_a['Leather Plate armour']))
+        u_02 = create_squad(num,
+                            units[0][0],
+                            all_w['Bronze Mace'],
+                            all_s['Bronze Buckler'],
+                            all_a['Leather Plate armour'])
         sq_re.append(u_02)
-        u_03 =\
-            squad(num, create_squad(units[0][0],
-                                    all_w['Bronze Pike'],
-                                    None,
-                                    all_a['Leather Plate armour']))
+        u_03 = create_squad(num,
+                            units[0][0],
+                            all_w['Bronze Pike'],
+                            None,
+                            all_a['Leather Plate armour'])
         sq_re.append(u_03)
-        u_04 = \
-            squad(num, create_squad(units[0][0],
-                                    all_w['Iron Pike'],
-                                    None,
-                                    all_a['Leather Chain vest']))
+        u_04 = create_squad(num,
+                            units[0][0],
+                            all_w['Iron Pike'],
+                            None,
+                            all_a['Leather Chain vest'])
         sq_re.append(u_04)
         # Mercenaries squad
-        u_05 = \
-            squad(num, create_squad(units[1][0],
-                                    all_w['Iron War_Hammer'],
-                                    all_s['Bronze Shield'],
-                                    all_a['Bronze Plate armour']))
+        u_05 = create_squad(num,
+                            units[1][0],
+                            all_w['Iron War_Hammer'],
+                            all_s['Bronze Shield'],
+                            all_a['Bronze Plate armour'])
         sq_re.append(u_05)
-        u_06 = \
-            squad(num, create_squad(units[1][0],
-                                    all_w['Iron Sword'],
-                                    all_s['Iron Buckler'],
-                                    all_a['Iron Chain vest']))
+        u_06 = create_squad(num,
+                            units[1][0],
+                            all_w['Iron Sword'],
+                            all_s['Iron Buckler'],
+                            all_a['Iron Chain vest'])
         sq_re.append(u_06)
-        u_07 = \
-            squad(num, create_squad(units[1][0],
-                                    all_w['Iron Axe'],
-                                    all_s['Iron Buckler'],
-                                    all_a['Iron Plate armour']))
+        u_07 = create_squad(num,
+                            units[1][0],
+                            all_w['Iron Axe'],
+                            all_s['Iron Buckler'],
+                            all_a['Iron Plate armour'])
         sq_re.append(u_07)
-        u_08 = \
-            squad(num, create_squad(units[1][0],
-                                    all_w['Iron Mace'],
-                                    all_s['Bronze Tower shield'],
-                                    all_a['Iron Plate armour']))
+        u_08 = create_squad(num,
+                            units[1][0],
+                            all_w['Iron Mace'],
+                            all_s['Bronze Tower shield'],
+                            all_a['Iron Plate armour'])
         sq_re.append(u_08)
         # Knights
-        u_09 = \
-            squad(num, create_squad(units[2][0],
-                                    all_w['Steel Long_Axe'],
-                                    None,
-                                    all_a['Steel Plate armour']))
+        u_09 = create_squad(num,
+                            units[2][0],
+                            all_w['Steel Long_Axe'],
+                            None,
+                            all_a['Steel Plate armour'])
         sq_re.append(u_09)
-        u_10 = \
-            squad(num, create_squad(units[2][0],
-                                    all_w['Steel Long_Sword'],
-                                    None,
-                                    all_a['Steel Plate armour']))
+        u_10 = create_squad(num,
+                            units[2][0],
+                            all_w['Steel Long_Sword'],
+                            None,
+                            all_a['Steel Plate armour'])
+        sq_re.append(u_10)
+        u_11 = create_squad(num,
+                            units[2][0],
+                            all_w['Steel Halberd'],
+                            None,
+                            all_a['Steel Chain vest'])
+        sq_re.append(u_11)
+        u_12 = create_squad(num,
+                            units[2][0],
+                            all_w['Steel Halberd'],
+                            None,
+                            all_a['Steel Chain vest'])
+        sq_re.append(u_12)
+        print_()
+        print("Human's army has arrived")
+        print_()
+    elif race == 'Orc':
+        # Goblin squads
+        u_01 = create_squad(num,
+                            units[0][0],
+                            all_w['Iron Pike'],
+                            None,
+                            all_a['Leather Chain vest'])
+        sq_re.append(u_01)
+        u_02 = create_squad(num,
+                            units[0][0],
+                            all_w['Iron Sword'],
+                            all_s['Iron Buckler'],
+                            all_a['Leather Chain vest'])
+        sq_re.append(u_02)
+        u_03 = create_squad(num,
+                            units[0][0],
+                            all_w['Iron Sword'],
+                            all_s['Iron Shield'],
+                            all_a['Leather Chain vest'])
+        sq_re.append(u_03)
+        u_04 = create_squad(num,
+                            units[0][0],
+                            all_w['Iron Long_Axe'],
+                            None,
+                            all_a['Bronze Chain vest'])
+        sq_re.append(u_04)
+        u_05 = create_squad(num,
+                            units[0][0],
+                            all_w['Bronze Pike'],
+                            None,
+                            all_a['Bronze Plate armour'])
+
+        sq_re.append(u_05)
+        # Orc squads
+        u_06 = create_squad(num,
+                            units[1][0],
+                            all_w['Iron Long_Sword'],
+                            None,
+                            all_a['Bronze Plate armour'])
+        sq_re.append(u_06)
+        u_07 = create_squad(num, units[1][0],
+                            all_w['Iron Halberd'],
+                            None,
+                            all_a['Iron Chain vest'])
+        sq_re.append(u_07)
+        u_08 = create_squad(num,
+                            units[1][0],
+                            all_w['Iron Long_Axe'],
+                            None,
+                            all_a['Iron Plate armour'])
+        sq_re.append(u_08)
+        # Ogre squads
+        u_09 = create_squad(num,
+                            units[2][0],
+                            all_w['Iron Mace'],
+                            None,
+                            all_a['Leather Plate armour'])
+        sq_re.append(u_09)
+        u_10 = create_squad(num,
+                            units[2][0],
+                            all_w['Iron Sword'],
+                            None,
+                            all_a['Iron Chain vest'])
+        sq_re.append(u_10)
+        print_()
+        print('Vile forces of darkness are upon you!')
+        print_()
+    sq_re = numeric_squad_setter(sq_re)
     return sq_re
+
+
+def numeric_squad_setter(squad_list):
+    num = 0
+    for element in squad_list:
+        element.set_name(str(num))
+        num += 1
+    return squad_list
+
+
+def show_players_squad(squads):
+    for element in squads:
+        name = element.show_name()
+        print(str(name) + ': ' + element.show_desc())
 
 
 def war_game():
@@ -733,21 +878,24 @@ def war_game():
     Turn = 1
     current_player = ''
     player_num = 0
+    all_formations = formation_creator()
+    armour = armour_creator()
+    weapons = weapon_creator()
+    units = unit_creator()
+    player1_squads = []
+    player2_squads = []
     while game == 1:
-        armour = armour_creator()
-        weapons = weapon_creator()
-        units = unit_creator()
-        player1_squads = []
-        player2_squads = []
         print('Its: ' + str(Turn) + ' Turn')
         if Turn % 2 != 0:
             current_player = 'Player 1'
             player_num = 1
             players_race = players[str(player_num)]
-            print('Its ' + current_player + ' turn, commanding ' +
+            print('Its ' + current_player + ' turn: ' + str(Turn) + ' , commanding ' +
                   players_race + str(race_army_title[players_race][0]))
+            # Beginning turn
             if Turn <= 2:
-                players1_squads = boring_squad_recruitment(units, weapons, armour, players_race, player_num)
+                player1_squads = boring_squad_recruitment(units, weapons, armour, players_race, player_num)
+                show_players_squad(player1_squads)
                 x = input('stop')
             Turn += 1
         else:
@@ -756,9 +904,11 @@ def war_game():
             players_race = players[str(player_num)]
             print('Its ' + current_player + ' turn, commanding ' +
                   players_race + str(race_army_title[players_race][0]))
+            # Beginning turn
             if Turn <= 2:
                 player2_squads = boring_squad_recruitment(units, weapons, armour, players_race, player_num)
-                print(player2_squads)
+                show_players_squad(player2_squads)
+                x = input('stop')
             Turn += 1
 
 
