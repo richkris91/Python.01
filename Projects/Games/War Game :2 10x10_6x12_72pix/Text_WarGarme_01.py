@@ -78,7 +78,7 @@ class weapon(object):
 
     def set_material(self, material_mod, material_name):
         self.material = [material_mod, material_name]
-
+        print('new material name =' + material_name)
 
 class armour(object):
     def __init__(self, name, def_mod, attack_mod, speed_mod, material=None):
@@ -556,6 +556,7 @@ def game_start():
 
 
 def create_squad(player, unit, weapon, shield, armour):
+    print_()
     unit_list = []
     count = unit.show_sq_size()
     objects = {
@@ -564,8 +565,10 @@ def create_squad(player, unit, weapon, shield, armour):
     }
     shield_desc = ''
     if shield is not None:
-        objects['armour'].append(shield)
+        objects['weapon'].append(shield)
         shield_desc = 'and ' + shield.show_name()
+    print(unit.show_name() + ' squad, wielding ' + weapon.show_name() + ' ' + shield_desc \
+           + ' ,armoured with ' + armour.show_name())
     desc = unit.show_name() + ' squad, wielding ' + weapon.show_name() + ' ' + shield_desc \
            + ' ,armoured with ' + armour.show_name()
     while count != 0:
