@@ -48,7 +48,7 @@ class weapon(object):
         self.reach = reach
         self.material = material
         # combat parameters
-        self.dmg = dmg + dmg * int(self.material[0] / 2)
+        self.dmg = dmg + dmg * int(self.material[0] / 100 / 2)
         self.penetration = penetration * self.material[0]
         self.block_mod = block_mod
         self.accuracy = accuracy
@@ -78,20 +78,18 @@ class weapon(object):
 
     def set_material(self, material_mod, material_name):
         self.material = [material_mod, material_name]
-        print('new material name =' + material_name)
+
 
 class armour(object):
-    def __init__(self, name, def_mod, attack_mod, speed_mod, material=None):
-        if material is None:
-            material = [1, '']
+    def __init__(self, name, def_mod, attack_mod, speed_mod, material):
         self.name = name
         self.material = material
-        self.def_mod = def_mod * material
+        self.def_mod = def_mod * material[0]/100
         self.speed_mod = speed_mod
         self.attack_mod = attack_mod
 
     def show_name(self):
-        return self.material[1] + ' ' + self.name
+        return self.material[1] + ' ' + str(self.name)
 
     def show_mods(self):
         mods = [self.def_mod, self.attack_mod, self.speed_mod]
@@ -445,35 +443,38 @@ def print_():
 
 
 def armour_creator():
-    armour_shield = [[], []]
     # Armour
-    Chain_vest = armour('Chain vest', 30, 15, 2)
-    Plate_armor = armour('Plate armour', 70, 20, 5)
-    armour_shield[0].append(Chain_vest)
-    armour_shield[0].append(Plate_armor)
-    # Shields
-    Buckler = armour('Buckler', 15, 0, 1)
-    Shield = armour('Shield', 30, 10, 2)
-    Tower_shield = armour('Tower shield', 60, 40, 3)
-    armour_shield[1].append(Buckler)
-    armour_shield[1].append(Shield)
-    armour_shield[1].append(Tower_shield)
-    return armour_shield
+    Chain_vest = armour('Chain vest', 30, 15, 2, [100, ''])
+    Plate_armour = armour('Plate armour', 70, 20, 5, [100, ''])
+    armour = [Chain_vest, Plate_armour]
+    return armour
 
 
 def weapon_creator():
     weapon_reminder = ['name', 'hand_space', 'reach', 'dmg', 'penetration', 'accuracy', 'block_mod',
                        'weight', 'prize']
-    Mace = weapon('Mace', 1, 1, 16, 40, 70, 30, 2, 20, [1, ''])
-    War_Hammer = weapon('War_Hammer', 1, 1, 16, 60, 70, 30, 3, 30, [1, ''])
-    Axe = weapon('Axe', 1, 1, 20, 10, 70, 30, 1, 20, [1, ''])
-    Sword = weapon('Sword', 1, 1, 14, 20, 80, 40, 2, 30, [1, ''])
-    Long_Sword = weapon('Long_Sword', 2, 1, 24, 30, 70, 40, 4, 50, [1, ''])
-    Pike = weapon('Pike', 2, 2, 14, 60, 60, 20, 1, 10, [1, ''])
-    Halberd = weapon('Halberd', 2, 2, 26, 30, 60, 20, 4, 40, [1, ''])
-    Long_Axe = weapon('Long_Axe', 2, 2, 30, 20, 60, 20, 3, 30, [1, ''])
+    Mace = weapon('Mace', 1, 1, 16, 40, 70, 30, 2, 20, [100, ''])
+    War_Hammer = weapon('War_Hammer', 1, 1, 16, 60, 70, 30, 3, 30, [100, ''])
+    Axe = weapon('Axe', 1, 1, 20, 10, 70, 30, 1, 20, [100, ''])
+    Sword = weapon('Sword', 1, 1, 14, 20, 80, 40, 2, 30, [100, ''])
+    Long_Sword = weapon('Long_Sword', 2, 1, 24, 30, 70, 40, 4, 50, [100, ''])
+    Pike = weapon('Pike', 2, 2, 14, 60, 60, 20, 1, 10, [100, ''])
+    Halberd = weapon('Halberd', 2, 2, 26, 30, 60, 20, 4, 40, [100, ''])
+    Long_Axe = weapon('Long_Axe', 2, 2, 30, 20, 60, 20, 3, 30, [100, ''])
     re_weapons = [Mace, War_Hammer, Axe, Sword, Long_Sword, Pike, Halberd, Long_Axe, ]
     return re_weapons
+
+
+def shield_creator():
+    # Shields
+    shields = []
+    Buckler = armour('Buckler', 15, 0, 1, [100, ''])
+    Shield = armour('Shield', 30, 10, 2, [100, ''])
+    Tower_shield = armour('Tower shield', 60, 40, 3, [100, ''])
+    shields[1].append(Buckler)
+    shields[1].append(Shield)
+    shields[1].append(Tower_shield)
+    return shields
 
 
 def material_pick(materials_):
@@ -556,7 +557,6 @@ def game_start():
 
 
 def create_squad(player, unit, weapon, shield, armour):
-    print_()
     unit_list = []
     count = unit.show_sq_size()
     objects = {
@@ -567,8 +567,6 @@ def create_squad(player, unit, weapon, shield, armour):
     if shield is not None:
         objects['weapon'].append(shield)
         shield_desc = 'and ' + shield.show_name()
-    print(unit.show_name() + ' squad, wielding ' + weapon.show_name() + ' ' + shield_desc \
-           + ' ,armoured with ' + armour.show_name())
     desc = unit.show_name() + ' squad, wielding ' + weapon.show_name() + ' ' + shield_desc \
            + ' ,armoured with ' + armour.show_name()
     while count != 0:
@@ -684,7 +682,7 @@ def unit_recruitment(race, money, units, weapons, armour):
     return 1
 
 
-def boring_squad_recruitment(units, weapons, armour, race, num):
+def boring_squad_recruitment(units, weapons, shields, armour, race, num):
     sq_re = []
     units = units[race]
     all_w = {}
@@ -696,16 +694,14 @@ def boring_squad_recruitment(units, weapons, armour, race, num):
                 new_weapon = element
                 new_weapon.set_material(materials[key], key)
                 all_w[new_weapon.show_name()] = new_weapon
-            for element in armour[1]:
+            for element in shields:
                 new_shield = element
                 new_shield.set_material(materials[key], key)
                 all_s[new_shield.show_name()] = new_shield
-        for element in armour[0]:
+        for element in armour:
             new_armour = element
             new_armour.set_material(materials[key], key)
             all_a[new_armour.show_name()] = new_armour
-    for key in all_w:
-        print(all_w[key].show_name())
     if race is 'Human':
         # Peasant squads
         u_01 = create_squad(num,
@@ -884,7 +880,9 @@ def war_game():
     all_formations = formation_creator()
     armour = armour_creator()
     weapons = weapon_creator()
+    shields = shield_creator()
     units = unit_creator()
+    #
     player1_squads = []
     player2_squads = []
     while game == 1:
