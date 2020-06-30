@@ -77,14 +77,15 @@ class weapon(object):
         return self.prize
 
     def set_material(self, material_mod, material_name):
-        self.material = [material_mod, material_name]
+        self.material[0] = material_mod
+        self.material[1] = material_name
 
 
 class armour(object):
     def __init__(self, name, def_mod, attack_mod, speed_mod, material):
         self.name = name
         self.material = material
-        self.def_mod = def_mod * material[0]/100
+        self.def_mod = def_mod * material[0] / 100
         self.speed_mod = speed_mod
         self.attack_mod = attack_mod
 
@@ -430,10 +431,10 @@ players = {
 }
 # Materials
 materials = {
-    'Leather': 100,
-    'Bronze': 140,
-    'Iron': 180,
-    'Steel': 220
+    'Leather': [100, 'Leather'],
+    'Bronze': [140, 'Bronze'],
+    'Iron': [180, 'Iron'],
+    'Steel': [220, 'Steel']
 }
 
 
@@ -443,11 +444,10 @@ def print_():
 
 
 def armour_creator():
-    # Armour
     Chain_vest = armour('Chain vest', 30, 15, 2, [100, ''])
     Plate_armour = armour('Plate armour', 70, 20, 5, [100, ''])
-    armour = [Chain_vest, Plate_armour]
-    return armour
+    re_armour = [Chain_vest, Plate_armour]
+    return re_armour
 
 
 def weapon_creator():
@@ -467,14 +467,18 @@ def weapon_creator():
 
 def shield_creator():
     # Shields
-    shields = []
     Buckler = armour('Buckler', 15, 0, 1, [100, ''])
     Shield = armour('Shield', 30, 10, 2, [100, ''])
     Tower_shield = armour('Tower shield', 60, 40, 3, [100, ''])
-    shields[1].append(Buckler)
-    shields[1].append(Shield)
-    shields[1].append(Tower_shield)
-    return shields
+    re_shields = [Buckler, Shield, Tower_shield]
+    return re_shields
+
+
+def obj_array_to_dic(array):
+    new_dic = {}
+    for element in array:
+        new_dic[element.show_name()] = element
+    return new_dic
 
 
 def material_pick(materials_):
@@ -684,24 +688,29 @@ def unit_recruitment(race, money, units, weapons, armour):
 
 def boring_squad_recruitment(units, weapons, shields, armour, race, num):
     sq_re = []
+    all_weapons = []
+    all_armour = []
+    all_shields = []
     units = units[race]
-    all_w = {}
-    all_a = {}
-    all_s = {}
     for key in materials:
+        mod = materials[key][0]
+        name = materials[key][1]
         if key != 'Leather':
             for element in weapons:
                 new_weapon = element
-                new_weapon.set_material(materials[key], key)
-                all_w[new_weapon.show_name()] = new_weapon
+                new_weapon.set_material(mod, name)
+                all_weapons.append(new_weapon)
             for element in shields:
                 new_shield = element
-                new_shield.set_material(materials[key], key)
-                all_s[new_shield.show_name()] = new_shield
+                new_shield.set_material(mod, name)
+                all_shields.append(new_shield)
         for element in armour:
             new_armour = element
-            new_armour.set_material(materials[key], key)
-            all_a[new_armour.show_name()] = new_armour
+            new_armour.set_material(mod, name)
+            all_armour.append(new_armour)
+    all_w = obj_array_to_dic(all_weapons)
+    all_s = obj_array_to_dic(all_shields)
+    all_a = obj_array_to_dic(all_armour)
     if race is 'Human':
         # Peasant squads
         u_01 = create_squad(num,
@@ -878,9 +887,9 @@ def war_game():
     current_player = ''
     player_num = 0
     all_formations = formation_creator()
-    armour = armour_creator()
-    weapons = weapon_creator()
-    shields = shield_creator()
+    all_armour = armour_creator()
+    all_weapons = weapon_creator()
+    all_shields = shield_creator()
     units = unit_creator()
     #
     player1_squads = []
@@ -895,7 +904,8 @@ def war_game():
                   players_race + str(race_army_title[players_race][0]))
             # Beginning turn
             if Turn <= 2:
-                player1_squads = boring_squad_recruitment(units, weapons, armour, players_race, player_num)
+                player1_squads = boring_squad_recruitment(units, all_weapons, all_shields, all_armour, players_race,
+                                                          player_num)
                 show_players_squad(player1_squads)
                 x = input('stop')
             Turn += 1
@@ -907,7 +917,8 @@ def war_game():
                   players_race + str(race_army_title[players_race][0]))
             # Beginning turn
             if Turn <= 2:
-                player2_squads = boring_squad_recruitment(units, weapons, armour, players_race, player_num)
+                player2_squads = boring_squad_recruitment(units, all_weapons, all_shields, all_armour, players_race,
+                                                          player_num)
                 show_players_squad(player2_squads)
                 x = input('stop')
             Turn += 1
