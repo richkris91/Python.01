@@ -42,19 +42,30 @@ class weapon(object):
                  prize,
                  material):
         # name
+        self.type = weapon
         self.name = name
         # hand_space, reach and material
         self.hand_space = hand_space
         self.reach = reach
         self.material = material
         # combat parameters
-        self.dmg = dmg + dmg * int(self.material[0] / 100 / 2)
-        self.penetration = penetration * self.material[0]
+        self.dmg = dmg
+        self.penetration = penetration
         self.block_mod = block_mod
         self.accuracy = accuracy
         # Rest
         self.prize = prize
         self.weight = weight
+
+    def return_type(self):
+        return self.type
+
+    def return_all(self):
+        re_all = [
+            self.name, self.hand_space, self.reach, self.dmg, self.penetration,
+            self.accuracy, self.block_mod, self.weight, self.prize
+        ]
+        return re_all
 
     def show_all(self):
         return self.name + ': it is a: ' + str(self.hand_space) + ' handed weapon, with reach of: ' + str(self.reach) + \
@@ -85,9 +96,19 @@ class armour(object):
     def __init__(self, name, def_mod, attack_mod, speed_mod, material):
         self.name = name
         self.material = material
-        self.def_mod = def_mod * material[0] / 100
+        self.def_mod = def_mod
         self.speed_mod = speed_mod
         self.attack_mod = attack_mod
+        self.type = armour
+
+    def return_type(self):
+        return self.type
+
+    def return_all(self):
+        re_all = [
+            self.name, self.def_mod, self.attack_mod, self.speed_mod
+        ]
+        return re_all
 
     def show_name(self):
         return self.material[1] + ' ' + str(self.name)
@@ -481,6 +502,33 @@ def obj_array_to_dic(array):
     return new_dic
 
 
+def material_obj_creator(materials, obj):
+    re_array = []
+    type_ = obj.return_type()
+    if type_ == weapon:
+        all_p = obj.return_all()
+        for key in materials:
+            if key != 'Leather':
+                mod = materials[key][0]
+                name = materials[key][1]
+                material = [mod, name]
+                new_obj = weapon(
+                    all_p[0], all_p[1], all_p[2], all_p[3], all_p[4], all_p[5], all_p[6], all_p[7], all_p[8], material
+                )
+                re_array.append(new_obj)
+    elif type_ == armour:
+        all_p = obj.return_all()
+        for key in materials:
+            mod = materials[key][0]
+            name = materials[key][1]
+            material = [mod, name]
+            new_obj = armour(
+                all_p[0], all_p[1], all_p[2], all_p[3], material
+            )
+            re_array.append(new_obj)
+    return re_array
+
+
 def material_pick(materials_):
     mat_name = ''
     weapon_mat_mod = 100
@@ -572,7 +620,7 @@ def create_squad(player, unit, weapon, shield, armour):
         objects['weapon'].append(shield)
         shield_desc = 'and ' + shield.show_name()
     desc = unit.show_name() + ' squad, wielding ' + weapon.show_name() + ' ' + shield_desc \
-           + ' ,armoured with ' + armour.show_name()
+           + ', armoured with ' + armour.show_name()
     while count != 0:
         new_unit = unit
         new_unit.set_objects(objects)
@@ -688,29 +736,22 @@ def unit_recruitment(race, money, units, weapons, armour):
 
 def boring_squad_recruitment(units, weapons, shields, armour, race, num):
     sq_re = []
-    all_weapons = []
-    all_armour = []
-    all_shields = []
+    all_w = {}
+    all_a = {}
+    all_s = {}
     units = units[race]
-    for key in materials:
-        mod = materials[key][0]
-        name = materials[key][1]
-        if key != 'Leather':
-            for element in weapons:
-                new_weapon = element
-                new_weapon.set_material(mod, name)
-                all_weapons.append(new_weapon)
-            for element in shields:
-                new_shield = element
-                new_shield.set_material(mod, name)
-                all_shields.append(new_shield)
-        for element in armour:
-            new_armour = element
-            new_armour.set_material(mod, name)
-            all_armour.append(new_armour)
-    all_w = obj_array_to_dic(all_weapons)
-    all_s = obj_array_to_dic(all_shields)
-    all_a = obj_array_to_dic(all_armour)
+    for element in weapons:
+        wm_array = material_obj_creator(materials, element)
+        for element in wm_array:
+            all_w[element.show_name()] = element
+    for element in armour:
+        am_array = material_obj_creator(materials, element)
+        for element in am_array:
+            all_a[element.show_name()] = element
+    for element in shields:
+        sm_array = material_obj_creator(materials, element)
+        for element in sm_array:
+            all_s[element.show_name()] = element
     if race is 'Human':
         # Peasant squads
         u_01 = create_squad(num,
@@ -844,15 +885,15 @@ def boring_squad_recruitment(units, weapons, shields, armour, race, num):
         # Ogre squads
         u_09 = create_squad(num,
                             units[2][0],
-                            all_w['Iron Mace'],
+                            all_w['Bronze Mace'],
                             None,
-                            all_a['Leather Plate armour'])
+                            all_a['Bronze Plate armour'])
         sq_re.append(u_09)
         u_10 = create_squad(num,
                             units[2][0],
-                            all_w['Iron Sword'],
+                            all_w['Bronze Sword'],
                             None,
-                            all_a['Iron Chain vest'])
+                            all_a['Bronze Chain vest'])
         sq_re.append(u_10)
         print_()
         print('Vile forces of darkness are upon you!')
