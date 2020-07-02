@@ -40,7 +40,8 @@ class weapon(object):
                  dmg, penetration, accuracy, block_mod,
                  weight,
                  prize,
-                 material):
+                 material,
+                 graph):
         # name
         self.type = weapon
         self.name = name
@@ -56,6 +57,10 @@ class weapon(object):
         # Rest
         self.prize = prize
         self.weight = weight
+        self.graph = graph
+
+    def return_graph(self):
+        return self.graph
 
     def return_type(self):
         return self.type
@@ -63,7 +68,7 @@ class weapon(object):
     def return_all(self):
         re_all = [
             self.name, self.hand_space, self.reach, self.dmg, self.penetration,
-            self.accuracy, self.block_mod, self.weight, self.prize
+            self.accuracy, self.block_mod, self.weight, self.prize, self.graph
         ]
         return re_all
 
@@ -93,20 +98,21 @@ class weapon(object):
 
 
 class armour(object):
-    def __init__(self, name, def_mod, attack_mod, speed_mod, material):
+    def __init__(self, name, def_mod, attack_mod, speed_mod, material, graph):
         self.name = name
         self.material = material
         self.def_mod = def_mod
         self.speed_mod = speed_mod
         self.attack_mod = attack_mod
         self.type = armour
+        self.graph = graph
 
     def return_type(self):
         return self.type
 
     def return_all(self):
         re_all = [
-            self.name, self.def_mod, self.attack_mod, self.speed_mod
+            self.name, self.def_mod, self.attack_mod, self.speed_mod, self.graph
         ]
         return re_all
 
@@ -465,8 +471,8 @@ def print_():
 
 
 def armour_creator():
-    Chain_vest = armour('Chain vest', 30, 15, 2, [100, ''])
-    Plate_armour = armour('Plate armour', 70, 20, 5, [100, ''])
+    Chain_vest = armour('Chain vest', 30, 15, 2, [100, ''], ['#'])
+    Plate_armour = armour('Plate armour', 70, 20, 5, [100, ''], ['@'])
     re_armour = [Chain_vest, Plate_armour]
     return re_armour
 
@@ -474,23 +480,23 @@ def armour_creator():
 def weapon_creator():
     weapon_reminder = ['name', 'hand_space', 'reach', 'dmg', 'penetration', 'accuracy', 'block_mod',
                        'weight', 'prize']
-    Mace = weapon('Mace', 1, 1, 16, 40, 70, 30, 2, 20, [100, ''])
-    War_Hammer = weapon('War_Hammer', 1, 1, 16, 60, 70, 30, 3, 30, [100, ''])
-    Axe = weapon('Axe', 1, 1, 20, 10, 70, 30, 1, 20, [100, ''])
-    Sword = weapon('Sword', 1, 1, 14, 20, 80, 40, 2, 30, [100, ''])
-    Long_Sword = weapon('Long_Sword', 2, 1, 24, 30, 70, 40, 4, 50, [100, ''])
-    Pike = weapon('Pike', 2, 2, 14, 60, 60, 20, 1, 10, [100, ''])
-    Halberd = weapon('Halberd', 2, 2, 26, 30, 60, 20, 4, 40, [100, ''])
-    Long_Axe = weapon('Long_Axe', 2, 2, 30, 20, 60, 20, 3, 30, [100, ''])
+    Mace = weapon('Mace', 1, 1, 16, 40, 70, 30, 2, 20, [100, ''], ['.', '*', '|', '|'])
+    War_Hammer = weapon('War_Hammer', 1, 1, 16, 60, 70, 30, 3, 30, [100, ''], ['.', '#', '|', '|'])
+    Axe = weapon('Axe', 1, 1, 20, 10, 70, 30, 1, 20, [100, ''], ['.', '}', '|', '|'])
+    Sword = weapon('Sword', 1, 1, 14, 20, 80, 40, 2, 30, [100, ''], ['.', '/', '|', '+'])
+    Long_Sword = weapon('Long_Sword', 2, 1, 24, 30, 70, 40, 4, 50, [100, ''], ['/', '|', '|', '+'])
+    Pike = weapon('Pike', 2, 2, 14, 60, 60, 20, 1, 10, [100, ''], ['^', '|', '|', '|'])
+    Halberd = weapon('Halberd', 2, 2, 26, 30, 60, 20, 4, 40, [100, ''], ['^', '>', '|', '|'])
+    Long_Axe = weapon('Long_Axe', 2, 2, 30, 20, 60, 20, 3, 30, [100, ''], ['}', '|', '|', '|'])
     re_weapons = [Mace, War_Hammer, Axe, Sword, Long_Sword, Pike, Halberd, Long_Axe, ]
     return re_weapons
 
 
 def shield_creator():
     # Shields
-    Buckler = armour('Buckler', 15, 0, 1, [100, ''])
-    Shield = armour('Shield', 30, 10, 2, [100, ''])
-    Tower_shield = armour('Tower shield', 60, 40, 3, [100, ''])
+    Buckler = armour('Buckler', 15, 0, 1, [100, ''], ['u'])
+    Shield = armour('Shield', 30, 10, 2, [100, ''], ['O'])
+    Tower_shield = armour('Tower shield', 60, 40, 3, [100, ''], ['U'])
     re_shields = [Buckler, Shield, Tower_shield]
     return re_shields
 
@@ -513,7 +519,8 @@ def material_obj_creator(materials, obj):
                 name = materials[key][1]
                 material = [mod, name]
                 new_obj = weapon(
-                    all_p[0], all_p[1], all_p[2], all_p[3], all_p[4], all_p[5], all_p[6], all_p[7], all_p[8], material
+                    all_p[0], all_p[1], all_p[2], all_p[3], all_p[4], all_p[5],
+                    all_p[6], all_p[7], all_p[8], material, all_p[9]
                 )
                 re_array.append(new_obj)
     elif type_ == armour:
@@ -523,7 +530,7 @@ def material_obj_creator(materials, obj):
             name = materials[key][1]
             material = [mod, name]
             new_obj = armour(
-                all_p[0], all_p[1], all_p[2], all_p[3], material
+                all_p[0], all_p[1], all_p[2], all_p[3], material, all_p[4]
             )
             re_array.append(new_obj)
     return re_array
@@ -616,6 +623,10 @@ def create_squad(player, unit, weapon, shield, armour):
         'armour': [armour]
     }
     shield_desc = ''
+    weapon_graph = weapon.show_graph()
+    shield_graph = ''
+    armour_graph = ''
+    unit_graph = unit.show_graph()
     if shield is not None:
         objects['weapon'].append(shield)
         shield_desc = 'and ' + shield.show_name()
@@ -916,6 +927,23 @@ def show_players_squad(squads):
         print(str(name) + ': ' + element.show_desc())
 
 
+def unit_count_to_str(num):
+    if num < 5:
+        return ['.', '.', '.', '.', 'F', 'E', 'W', '.', '.', '.']
+    elif 5 < num < 10:
+        return ['.', '.', '.', 'P', 'A', 'C', 'K', '.', '.', '.']
+    elif 10 < num < 16:
+        return ['.', 'S', 'E', 'V', 'E', 'R', 'A', 'L', '.', '.']
+    elif 16 < num < 30:
+        return ['.', '.', '.', 'M', 'A', 'N', 'Y', '.', '.', '.']
+    elif 30 < num:
+        return ['.', '.', 'H', 'O', 'R', 'D', 'E', '.', '.', '.']
+
+
+def place_units_on_the_map():
+    pass
+
+
 def war_game():
     Terrain_map = game_start()
     TILES_0 = tiles_maker()
@@ -948,6 +976,9 @@ def war_game():
                 player1_squads = boring_squad_recruitment(units, all_weapons, all_shields, all_armour, players_race,
                                                           player_num)
                 show_players_squad(player1_squads)
+                place_units(player_num, player1_squads)
+            turn_go = 1
+            while turn_go == 1:
                 x = input('stop')
             Turn += 1
         else:
