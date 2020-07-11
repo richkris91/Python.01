@@ -129,12 +129,17 @@ class armour(object):
 
 # Squads
 class squad(object):
-    def __init__(self, player, unit_placement, squad_formation, desc=None, name=None, ):
+    def __init__(self, player, unit_placement, squad_formation, graphics, desc=None, name=None, obj_graph=None):
         self.player = player
         self.squad_formation = squad_formation
         self.name = name
         self.unit_placement = unit_placement
         self.desc = desc
+        self.graphics = graphics
+        self.obj_graph = obj_graph
+
+    def show_ter(self):
+        pass
 
     def set_name(self, name):
         self.name = name
@@ -155,7 +160,9 @@ class unit(object):
                  combat_skill,
                  Morale, Hp,
                  Movement, Strength, Vigor,
-                 objects, hand_space=2):
+                 objects,
+                 graph,
+                 hand_space=2):
         self.name = name
         self.size = size
         self.sq_size = sq_size
@@ -167,7 +174,7 @@ class unit(object):
         self.Vigor = Vigor
         self.objects = objects
         self.hand_space = hand_space
-
+        self.graph = graph
     def show_sq_size(self):
         return self.sq_size
 
@@ -449,7 +456,7 @@ race_army_title = {
 }
 race_recruitment = {
     'Human': "Your army is not ready to battle commander!",
-    'Orc': "Send orders to gather the Biggest Army! "
+    'Orc': "Give orders to gather the Biggest Army! "
 }
 # Races
 players = {
@@ -580,6 +587,9 @@ def unit_creator():
                '3 Combat Skill',
                '4Morale', '5Hp',
                '6Movement', '7Strength', '8Vigor']
+    # Graphics
+    Peasant_g = [' ', ' ', '/', '/', '/', '\\', '\\', '\\' ' ', ' ']
+
     # Human
     Peasant = unit('Peasant', 1, 30, 8, 75, 20, 6, 6, 24, objects)
     Mercenary = unit('Mercenary', 1, 26, 13, 100, 24, 8, 8, 28, objects)
@@ -616,6 +626,7 @@ def game_start():
 
 
 def create_squad(player, unit, weapon, shield, armour):
+    # Object creator and squad info
     unit_list = []
     count = unit.show_sq_size()
     objects = {
@@ -623,10 +634,6 @@ def create_squad(player, unit, weapon, shield, armour):
         'armour': [armour]
     }
     shield_desc = ''
-    weapon_graph = weapon.show_graph()
-    shield_graph = ''
-    armour_graph = ''
-    unit_graph = unit.show_graph()
     if shield is not None:
         objects['weapon'].append(shield)
         shield_desc = 'and ' + shield.show_name()
@@ -649,6 +656,7 @@ def create_squad(player, unit, weapon, shield, armour):
     formation = 'Lose'
     if unit.show_name() == 'Ogre':
         formation = 'Wild'
+    # Graphics
     new_squad = squad(player, unit_placement, formation, desc)
     return new_squad
 
