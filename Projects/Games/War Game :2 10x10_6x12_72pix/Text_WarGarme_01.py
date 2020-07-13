@@ -107,6 +107,9 @@ class armour(object):
         self.type = armour
         self.graph = graph
 
+    def return_graph(self):
+        return self.graph
+
     def return_type(self):
         return self.type
 
@@ -129,7 +132,7 @@ class armour(object):
 
 # Squads
 class squad(object):
-    def __init__(self, player, unit_placement, squad_formation, graphics, desc=None, name=None, obj_graph=None):
+    def __init__(self, player, unit_placement, squad_formation, desc=None, graphics=None, name=None, obj_graph=None):
         self.player = player
         self.squad_formation = squad_formation
         self.name = name
@@ -138,8 +141,48 @@ class squad(object):
         self.graphics = graphics
         self.obj_graph = obj_graph
 
+    def set_obj_graph(self, new_graph):
+        self.obj_graph = new_graph
+
     def show_ter(self):
-        pass
+        # Name
+        if len(self.name) < 2:
+            name_2 = ' '
+        else:
+            name_2 = str(self.name[1])
+        # Weapon_g
+        w1 = 'x'
+        w2 = 'x'
+        w3 = 'x'
+        w4 = 'x'
+        if len(self.obj_graph[0]) > 1:
+            w1 = self.obj_graph[0][0]
+            w2 = self.obj_graph[0][1]
+            w3 = self.obj_graph[0][2]
+            if len(self.obj_graph[0]) > 3:
+                w4 = self.obj_graph[0][3]
+        # Armour_g
+        a1 = 'x'
+        a2 = 'x'
+        if self.obj_graph[1][0] != 'x':
+            a1 = self.obj_graph[1][0]
+        if self.obj_graph[2][0] != 'x':
+            a2 = self.obj_graph[2][0]
+        # Unit_g
+        u_g = self.graphics
+        # Unit_n_g
+        unit_n = 0
+        for key in self.unit_placement:
+            unit_n += len(self.unit_placement[key])
+        ng = unit_count_to_str(unit_n)
+        # Finale
+        sq_graph = ['X', 'R', 'A', 'N', 'K', 'S', '= ', self.squad_formation, 'X', self.name[0], name_2, 'X',
+                    w1, u_g[0], u_g[1], u_g[2], u_g[3], u_g[4], u_g[5], u_g[6], u_g[7], u_g[8], u_g[9], a1,
+                    w2, u_g[10], u_g[11], u_g[12], u_g[13], u_g[14], u_g[15], u_g[16], u_g[17], u_g[18], u_g[19], 'x',
+                    w3, u_g[20], u_g[21], u_g[22], u_g[23], u_g[24], u_g[25], u_g[26], u_g[27], u_g[28], u_g[29], 'x',
+                    w4, u_g[30], u_g[31], u_g[32], u_g[33], u_g[34], u_g[35], u_g[36], u_g[37], u_g[38], u_g[39], a2,
+                    'X', ng[0], ng[1], ng[2], ng[3], ng[4], ng[5], ng[6], ng[7], ng[8], ng[9], 'X']
+        return sq_graph
 
     def set_name(self, name):
         self.name = name
@@ -175,6 +218,10 @@ class unit(object):
         self.objects = objects
         self.hand_space = hand_space
         self.graph = graph
+
+    def show_graph(self):
+        return self.graph
+
     def show_sq_size(self):
         return self.sq_size
 
@@ -586,21 +633,43 @@ def unit_creator():
                '1size', '2sq_size',
                '3 Combat Skill',
                '4Morale', '5Hp',
-               '6Movement', '7Strength', '8Vigor']
+               '6Movement', '7Strength', '8Vigor', '9graph']
     # Graphics
-    Peasant_g = [' ', ' ', '/', '/', '/', '\\', '\\', '\\' ' ', ' ']
-
+    peasant_g = [' ', ' ', '/', '/', '/', '\\', '\\', '\\', ' ', ' ',
+                 ' ', '@', ' ', 'o', ' ', ' ', 'o', ' ', '@', '',
+                 ' ', ' ', '|', ' ', '~', ' ', ' ', '|', ' ', ' ',
+                 '/', '=', '=', '|', '+', '+', '|', '=', '=', '\\']
+    mercenary_g = [' ', ' ', ',', ',', ',', ',', ',', ',', ' ', ' ',
+                   ' ', '[', ' ', '-', ' ', ',', '-', ' ', ']', ' ',
+                   ' ', '\\', ' ', '=', '=', '=', '=', ' ', '/', ' ',
+                   '(', '/', '/', '/', '/', '\\', '\\', '\\', '\\', ')']
+    knight_g = [' ', '\\', '\\', '\\', '\\', '/', '/', '/', '/', ' ',
+                ' ', '[', ':', '=', ':', ':', '=', ':', ']', ' ',
+                ' ', '\\', ':', ':', '_', '_', ':', ':', '/', ' ',
+                '#', '\\', ':', ':', ':', ':', ':', ':', '/', '#']
+    goblin_g = [' ', ' ', 'A', ',', ',', ',', ',', 'A', ' ', ' ',
+                ' ', '\\', '|', 'o', ' ', '>', 'o', '|', '/', ' ',
+                ' ', ' ', '\\', 'v', '-', '-', 'v', '/', ' ', ' ',
+                ' ', '/', ',', ';', ',', ',', ';', ',', '\\', ' ']
+    orc_g = [' ', '\\', '\\', '\\', '\\', '\\', '\\', '\\', '\\', ' ',
+             ' ', '\\', ' ', '#', ' ', ' ', '0', ' ', '/', ' ',
+             ' ', ' ', '/', ' ', '^', '^', ' ', '\\', ' ', ' ',
+             ' ', '[', 'A', '.', '.', '.', '.', 'A', ']', ' ']
+    troll_g = ['/', ':', '/', ':', '|', '|', ':', '\\', ':', '\\',
+               ':', '\\', ':', '0', ':', ':', '0', ':', '/', ':',
+               ':', '/', 'V', '-', 'v', 'v', '-', 'V', '\\', ':',
+               '\\', 'A', '-', 'A', '-', '-', 'A', '-', 'A', '/']
     # Human
-    Peasant = unit('Peasant', 1, 30, 8, 75, 20, 6, 6, 24, objects)
-    Mercenary = unit('Mercenary', 1, 26, 13, 100, 24, 8, 8, 28, objects)
-    Knight = unit('Knight', 1, 20, 18, 150, 26, 8, 10, 30, objects)
+    Peasant = unit('Peasant', 1, 30, 8, 75, 20, 6, 6, 24, objects, peasant_g)
+    Mercenary = unit('Mercenary', 1, 26, 13, 100, 24, 8, 8, 28, objects, mercenary_g)
+    Knight = unit('Knight', 1, 20, 18, 150, 26, 8, 10, 30, objects, knight_g)
     # Orc
-    Goblin = unit('Goblin', 0.75, 40, 8, 75, 24, 10, 6, 24, objects)
-    Orc = unit('Orc', 1.25, 26, 14, 150, 36, 8, 11, 30, objects)
-    Ogre = unit('Ogre', 5, 6, 6, 200, 80, 6, 36, 30, objects)
+    Goblin = unit('Goblin', 0.75, 40, 8, 75, 24, 10, 6, 24, objects, goblin_g)
+    Orc = unit('Orc', 1.25, 26, 14, 150, 36, 8, 11, 30, objects, orc_g)
+    Troll = unit('Troll', 5, 6, 6, 200, 80, 6, 36, 30, objects, troll_g)
     re_units = {
         'Human': [[Peasant, 30], [Mercenary, 50], [Knight, 80]],
-        'Orc': [[Goblin, 20], [Orc, 60], [Ogre, 100]]
+        'Orc': [[Goblin, 20], [Orc, 60], [Troll, 100]]
     }
     return re_units
 
@@ -653,11 +722,24 @@ def create_squad(player, unit, weapon, shield, armour):
     }
     for element in unit_list:
         unit_placement['R'].append(element)
-    formation = 'Lose'
-    if unit.show_name() == 'Ogre':
-        formation = 'Wild'
+    formation = 'L'
+    if unit.show_name() == 'Troll':
+        formation = 'D'
     # Graphics
-    new_squad = squad(player, unit_placement, formation, desc)
+    graphics = unit.show_graph()
+    w_g = weapon.return_graph()
+    if w_g is None:
+        w_g = 'x'
+    s_g = shield.return_graph()
+    if s_g is None:
+        s_g = 'x'
+    a_g = armour.return_graph()
+    if a_g is None:
+        a_g = 'x'
+    obj_graphics = [w_g, s_g, a_g]
+    # Finale
+    new_squad = squad(player, unit_placement, formation, desc, graphics)
+    new_squad.set_obj_graph(obj_graphics)
     return new_squad
 
 
@@ -984,7 +1066,6 @@ def war_game():
                 player1_squads = boring_squad_recruitment(units, all_weapons, all_shields, all_armour, players_race,
                                                           player_num)
                 show_players_squad(player1_squads)
-                place_units(player_num, player1_squads)
             turn_go = 1
             while turn_go == 1:
                 x = input('stop')
