@@ -726,16 +726,12 @@ def create_squad(player, unit, weapon, shield, armour):
     if unit.show_name() == 'Troll':
         formation = 'D'
     # Graphics
-    graphics = unit.show_graph()
     w_g = weapon.return_graph()
-    if w_g is None:
-        w_g = 'x'
-    s_g = shield.return_graph()
-    if s_g is None:
-        s_g = 'x'
     a_g = armour.return_graph()
-    if a_g is None:
-        a_g = 'x'
+    graphics = unit.show_graph()
+    s_g = 'x'
+    if shield is not None:
+        s_g = shield.return_graph()
     obj_graphics = [w_g, s_g, a_g]
     # Finale
     new_squad = squad(player, unit_placement, formation, desc, graphics)
@@ -1030,16 +1026,88 @@ def unit_count_to_str(num):
         return ['.', '.', 'H', 'O', 'R', 'D', 'E', '.', '.', '.']
 
 
-def place_units_on_the_map():
-    pass
+def place_units_on_the_map(squad_array, blank_tiles, real_tiles, num):
+    keys_l = []
+    letters = {'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5, 'F': 6, 'G': 7, 'H': 8, 'I': 9, 'J': 10}
+    for key in letters:
+        keys_l.append(key)
+    stop0 = input('Now place your units on the battlefield')
+    print_()
+    #
+    squad_dic = {}
+    dic_num = 0
+    for element in squad_array:
+        squad_dic[str(dic_num)] = element
+        dic_num += 1
+    #
+    can_place = []
+    if num == 1:
+        can_place = [1, 2, 3]
+    elif num == 2:
+        can_place = [8, 9, 10]
+    squads_to_place = len(squad_array)
+    #
+    place_u = ''
+    row = ''
+    letter = ''
+    fin_l = ''
+    while squads_to_place != 0:
+        keys = []
+        for key in squad_dic:
+            print(str(key) + ': ' + squad_dic[key].show_desc())
+            keys.append(key)
+        print_()
+        place_0 = 0
+        while place_0 == 0:
+            place_u = input('Which unit would you like to place ?:\n')
+            if place_u in keys:
+                place_0 += 1
+            else:
+                print('You have not managed to enter the input correctly')
+        tiles_printer(blank_tiles)
+        print('You can only place your units in given rows =\n' + str(can_place))
+        print_()
+        place_1 = 0
+        while place_1 == 0:
+            row = int(input('Now chose your  desired row: \n'))
+            if row in can_place:
+                place_1 += 1
+            else:
+                print('You have not managed to enter the input correctly')
+        print_()
+        place_2 = 0
+        while place_2 == 0:
+            print(keys_l)
+            letter = input('Now chose direct tile: \n').capitalize()
+            if letter in letters:
+                place_2 += 1
+                fin_l = letters[letter]
+            else:
+                print('You have not managed to enter the input correctly')
+        # Logic fix
+        r_row = 'Obj' + str(row)
+        f_col = 'Obj_' + str(fin_l)
+        f_u = squad_dic[place_u]
+        del squad_dic[place_u]
+        # Add unit obj to Tiles array
+        real_tiles[r_row][0][f_col].append(f_u)
+        blank_tiles[r_row][0][f_col].append(f_u)
+        print('wow')
+
+
+
+
+
 
 
 def war_game():
+    # Map generator
     Terrain_map = game_start()
     TILES_0 = tiles_maker()
     Tiles_1 = border_adder(TILES_0)
     Tiles_2 = terrain_adder(Tiles_1, Terrain_map)
-    tiles_printer(Tiles_2)
+    #
+    Tiles_F = None
     # Turn Loop
     game = 1
     Turn = 1
@@ -1054,6 +1122,7 @@ def war_game():
     player1_squads = []
     player2_squads = []
     while game == 1:
+        print_()
         print('Its: ' + str(Turn) + ' Turn')
         if Turn % 2 != 0:
             current_player = 'Player 1'
@@ -1065,10 +1134,8 @@ def war_game():
             if Turn <= 2:
                 player1_squads = boring_squad_recruitment(units, all_weapons, all_shields, all_armour, players_race,
                                                           player_num)
-                show_players_squad(player1_squads)
+                Tiles_F = place_units_on_the_map(player1_squads, Tiles_2, Tiles_2, player_num)
             turn_go = 1
-            while turn_go == 1:
-                x = input('stop')
             Turn += 1
         else:
             current_player = 'Player 2'
@@ -1080,7 +1147,7 @@ def war_game():
             if Turn <= 2:
                 player2_squads = boring_squad_recruitment(units, all_weapons, all_shields, all_armour, players_race,
                                                           player_num)
-                show_players_squad(player2_squads)
+                Tiles_F = place_units_on_the_map(player2_squads, Tiles_2, Tiles_F, player_num)
                 x = input('stop')
             Turn += 1
 
