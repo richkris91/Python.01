@@ -2,13 +2,12 @@ rly = [1, 2, 3]
 # Tile Graphics
 Tile_sets = {
     'Short_Grass_1': [
-        '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
-        '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
-        '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
-        '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
-        '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~',
-        '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~', '~'
-    ]
+        '~~~~~~~~~~~~',
+        '~~~~~~~~~~~~',
+        '~~~~~~~~~~~~',
+        '~~~~~~~~~~~~',
+        '~~~~~~~~~~~~',
+        '~~~~~~~~~~~~']
 }
 
 
@@ -29,7 +28,7 @@ class border_obj(object):
     def __init__(self, graphic):
         self.graphic = graphic
 
-    def show_graphics(self):
+    def show_ter(self):
         return self.graphic
 
 
@@ -151,37 +150,33 @@ class squad(object):
         else:
             name_2 = str(self.name[1])
         # Weapon_g
-        w1 = 'x'
-        w2 = 'x'
-        w3 = 'x'
-        w4 = 'x'
-        if len(self.obj_graph[0]) > 1:
-            w1 = self.obj_graph[0][0]
-            w2 = self.obj_graph[0][1]
-            w3 = self.obj_graph[0][2]
-            if len(self.obj_graph[0]) > 3:
-                w4 = self.obj_graph[0][3]
+        w4 = '.'
+        w1 = self.obj_graph[0][0]
+        w2 = self.obj_graph[0][1]
+        w3 = self.obj_graph[0][2]
+        if len(self.obj_graph[0]) > 3:
+            w4 = self.obj_graph[0][3]
         # Armour_g
-        a1 = 'x'
-        a2 = 'x'
-        if self.obj_graph[1][0] != 'x':
-            a1 = self.obj_graph[1][0]
-        if self.obj_graph[2][0] != 'x':
-            a2 = self.obj_graph[2][0]
+        a1 = self.obj_graph[1][0]
+        # Shield_g
+        s1 = '.'
+        if len(self.obj_graph) > 2:
+            s1 = self.obj_graph[2][0]
         # Unit_g
         u_g = self.graphics
         # Unit_n_g
         unit_n = 0
         for key in self.unit_placement:
             unit_n += len(self.unit_placement[key])
-        ng = unit_count_to_str(unit_n)
+        ng = str(unit_count_to_str(unit_n))
         # Finale
-        sq_graph = ['X', 'R', 'A', 'N', 'K', 'S', '= ', self.squad_formation, 'X', self.name[0], name_2, 'X',
-                    w1, u_g[0], u_g[1], u_g[2], u_g[3], u_g[4], u_g[5], u_g[6], u_g[7], u_g[8], u_g[9], a1,
-                    w2, u_g[10], u_g[11], u_g[12], u_g[13], u_g[14], u_g[15], u_g[16], u_g[17], u_g[18], u_g[19], 'x',
-                    w3, u_g[20], u_g[21], u_g[22], u_g[23], u_g[24], u_g[25], u_g[26], u_g[27], u_g[28], u_g[29], 'x',
-                    w4, u_g[30], u_g[31], u_g[32], u_g[33], u_g[34], u_g[35], u_g[36], u_g[37], u_g[38], u_g[39], a2,
-                    'X', ng[0], ng[1], ng[2], ng[3], ng[4], ng[5], ng[6], ng[7], ng[8], ng[9], 'X']
+        row_1 = '.ranks.' + self.squad_formation + '.' + self.name[0] + name_2 + '.'
+        row_2 = w1 + u_g[0] + a1
+        row_3 = w2 + u_g[1] + '.'
+        row_4 = w3 + u_g[2] + s1
+        row_5 = w4 + u_g[3] + '.'
+        row_6 = '.' + ng + '.'
+        sq_graph = [row_1, row_2, row_3, row_4, row_5, row_6]
         return sq_graph
 
     def set_name(self, name):
@@ -306,13 +301,17 @@ def tiles_maker():
         Tiles[key].append({})
         counter_t_o = 1
         counter_t_b = 1
+        counter_t_o_b = 1
+        counter_t_o_a = 1
         if 'Obj' in key:
-            while counter_t_o != 20:
+            while counter_t_o_a != 20:
                 Tiles[key][0]['Obj_' + str(counter_t_o)] = []
                 counter_t_o += 1
-                if counter_t_o != 20:
-                    Tiles[key][0]['Bor_' + str(counter_t_o)] = []
-                    counter_t_o += 1
+                counter_t_o_a += 1
+                if counter_t_o_a != 20:
+                    Tiles[key][0]['Bor_' + str(counter_t_o_b)] = []
+                    counter_t_o_b += 1
+                    counter_t_o_a += 1
         if 'Bor' in key:
             while counter_t_b != 11:
                 Tiles[key][0]['Bor_' + str(counter_t_b)] = []
@@ -322,7 +321,7 @@ def tiles_maker():
 
 
 def border_adder(tiles):
-    add_bor = border_obj(['+', '+', '+', '+', '+', '+'])
+    add_bor = border_obj('      ')
     for key in tiles:
         key1 = key
         if 'Bor' in key1:
@@ -349,75 +348,55 @@ def terrain_adder(Tiles, Terrain_map):
 
 # Map printer
 def tiles_printer(Tiles):
-    Index = ['====']
+    # First Line
+    Index0 = ['----']
     letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
-    numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     for element in letters:
-        Index.append('|___' + element + '____' + element + '___')
-    Index.append('|')
-    Index = str(Index).replace('[', '')
-    Index = Index.replace(']', '')
-    Index = Index.replace("'", '')
-    Index = Index.replace(',', '')
-    Index = Index.replace(' ', '')
-    print(Index)
-    Lines = []
-    line_c = 0
-    while line_c != 69:
-        Lines.append([])
-        line_c += 1
-    counter_min = 0
+        Index0.append('|___' + element + '____' + element + '___')
+    Index0.append('|')
+    Index0 = str(Index0).replace('[', '')
+    Index0 = Index0.replace(']', '')
+    Index0 = Index0.replace("'", '')
+    Index0 = Index0.replace(',', '')
+    Index0 = Index0.replace(' ', '')
+    print(Index0)
+    # Every other line
+    str_num = 0
+    line_num = 0
+    print('====' + ('X' + ('=' * 12 + 'X') * 10))
     for key in Tiles:
         key1 = key
+        row_num = 0
         if 'Obj' in key1:
+            while row_num < 6:
+                line = ''
+                # Index1
+                Index1 = ''
+                if row_num == 2 or row_num == 3:
+                    Index1 = '-' + str(str_num) * 2 + '-' + '|'
+                    if row_num == 3:
+                        str_num += 1
+                elif row_num == 6:
+                    Index1 = 'X==='
+                else:
+                    Index1 = '-' * 4 + '|'
+                line += Index1
+                # Rest
+                new_ter = ''
+                for key in Tiles[key1][0]:
+                    if 'Obj' in key:
+                        new_ter += Tiles[key1][0][key][-1].show_ter()[row_num]
+                    elif 'Bor' in key:
+                        new_ter += Tiles[key1][0][key][-1].show_ter()[row_num]
+                line += new_ter + '|'
+                row_num += 1
+                print(line)
+        else:
+            new_bor = '====X'
             for key in Tiles[key1][0]:
-                if_unit = len(Tiles[key1][0][key]) - 1
-                if 'Obj' in key:
-                    obj_graphics = Tiles[key1][0][key][if_unit].show_ter()
-                    Lines[counter_min].append(list_str(obj_graphics[0:12]))
-                    Lines[counter_min + 1].append(list_str(obj_graphics[12:24]))
-                    Lines[counter_min + 2].append(list_str(obj_graphics[24:36]))
-                    Lines[counter_min + 3].append(list_str(obj_graphics[36:48]))
-                    Lines[counter_min + 4].append(list_str(obj_graphics[48:60]))
-                    Lines[counter_min + 5].append(list_str(obj_graphics[60:72]))
-                if 'Bor' in key:
-                    bor_graphics = Tiles[key1][0][key][0].show_graphics()
-                    Lines[counter_min].append(list_str(bor_graphics[0]))
-                    Lines[counter_min + 1].append(list_str(bor_graphics[1]))
-                    Lines[counter_min + 2].append(list_str(bor_graphics[2]))
-                    Lines[counter_min + 3].append(list_str(bor_graphics[3]))
-                    Lines[counter_min + 4].append(list_str(bor_graphics[4]))
-                    Lines[counter_min + 5].append(list_str(bor_graphics[5]))
-            counter_min += 6
-        if 'Bor' in key1:
-            for key in Tiles[key1][0]:
-                bor_graphics = Tiles[key1][0][key][0].show_graphics()
-                Lines[counter_min].append(
-                    '+++' +
-                    str(bor_graphics[0]) + str(bor_graphics[1]) + str(bor_graphics[2]) +
-                    str(bor_graphics[3]) + str(bor_graphics[4]) + str(bor_graphics[5]) +
-                    '+++' + 'X')
-            counter_min += 1
-    Final_Lines = []
-    for element in Lines:
-        element = str(element).replace(' ', '')
-        element = element.replace('[', '')
-        element = element.replace(']', '')
-        element = element.replace("'", '')
-        element = element.replace(',', '')
-        element = element + '|'
-        Final_Lines.append(element)
-    Final_Lines.append(('=' * 12 + 'X') * 10)
-    Final_line_count = 0
-    for element in numbers:
-        print('----|' + Final_Lines[Final_line_count])
-        print('----|' + Final_Lines[Final_line_count + 1])
-        print('_' + element * 2 + '_|' + Final_Lines[Final_line_count + 2])
-        print('_' + element * 2 + '_|' + Final_Lines[Final_line_count + 3])
-        print('----|' + Final_Lines[Final_line_count + 4])
-        print('----|' + Final_Lines[Final_line_count + 5])
-        print('====|' + Final_Lines[Final_line_count + 6])
-        Final_line_count += 7
+                new_bor += '===' + Tiles[key1][0][key][0].show_ter() + '===X'
+            print(new_bor)
+    print('====' + ('X' + ('=' * 12 + 'X') * 10))
 
 
 # Maps
@@ -635,30 +614,30 @@ def unit_creator():
                '4Morale', '5Hp',
                '6Movement', '7Strength', '8Vigor', '9graph']
     # Graphics
-    peasant_g = [' ', ' ', '/', '/', '/', '\\', '\\', '\\', ' ', ' ',
-                 ' ', '@', ' ', 'o', ' ', ' ', 'o', ' ', '@', '',
-                 ' ', ' ', '|', ' ', '~', ' ', ' ', '|', ' ', ' ',
-                 '/', '=', '=', '|', '+', '+', '|', '=', '=', '\\']
-    mercenary_g = [' ', ' ', ',', ',', ',', ',', ',', ',', ' ', ' ',
-                   ' ', '[', ' ', '-', ' ', ',', '-', ' ', ']', ' ',
-                   ' ', '\\', ' ', '=', '=', '=', '=', ' ', '/', ' ',
-                   '(', '/', '/', '/', '/', '\\', '\\', '\\', '\\', ')']
-    knight_g = [' ', '\\', '\\', '\\', '\\', '/', '/', '/', '/', ' ',
-                ' ', '[', ':', '=', ':', ':', '=', ':', ']', ' ',
-                ' ', '\\', ':', ':', '_', '_', ':', ':', '/', ' ',
-                '#', '\\', ':', ':', ':', ':', ':', ':', '/', '#']
-    goblin_g = [' ', ' ', 'A', ',', ',', ',', ',', 'A', ' ', ' ',
-                ' ', '\\', '|', 'o', ' ', '>', 'o', '|', '/', ' ',
-                ' ', ' ', '\\', 'v', '-', '-', 'v', '/', ' ', ' ',
-                ' ', '/', ',', ';', ',', ',', ';', ',', '\\', ' ']
-    orc_g = [' ', '\\', '\\', '\\', '\\', '\\', '\\', '\\', '\\', ' ',
-             ' ', '\\', ' ', '#', ' ', ' ', '0', ' ', '/', ' ',
-             ' ', ' ', '/', ' ', '^', '^', ' ', '\\', ' ', ' ',
-             ' ', '[', 'A', '.', '.', '.', '.', 'A', ']', ' ']
-    troll_g = ['/', ':', '/', ':', '|', '|', ':', '\\', ':', '\\',
-               ':', '\\', ':', '0', ':', ':', '0', ':', '/', ':',
-               ':', '/', 'V', '-', 'v', 'v', '-', 'V', '\\', ':',
-               '\\', 'A', '-', 'A', '-', '-', 'A', '-', 'A', '/']
+    peasant_g = ['  ///\\\\\\  ',
+                 ' @ o  o @ ',
+                 '  | ~  |  ',
+                 '/==|++|==\\']
+    mercenary_g = [' ,,,,,,,, ',
+                   ' [ - ,- ] ',
+                   ' \\ ==== / ',
+                   '(////\\\\\\\\)']
+    knight_g = [' \\\\\\\\//// ',
+                ' [:=::=:] ',
+                ' \\::__::/ ',
+                '#\\::::::/#']
+    goblin_g = ['  A,,,,A  ',
+                ' \\|o >o|/ ',
+                '  \\v--v/  ',
+                ' /,;,,;,\\ ']
+    orc_g = [' \\\\\\\\\\\\\\\\ ',
+             ' \\ #  0 / ',
+             '  / ^^ \\  ',
+             ' [A....A] ']
+    troll_g = ['/:/:||:\\:\\',
+               ':\\:0::0:/:',
+               ':/V-vv-V\\:',
+               '\\A-A--A-A/']
     # Human
     Peasant = unit('Peasant', 1, 30, 8, 75, 20, 6, 6, 24, objects, peasant_g)
     Mercenary = unit('Mercenary', 1, 26, 13, 100, 24, 8, 8, 28, objects, mercenary_g)
@@ -729,10 +708,10 @@ def create_squad(player, unit, weapon, shield, armour):
     w_g = weapon.return_graph()
     a_g = armour.return_graph()
     graphics = unit.show_graph()
-    s_g = 'x'
+    obj_graphics = [w_g, a_g]
     if shield is not None:
         s_g = shield.return_graph()
-    obj_graphics = [w_g, s_g, a_g]
+        obj_graphics.append(s_g)
     # Finale
     new_squad = squad(player, unit_placement, formation, desc, graphics)
     new_squad.set_obj_graph(obj_graphics)
@@ -1014,16 +993,16 @@ def show_players_squad(squads):
 
 
 def unit_count_to_str(num):
-    if num < 5:
-        return ['.', '.', '.', '.', 'F', 'E', 'W', '.', '.', '.']
-    elif 5 < num < 10:
-        return ['.', '.', '.', 'P', 'A', 'C', 'K', '.', '.', '.']
-    elif 10 < num < 16:
-        return ['.', 'S', 'E', 'V', 'E', 'R', 'A', 'L', '.', '.']
-    elif 16 < num < 30:
-        return ['.', '.', '.', 'M', 'A', 'N', 'Y', '.', '.', '.']
+    if num <= 5:
+        return '....FEW...'
+    elif 5 < num <= 10:
+        return '...PACK...'
+    elif 10 < num <= 16:
+        return '.SEVERAL..'
+    elif 16 < num <= 30:
+        return '...MANY...'
     elif 30 < num:
-        return ['.', '.', 'H', 'O', 'R', 'D', 'E', '.', '.', '.']
+        return '..HORDE...'
 
 
 def place_units_on_the_map(squad_array, blank_tiles, real_tiles, num):
@@ -1042,16 +1021,15 @@ def place_units_on_the_map(squad_array, blank_tiles, real_tiles, num):
     #
     can_place = []
     if num == 1:
-        can_place = [1, 2, 3]
+        can_place = [0, 1, 2]
     elif num == 2:
-        can_place = [8, 9, 10]
+        can_place = [7, 8, 9]
     squads_to_place = len(squad_array)
     #
-    place_u = ''
-    row = ''
-    letter = ''
-    fin_l = ''
     while squads_to_place != 0:
+        place_u = ''
+        row = ''
+        fin_l = ''
         keys = []
         for key in squad_dic:
             print(str(key) + ': ' + squad_dic[key].show_desc())
@@ -1085,7 +1063,7 @@ def place_units_on_the_map(squad_array, blank_tiles, real_tiles, num):
             else:
                 print('You have not managed to enter the input correctly')
         # Logic fix
-        r_row = 'Obj' + str(row)
+        r_row = 'Obj' + str(row + 1)
         f_col = 'Obj_' + str(fin_l)
         f_u = squad_dic[place_u]
         del squad_dic[place_u]
@@ -1093,11 +1071,6 @@ def place_units_on_the_map(squad_array, blank_tiles, real_tiles, num):
         real_tiles[r_row][0][f_col].append(f_u)
         blank_tiles[r_row][0][f_col].append(f_u)
         print('wow')
-
-
-
-
-
 
 
 def war_game():
