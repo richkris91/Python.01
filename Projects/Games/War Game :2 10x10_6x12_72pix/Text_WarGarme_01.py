@@ -170,11 +170,11 @@ class squad(object):
             unit_n += len(self.unit_placement[key])
         ng = str(unit_count_to_str(unit_n))
         # Finale
-        row_1 = '.ranks.' + self.squad_formation + '.' + self.name[0] + name_2 + '.'
-        row_2 = w1 + u_g[0] + a1
-        row_3 = w2 + u_g[1] + '.'
-        row_4 = w3 + u_g[2] + s1
-        row_5 = w4 + u_g[3] + '.'
+        row_1 = w1 + '.ranks' + self.squad_formation + '.' + self.name[0] + name_2 + '.'
+        row_2 = w2 + u_g[0] + a1
+        row_3 = w3 + u_g[1] + '.'
+        row_4 = w4 + u_g[2] + s1
+        row_5 = '.' + u_g[3] + '.'
         row_6 = '.' + ng + '.'
         sq_graph = [row_1, row_2, row_3, row_4, row_5, row_6]
         return sq_graph
@@ -625,7 +625,7 @@ def unit_creator():
     knight_g = [' \\\\\\\\//// ',
                 ' [:=::=:] ',
                 ' \\::__::/ ',
-                '#\\::::::/#']
+                '#/::::::\\#']
     goblin_g = ['  A,,,,A  ',
                 ' \\|o >o|/ ',
                 '  \\v--v/  ',
@@ -830,12 +830,6 @@ def boring_squad_recruitment(units, weapons, shields, armour, race, num):
             all_s[element.show_name()] = element
     if race is 'Human':
         # Peasant squads
-        u_01 = create_squad(num,
-                            units[0][0],
-                            all_w['Bronze Axe'],
-                            None,
-                            all_a['Leather Chain vest'])
-        sq_re.append(u_01)
         u_02 = create_squad(num,
                             units[0][0],
                             all_w['Bronze Mace'],
@@ -867,25 +861,7 @@ def boring_squad_recruitment(units, weapons, shields, armour, race, num):
                             all_s['Iron Buckler'],
                             all_a['Iron Chain vest'])
         sq_re.append(u_06)
-        u_07 = create_squad(num,
-                            units[1][0],
-                            all_w['Iron Axe'],
-                            all_s['Iron Buckler'],
-                            all_a['Iron Plate armour'])
-        sq_re.append(u_07)
-        u_08 = create_squad(num,
-                            units[1][0],
-                            all_w['Iron Mace'],
-                            all_s['Bronze Tower shield'],
-                            all_a['Iron Plate armour'])
-        sq_re.append(u_08)
         # Knights
-        u_09 = create_squad(num,
-                            units[2][0],
-                            all_w['Steel Long_Axe'],
-                            None,
-                            all_a['Steel Plate armour'])
-        sq_re.append(u_09)
         u_10 = create_squad(num,
                             units[2][0],
                             all_w['Steel Long_Sword'],
@@ -921,12 +897,6 @@ def boring_squad_recruitment(units, weapons, shields, armour, race, num):
                             all_s['Iron Buckler'],
                             all_a['Leather Chain vest'])
         sq_re.append(u_02)
-        u_03 = create_squad(num,
-                            units[0][0],
-                            all_w['Iron Sword'],
-                            all_s['Iron Shield'],
-                            all_a['Leather Chain vest'])
-        sq_re.append(u_03)
         u_04 = create_squad(num,
                             units[0][0],
                             all_w['Iron Long_Axe'],
@@ -965,12 +935,6 @@ def boring_squad_recruitment(units, weapons, shields, armour, race, num):
                             None,
                             all_a['Bronze Plate armour'])
         sq_re.append(u_09)
-        u_10 = create_squad(num,
-                            units[2][0],
-                            all_w['Bronze Sword'],
-                            None,
-                            all_a['Bronze Chain vest'])
-        sq_re.append(u_10)
         print_()
         print('Vile forces of darkness are upon you!')
         print_()
@@ -1005,7 +969,8 @@ def unit_count_to_str(num):
         return '..HORDE...'
 
 
-def place_units_on_the_map(squad_array, blank_tiles, real_tiles, num):
+def place_units_on_the_map(squad_array, empty_tiles, real_tiles, num):
+    blank_tiles = empty_tiles
     keys_l = []
     letters = {'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5, 'F': 6, 'G': 7, 'H': 8, 'I': 9, 'J': 10}
     for key in letters:
@@ -1047,7 +1012,12 @@ def place_units_on_the_map(squad_array, blank_tiles, real_tiles, num):
         print_()
         place_1 = 0
         while place_1 == 0:
-            row = int(input('Now chose your  desired row: \n'))
+            row = 0
+            row0 = input('Now chose your  desired row: \n')
+            try:
+                row = int(row0)
+            except:
+                pass
             if row in can_place:
                 place_1 += 1
             else:
@@ -1066,11 +1036,15 @@ def place_units_on_the_map(squad_array, blank_tiles, real_tiles, num):
         r_row = 'Obj' + str(row + 1)
         f_col = 'Obj_' + str(fin_l)
         f_u = squad_dic[place_u]
-        del squad_dic[place_u]
         # Add unit obj to Tiles array
-        real_tiles[r_row][0][f_col].append(f_u)
-        blank_tiles[r_row][0][f_col].append(f_u)
-        print('wow')
+        if len(real_tiles[r_row][0][f_col]) > 1:
+            print('selected tile is already occupied')
+        else:
+            del squad_dic[place_u]
+            real_tiles[r_row][0][f_col].append(f_u)
+            blank_tiles[r_row][0][f_col].append(f_u)
+            squads_to_place -= 1
+    return real_tiles
 
 
 def war_game():
@@ -1108,7 +1082,6 @@ def war_game():
                 player1_squads = boring_squad_recruitment(units, all_weapons, all_shields, all_armour, players_race,
                                                           player_num)
                 Tiles_F = place_units_on_the_map(player1_squads, Tiles_2, Tiles_2, player_num)
-            turn_go = 1
             Turn += 1
         else:
             current_player = 'Player 2'
