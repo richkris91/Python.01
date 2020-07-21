@@ -1,3 +1,4 @@
+import copy
 rly = [1, 2, 3]
 # Tile Graphics
 Tile_sets = {
@@ -139,6 +140,9 @@ class squad(object):
         self.desc = desc
         self.graphics = graphics
         self.obj_graph = obj_graph
+
+    def show_num(self):
+        return self.player
 
     def set_obj_graph(self, new_graph):
         self.obj_graph = new_graph
@@ -969,8 +973,7 @@ def unit_count_to_str(num):
         return '..HORDE...'
 
 
-def place_units_on_the_map(squad_array, empty_tiles, real_tiles, num):
-    blank_tiles = empty_tiles
+def place_units_on_the_map(squad_array, blank_tiles, real_tiles, num):
     keys_l = []
     letters = {'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5, 'F': 6, 'G': 7, 'H': 8, 'I': 9, 'J': 10}
     for key in letters:
@@ -992,6 +995,7 @@ def place_units_on_the_map(squad_array, empty_tiles, real_tiles, num):
     squads_to_place = len(squad_array)
     #
     while squads_to_place != 0:
+        tiles_printer(blank_tiles)
         place_u = ''
         row = ''
         fin_l = ''
@@ -1003,48 +1007,66 @@ def place_units_on_the_map(squad_array, empty_tiles, real_tiles, num):
         place_0 = 0
         while place_0 == 0:
             place_u = input('Which unit would you like to place ?:\n')
-            if place_u in keys:
+            if place_u == 'wtf':
+                squads_to_place = 0
+                place_0 += 1
+            elif place_u in keys:
                 place_0 += 1
             else:
                 print('You have not managed to enter the input correctly')
-        tiles_printer(blank_tiles)
-        print('You can only place your units in given rows =\n' + str(can_place))
-        print_()
-        place_1 = 0
-        while place_1 == 0:
-            row = 0
-            row0 = input('Now chose your  desired row: \n')
-            try:
-                row = int(row0)
-            except:
-                pass
-            if row in can_place:
-                place_1 += 1
-            else:
-                print('You have not managed to enter the input correctly')
-        print_()
-        place_2 = 0
-        while place_2 == 0:
-            print(keys_l)
-            letter = input('Now chose direct tile: \n').capitalize()
-            if letter in letters:
-                place_2 += 1
-                fin_l = letters[letter]
-            else:
-                print('You have not managed to enter the input correctly')
-        # Logic fix
-        r_row = 'Obj' + str(row + 1)
-        f_col = 'Obj_' + str(fin_l)
-        f_u = squad_dic[place_u]
-        # Add unit obj to Tiles array
-        if len(real_tiles[r_row][0][f_col]) > 1:
-            print('selected tile is already occupied')
+        if place_u == 'wtf':
+            pass
         else:
-            del squad_dic[place_u]
-            real_tiles[r_row][0][f_col].append(f_u)
-            blank_tiles[r_row][0][f_col].append(f_u)
-            squads_to_place -= 1
+            print('You can only place your units in given rows =\n' + str(can_place))
+            print_()
+            place_1 = 0
+            while place_1 == 0:
+                row = 0
+                row0 = input('Now chose your  desired row: \n')
+                try:
+                    row = int(row0)
+                except:
+                    pass
+                if row in can_place:
+                    place_1 += 1
+                else:
+                    print('You have not managed to enter the input correctly')
+            print_()
+            place_2 = 0
+            while place_2 == 0:
+                print(keys_l)
+                letter = input('Now chose direct tile: \n').capitalize()
+                if letter in letters:
+                    place_2 += 1
+                    fin_l = letters[letter]
+                else:
+                    print('You have not managed to enter the input correctly')
+            # Logic fix
+            r_row = 'Obj' + str(row + 1)
+            f_col = 'Obj_' + str(fin_l)
+            f_u = squad_dic[place_u]
+            # Add unit obj to Tiles array
+            if len(real_tiles[r_row][0][f_col]) > 1:
+                print('selected tile is already occupied')
+            else:
+                del squad_dic[place_u]
+                real_tiles[r_row][0][f_col].append(f_u)
+                blank_tiles[r_row][0][f_col].append(f_u)
+                squads_to_place -= 1
     return real_tiles
+
+
+def players_squads_check(num, Tiles):
+    squads = []
+    for key in Tiles:
+        key1 = key
+        if 'Obj' in key1:
+            for key in Tiles[key1][0]:
+                if len(Tiles[key1][0][key]) > 1:
+                    if int(Tiles[key1][0][key][1].show_num()) == num:
+                        add_squad = copy.deepcopy(Tiles[key1][0][key][1])
+                        squads.insert(int(add_squad.show_name()), add_squad)
+    return squads
 
 
 def war_game():
@@ -1053,6 +1075,7 @@ def war_game():
     TILES_0 = tiles_maker()
     Tiles_1 = border_adder(TILES_0)
     Tiles_2 = terrain_adder(Tiles_1, Terrain_map)
+    blank_tiles = copy.deepcopy(Tiles_2)
     #
     Tiles_F = None
     # Turn Loop
@@ -1060,6 +1083,7 @@ def war_game():
     Turn = 1
     current_player = ''
     player_num = 0
+    # Objects stuff
     all_formations = formation_creator()
     all_armour = armour_creator()
     all_weapons = weapon_creator()
@@ -1081,8 +1105,13 @@ def war_game():
             if Turn <= 2:
                 player1_squads = boring_squad_recruitment(units, all_weapons, all_shields, all_armour, players_race,
                                                           player_num)
-                Tiles_F = place_units_on_the_map(player1_squads, Tiles_2, Tiles_2, player_num)
+                Tiles_F = place_units_on_the_map(player1_squads, blank_tiles, blank_tiles, player_num)
+            # Real turn loop
+            else:
+                player1_squads = players_squads_check(player_num, Tiles_F)
+                tiles_printer(Tiles_F)
             Turn += 1
+            # Turn end
         else:
             current_player = 'Player 2'
             player_num = 2
@@ -1095,7 +1124,11 @@ def war_game():
                                                           player_num)
                 Tiles_F = place_units_on_the_map(player2_squads, Tiles_2, Tiles_F, player_num)
                 x = input('stop')
+            else:
+                player2_squads = players_squads_check(player_num, Tiles_F)
+                tiles_printer(Tiles_F)
             Turn += 1
+            tiles_printer(Tiles_F)
 
 
 war_game()
