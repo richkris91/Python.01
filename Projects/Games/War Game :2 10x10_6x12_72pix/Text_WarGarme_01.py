@@ -1,4 +1,5 @@
 import copy
+
 rly = [1, 2, 3]
 # Tile Graphics
 Tile_sets = {
@@ -132,7 +133,8 @@ class armour(object):
 
 # Squads
 class squad(object):
-    def __init__(self, player, unit_placement, squad_formation, desc=None, graphics=None, name=None, obj_graph=None):
+    def __init__(self, player, unit_placement, squad_formation, desc=None, graphics=None, name=None, obj_graph=None,
+                 squad_movement=None):
         self.player = player
         self.squad_formation = squad_formation
         self.name = name
@@ -140,6 +142,9 @@ class squad(object):
         self.desc = desc
         self.graphics = graphics
         self.obj_graph = obj_graph
+        self.squad_movement = squad_movement
+        self.average_vigour = None
+        self.average_morale = None
 
     def show_num(self):
         return self.player
@@ -195,6 +200,41 @@ class squad(object):
     def move(self, where):
         pass
 
+    def squad_value_turn_reset(self):
+        # Movement
+        if self.squad_movement is None:
+            self.squad_movement = self.unit_placement['R'][0].set_squad_movement()
+        self.squad_movement[1] = self.squad_movement[0]
+        # Speed mod
+        speed_mod = 0
+        # Vigour
+        Vigor = 0
+        u_count_0 = 0
+        for key in self.unit_placement:
+            for element in range(len(self.unit_placement[key])):
+                Vigor += self.unit_placement[key][element].show_vigor()
+                u_count_0 += 1
+        average_vigour = Vigor / u_count_0
+        self.average_vigour = average_vigour
+        # Vigour modifier
+        if average_vigour >= 8:
+            speed_mod -= 2
+            if average_vigour >= 4:
+                speed_mod -= 2
+        # Morale
+        Morale = 0
+        u_count_1 = 0
+        for key in self.unit_placement:
+            for element in range(len(self.unit_placement[key])):
+                Morale += self.unit_placement[key][element].show_morale()
+                u_count_1 += 1
+        average_morale = Morale / u_count_1
+        self.average_morale = average_morale
+        self.squad_movement[1] += speed_mod
+
+    def squad_report(self):
+        return str(self.name) + ' : ' + self.squad_formation + ' : ' + self.average_vigour
+
 
 class unit(object):
     def __init__(self, name,
@@ -231,6 +271,15 @@ class unit(object):
         self.objects['weapon'].append(weapon_obj)
         self.hand_space -= weapon_obj.show_hand_space()
         self.Strength -= weapon_obj.show_speed_mod()
+
+    def set_squad_movement(self):
+        return [self.Movement, 0]
+
+    def show_vigor(self):
+        return self.Vigor
+
+    def show_morale(self):
+        return self.Morale
 
     def show_strength(self):
         return self.Strength
@@ -643,13 +692,13 @@ def unit_creator():
                ':/V-vv-V\\:',
                '\\A-A--A-A/']
     # Human
-    Peasant = unit('Peasant', 1, 30, 8, 75, 20, 6, 6, 24, objects, peasant_g)
-    Mercenary = unit('Mercenary', 1, 26, 13, 100, 24, 8, 8, 28, objects, mercenary_g)
-    Knight = unit('Knight', 1, 20, 18, 150, 26, 8, 10, 30, objects, knight_g)
+    Peasant = unit('Peasant', 1, 30, 8, 75, 20, 6, 6, 10, objects, peasant_g)
+    Mercenary = unit('Mercenary', 1, 26, 13, 100, 24, 6, 8, 12, objects, mercenary_g)
+    Knight = unit('Knight', 1, 20, 18, 125, 26, 8, 10, 14, objects, knight_g)
     # Orc
-    Goblin = unit('Goblin', 0.75, 40, 8, 75, 24, 10, 6, 24, objects, goblin_g)
-    Orc = unit('Orc', 1.25, 26, 14, 150, 36, 8, 11, 30, objects, orc_g)
-    Troll = unit('Troll', 5, 6, 6, 200, 80, 6, 36, 30, objects, troll_g)
+    Goblin = unit('Goblin', 0.75, 40, 8, 50, 24, 8, 6, 8, objects, goblin_g)
+    Orc = unit('Orc', 1.25, 26, 14, 125, 36, 6, 11, 12, objects, orc_g)
+    Troll = unit('Troll', 5, 6, 6, 150, 80, 4, 36, 14, objects, troll_g)
     re_units = {
         'Human': [[Peasant, 30], [Mercenary, 50], [Knight, 80]],
         'Orc': [[Goblin, 20], [Orc, 60], [Troll, 100]]
@@ -1069,6 +1118,21 @@ def players_squads_check(num, Tiles):
     return squads
 
 
+def vigor_to_string(vigor):
+    if vigor > 8:
+        return 'Fresh'
+    elif 8 >= vigor > 5:
+        return 'Tired'
+    elif 5 >= vigor > 2:
+        return 'Exhausted'
+    elif vigor <= 2:
+        return 'Anguished'
+
+def morale_to_string(morale):
+    if morale > 149:
+        return 'Blood thirsty'
+    elif 149 >= morale > 125:
+        pass
 def war_game():
     # Map generator
     Terrain_map = game_start()
@@ -1108,8 +1172,11 @@ def war_game():
                 Tiles_F = place_units_on_the_map(player1_squads, blank_tiles, blank_tiles, player_num)
             # Real turn loop
             else:
+                # Squad_assaign
                 player1_squads = players_squads_check(player_num, Tiles_F)
+                # Sow_map
                 tiles_printer(Tiles_F)
+                # Turn loop
             Turn += 1
             # Turn end
         else:
